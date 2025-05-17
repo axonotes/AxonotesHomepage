@@ -58,13 +58,7 @@ Its purpose is to:
 
 ## ⭐ Star History (for this Website Repository)
 
-<a href="https://www.star-history.com/#axonotes/AxonotesHomepage&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=axonotes/AxonotesHomepage&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=axonotes/AxonotesHomepage&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=axonotes/AxonotesHomepage&type=Date" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/svg?repos=axonotes/AxonotesHomepage&type=Date)](https://www.star-history.com/#axonotes/AxonotesHomepage&Date)
 
 ## 🛠️ Tech Stack (for this Website)
 
