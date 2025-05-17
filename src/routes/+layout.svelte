@@ -1,12 +1,20 @@
 <script lang="ts">
 	import '../app.css';
-    import LightSwitch from "$lib/components/lightSwitch/LightSwitch.svelte";
+    import Navbar from "$lib/components/Navbar.svelte";
 
 	let { children } = $props();
 </script>
 
-<div class="w-screen h-screen absolute top-0 left-0 overflow-auto">
-    <LightSwitch/>
+<div class="flex min-h-screen flex-col">
+    <header class="sticky top-0 z-50 w-full">
+        <Navbar />
+    </header>
 
-    {@render children()}
+    <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+        {@render children()}
+    </main>
+
+    <footer class="p-4 text-center text-sm">
+        © {new Date().getFullYear()} Axonotes. All rights reserved.
+    </footer>
 </div>
