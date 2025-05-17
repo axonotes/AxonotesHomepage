@@ -12,11 +12,7 @@
         {href: '/community', label: 'Community'},
     ];
 
-    let isMobileMenuOpen = $state(false);
-
-    function toggleMobileMenu() {
-        isMobileMenuOpen = !isMobileMenuOpen;
-    }
+    let isMobileMenuOpen = $state(true);
 
     function closeMobileMenu() {
         isMobileMenuOpen = false;
@@ -46,9 +42,10 @@
                 {#each navLinks as link}
                     <li>
                         <a
-                            href={link.href}
-                            class="px-3 py-2 rounded-md text-sm font-medium transition-colors
+                                href={link.href}
+                                class="px-3 py-2 rounded-md text-sm font-medium transition-colors
                                    {page.url.pathname === link.href ? 'text-primary-600 dark:text-primary-400' : ''}"
+                                aria-current={page.url.pathname === link.href ? 'page' : undefined}
                         >
                             {link.label}
                         </a>
@@ -58,6 +55,7 @@
             <LightSwitch/>
         </div>
 
+        <!-- Mobile Navigation & LightSwitch -->
         <div class="md:hidden flex items-center space-x-2">
             <LightSwitch/>
             <Modal
@@ -77,7 +75,11 @@
                 {#snippet content()}
                     <div>
                         <div class="w-full flex justify-end space-x-2">
-                            <button class="btn" onclick={closeMobileMenu}>
+                            <button
+                                    class="btn"
+                                    onclick={closeMobileMenu}
+                                    aria-label="Close mobile menu"
+                            >
                                 <X/>
                             </button>
                         </div>
@@ -86,8 +88,13 @@
                                 <li>
                                     <a
                                             href={link.href}
-                                            class="btn font-medium py-2"
+                                            class="btn font-medium py-2 w-full flex justify-start
+                                                    {page.url.pathname === link.href ?
+                                                        'text-primary-600 dark:text-primary-400 border-1' :
+                                                        ''
+                                                    }"
                                             onclick={closeMobileMenu}
+                                            aria-current={page.url.pathname === link.href ? 'page' : undefined}
                                     >
                                         {link.label}
                                     </a>
