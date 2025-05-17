@@ -26,18 +26,33 @@
 
 <svelte:head>
     <script>
-        const mode = localStorage.getItem('mode') || 'light';
-        document.documentElement.setAttribute('data-mode', mode);
+        try {
+            const mode = localStorage.getItem('mode') || 'light';
+            document.documentElement.setAttribute('data-mode', mode);
+        } catch (error) {
+            console.warn('Unable to load mode from localStorage:', error);
+            document.documentElement.setAttribute('data-mode', 'light');
+        }
     </script>
 </svelte:head>
 
 <div class="relative">
     {#if checked}
-        <button type="button" class="btn-icon preset-filled scheme-light" onclick={() => onCheckedChange({checked: false})}>
+        <button
+                type="button"
+                class="btn-icon preset-filled scheme-light"
+                onclick={() => onCheckedChange({checked: false})}
+                aria-label="Switch to light mode"
+        >
             <Sun/>
         </button>
     {:else}
-        <button type="button" class="btn-icon preset-filled scheme-dark" onclick={() => onCheckedChange({checked: true})}>
+        <button
+                type="button"
+                class="btn-icon preset-filled scheme-dark"
+                onclick={() => onCheckedChange({checked: true})}
+                aria-label="Switch to dark mode"
+        >
             <Moon/>
         </button>
     {/if}
