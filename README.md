@@ -14,16 +14,16 @@
 </p>
 
 <p align="center">
-  <a href="#-about-axonotes">About Axonotes</a> •
-  <a href="#-about-this-website">About This Website</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-getting-started">Getting Started</a> •
-  <a href="#-contributing">Contributing</a> •
-  <a href="#-stay-connected-with-axonotes">Stay Connected</a> •
-  <a href="#-license">License</a>
+  <a href="#about-axonotes">About Axonotes</a> •
+  <a href="#about-this-website">About This Website</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#stay-connected-with-axonotes">Stay Connected</a> •
+  <a href="#license">License</a>
 </p>
 
-[![Status](https://img.shields.io/badge/status-early%20development-orange)](https://github.com/axonotes/AxonotesHomepage) <!-- Update with actual repo link -->
+[![Status](https://img.shields.io/badge/status-early%20development-orange)](https://github.com/axonotes/AxonotesHomepage)
 
 ---
 
@@ -100,20 +100,16 @@ We welcome contributions to improve the Axonotes homepage! Whether it's fixing a
 
 **How to contribute to this website:**
 
-*   🔎 **Found a Bug or Typo?** Open an issue in this repository.
+*   🔎 **Found a Bug or Typo?** Please open an issue in this repository.
 *   🎨 **Design Ideas?** Open an issue to discuss your suggestions. We're keen to make the site as user-friendly and appealing as possible.
 *   ✍️ **Content Suggestions?** If you have ideas for content that would help users understand Axonotes better, let us know via an issue.
 *   🛠️ **Code Contributions:**
     1.  Fork this repository.
     2.  Create a new branch (`git checkout -b feat/your-amazing-feature`).
     3.  Make your changes.
-    4.  Commit your changes (`git commit -m 'Add some amazing feature'`).
+    4.  Commit your changes (`git commit -m 'Add some amazing feature'`). ***Make sure to sign your commits with gpg!***
     5.  Push to the branch (`git push origin feat/your-amazing-feature`).
     6.  Open a Pull Request.
-
-!!! Warning "Signing"
-    
-    Make sure to sign your commits with gpg!
 
 **For general feedback about the Axonotes application itself (not just this website):**
 
