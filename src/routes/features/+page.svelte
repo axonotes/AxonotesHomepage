@@ -1,7 +1,14 @@
 <script lang="ts">
     import type {PageData} from './$types';
+    import {onMount} from "svelte";
 
     export let data: PageData;
+
+    onMount(() => {
+        if (data.error) {
+            console.error(data.error);
+        }
+    })
 </script>
 
 <div class="text-center mb-8">
