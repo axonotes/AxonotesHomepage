@@ -1,5 +1,4 @@
 <script lang="ts">
-    import {Switch} from '@skeletonlabs/skeleton-svelte';
     import {Moon, Sun} from "@lucide/svelte";
 
     let checked = $state(false);
@@ -9,10 +8,18 @@
         checked = mode === 'dark';
     });
 
-    const onCheckedChange = (event: { checked: boolean }) => {
+    interface CheckedChangeEvent {
+        checked: boolean;
+    }
+
+    const onCheckedChange = (event: CheckedChangeEvent) => {
         const mode = event.checked ? 'dark' : 'light';
         document.documentElement.setAttribute('data-mode', mode);
-        localStorage.setItem('mode', mode);
+        try {
+            localStorage.setItem('mode', mode);
+        } catch (error) {
+            console.warn('Unable to save mode to localStorage:', error);
+        }
         checked = event.checked;
     };
 </script>
