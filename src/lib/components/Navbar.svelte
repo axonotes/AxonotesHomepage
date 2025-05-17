@@ -12,7 +12,7 @@
         {href: '/community', label: 'Community'},
     ];
 
-    let isMobileMenuOpen = $state(true);
+    let isMobileMenuOpen = $state(false);
 
     function closeMobileMenu() {
         isMobileMenuOpen = false;
