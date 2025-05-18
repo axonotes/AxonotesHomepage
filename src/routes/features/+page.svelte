@@ -18,7 +18,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {#each data.features as feature}
-        <a href={feature.url} class="p-4 border rounded-md border-primary-500">
+        <a href={feature.url} class="p-4 border rounded-md border-primary-500 m-2 flex flex-col justify-between">
             <p>{feature.name}</p>
             <div class="w-full flex justify-end">
                 <span class="badge">
