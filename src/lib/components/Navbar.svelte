@@ -20,7 +20,7 @@
 </script>
 
 <nav
-        class="shadow-md"
+        class="shadow-md backdrop-filter backdrop-blur-md bg-opacity-10 m-2 rounded-md"
         aria-label="Main navigation"
 >
     <div
