@@ -29,6 +29,7 @@ const cache = new NodeCache({
 interface Feature {
     name: string;
     description: string | null;
+    short_description: string | null;
     upvotes: number;
     url: string;
     // id is added for Svelte's #each key, even though it's not used
@@ -114,6 +115,27 @@ function parseLinkHeader(header: string | null): { [key: string]: string } {
     });
 
     return links;
+}
+
+function bodyToShortDescription(body: string | null): string | null {
+    if (!body) {
+        return null;
+    }
+
+    /*
+    * For a short description, we just take the first line that doesn't start with a formatting like **
+    * */
+
+    const lines = body.split("\n");
+    let shortDescription = null;
+    for (const line of lines) {
+        if (!line.startsWith("**") && line.trim() !== "") {
+            shortDescription = line.trim();
+            break;
+        }
+    }
+
+    return shortDescription;
 }
 
 async function fetchFeatures(
@@ -217,6 +239,7 @@ async function fetchFeatures(
             id: issue.id,
             name: issue.title,
             description: issue.body,
+            short_description: bodyToShortDescription(issue.body),
             url: issue.html_url,
             upvotes: issue.reactions ? issue.reactions["+1"] : 0,
         }));
