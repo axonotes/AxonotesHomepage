@@ -29,7 +29,6 @@ const cache = new NodeCache({
 interface Feature {
     name: string;
     description: string | null;
-    short_description: string | null;
     upvotes: number;
     url: string;
     // id is added for Svelte's #each key, even though it's not used
@@ -117,25 +116,34 @@ function parseLinkHeader(header: string | null): { [key: string]: string } {
     return links;
 }
 
-function bodyToShortDescription(body: string | null): string | null {
+function parseBody(body: string | null): {
+    name: string | null;
+    description: string | null;
+} {
     if (!body) {
-        return null;
+        return {
+            name: null,
+            description: null,
+        };
     }
 
     /*
-    * For a short description, we just take the first line that doesn't start with a formatting like **
+    * name and description are hidden in html comments.
+    * the first comment is the name, the second is the description.
     * */
 
-    const lines = body.split("\n");
-    let shortDescription = null;
-    for (const line of lines) {
-        if (!line.startsWith("**") && line.trim() !== "") {
-            shortDescription = line.trim();
-            break;
-        }
+    const nameMatch = body.match(/<!--\s*name:\s*(.*?)\s*-->/);
+    const descriptionMatch = body.match(
+        /<!--\s*description:\s*(.*?)\s*-->/,
+    );
+    const name = nameMatch ? nameMatch[1] : null;
+    const description = descriptionMatch
+        ? descriptionMatch[1]
+        : null;
+    return {
+        name,
+        description,
     }
-
-    return shortDescription;
 }
 
 async function fetchFeatures(
@@ -237,9 +245,8 @@ async function fetchFeatures(
 
         const features: Feature[] = allIssues.map((issue) => ({
             id: issue.id,
-            name: issue.title,
-            description: issue.body,
-            short_description: bodyToShortDescription(issue.body),
+            name: parseBody(issue.body).name || issue.title,
+            description: parseBody(issue.body).description,
             url: issue.html_url,
             upvotes: issue.reactions ? issue.reactions["+1"] : 0,
         }));
