@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { PageData } from './$types';
-    import { onMount } from 'svelte';
+    import type {PageData} from './$types';
+    import {onMount} from 'svelte';
 
     export let data: PageData;
 
@@ -41,12 +41,12 @@
     >
         Axonotes Features
     </h1>
-    <p
-            class="mt-4 text-lg font-light text-surface-700 dark:text-surface-300 max-w-xl mx-auto"
+    <h3
+            class="mt-4 text-lg font-light text-surface-800 dark:text-surface-200 max-w-xl mx-auto"
     >
         Explore the innovative features planned for Axonotes, designed to
         revolutionize your learning and note-taking experience.
-    </p>
+    </h3>
 </div>
 
 {#if data.features && data.features.length > 0}
@@ -58,7 +58,7 @@
             )}
             <a
                     href={feature.url}
-                    class="group block rounded-xl bg-white/10 dark:bg-surface-800/10 p-6 shadow-lg hover:shadow-xl dark:hover:shadow-primary-500/10 focus-visible:shadow-xl border border-surface-200 dark:border-surface-700 hover:border-primary-500/50 dark:hover:border-primary-500/70 focus-visible:border-primary-500/50 dark:focus-visible:border-primary-500/70 transition-all duration-300 ease-in-out hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-surface-900"
+                    class="group block rounded-xl bg-white/10 dark:bg-surface-800/10 p-6 shadow-lg hover:shadow-xl dark:hover:shadow-primary-500/10 focus-visible:shadow-xl border border-surface-200 dark:border-surface-700 hover:border-primary-500/50 dark:hover:border-primary-500/70 focus-visible:border-primary-500/50 dark:focus-visible:border-primary-500/70 transition-all duration-200 ease-in-out hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-surface-900"
                     aria-label={`Read more about ${feature.name}`}
             >
                 <div class="flex flex-col justify-between h-full">
@@ -70,7 +70,7 @@
                         </h3>
                         {#if truncated_description}
                             <p
-                                    class="mt-3 text-sm text-surface-600 dark:text-surface-300 leading-relaxed"
+                                    class="mt-3 text-sm text-surface-800 dark:text-surface-200 leading-relaxed"
                             >
                                 {truncated_description}
                             </p>
@@ -97,7 +97,7 @@
 						</span>
                         {#if feature.upvotes !== undefined && feature.upvotes !== null}
 							<span class="badge variant-soft-primary">
-                                <span class="hover:-rotate-[30deg] transition-all duration-200 hover:scale-125 hover:-translate-x-1 hover:-translate-y-1">👍</span> {feature.upvotes}
+                                👍 {feature.upvotes}
 							</span>
                         {/if}
                     </div>
