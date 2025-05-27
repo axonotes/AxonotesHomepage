@@ -6,11 +6,6 @@
     }
 
     let {features}: Props = $props();
-
-    // Convert markdown-style bold text to HTML
-    function parseFeature(feature: string): string {
-        return feature.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    }
 </script>
 
 <ul class="space-y-3 text-sm">
@@ -21,7 +16,7 @@
                     aria-hidden="true"
             />
             <span class="text-surface-700 dark:text-surface-200 leading-relaxed">
-        {@html parseFeature(feature)}
+        {feature}
       </span>
         </li>
     {/each}

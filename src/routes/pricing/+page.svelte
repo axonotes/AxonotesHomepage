@@ -1,6 +1,5 @@
 <script lang="ts">
     import PricingCard from '$lib/components/PricingCard.svelte';
-    import FeatureList from '$lib/components/FeatureList.svelte';
     import SelfHostingSection from '$lib/components/SelfHostingSection.svelte';
     import type { PricingPlan } from '$lib/types/pricing.js';
 
@@ -10,9 +9,9 @@
             name: 'Free Tier',
             price: 'Free',
             description:
-                'Perfect for individual use, students, and anyone wanting to explore the core of Axonotes.',
+                'Perfect for individual use, students, and anyone wanting to explore the core of Axonotes, with everything you need.',
             features: [
-                'Targeting **1GB** of storage',
+                'Targeting 1GB of storage',
                 'Enough for thousands of documents & notes',
                 'Core note-taking, organization, and learning tools',
                 'Everything essential for students and individual learners'
@@ -26,12 +25,12 @@
         {
             id: 'pro',
             name: 'Pro Supporter',
-            price: '≤ $10',
+            price: '$8',
             priceUnit: '/month',
             description:
                 "Support Axonotes' development and unlock valuable extras like more storage, AI, and personalization.",
             features: [
-                'Aiming for **≥ 10GB** of storage',
+                'Aiming for 10GB of storage',
                 'Enhanced capabilities (e.g., AI Assistance)',
                 'Exclusive personalization options (themes, profiles - planned)',
                 'All Free Tier features',
@@ -80,19 +79,12 @@
         >
             Axonotes Pricing
         </h1>
-        <p
-                class="text-lg font-light text-surface-700 dark:text-surface-300 max-w-2xl mx-auto mb-3"
+        <h3
+                class="text-lg font-light text-surface-800 dark:text-surface-200 max-w-2xl mx-auto mb-3"
         >
             Discover our planned pricing: transparent, accessible, and designed for
             everyone from individual students to educational institutions.
-        </p>
-        <p
-                class="text-sm text-surface-600 dark:text-surface-400 max-w-2xl mx-auto"
-        >
-            <strong>Please note:</strong> The plans outlined below are our current
-            aspirations. Specific features, storage limits, and pricing are subject
-            to change as we continue to develop and refine Axonotes.
-        </p>
+        </h3>
     </header>
 
     <!-- Pricing Plans Grid -->
@@ -102,6 +94,14 @@
                 <PricingCard {plan} />
             {/each}
         </div>
+
+        <p
+                class="text-sm text-surface-800 dark:text-surface-200 max-w-2xl mx-auto mt-8"
+        >
+            <strong>Please note:</strong> The plans outlined are our current
+            aspirations. Specific features, storage limits, and pricing are subject
+            to change as we continue to develop and refine Axonotes.
+        </p>
     </section>
 
     <!-- Self-Hosted Section -->

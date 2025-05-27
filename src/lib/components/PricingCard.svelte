@@ -11,7 +11,7 @@
     const cardVariants = {
         default: {
             container:
-                'card bg-surface-50 dark:bg-surface-800/60 border border-surface-200 dark:border-surface-700',
+                'card bg-surface-50 dark:bg-surface-800/20 border border-surface-200 dark:border-surface-700',
             title: 'text-primary-600 dark:text-primary-400',
             button: 'btn preset-outlined-primary-500'
         },
@@ -44,7 +44,7 @@
           </span>
                 {/if}
             </div>
-            <p class="text-sm text-surface-600 dark:text-surface-300 leading-relaxed">
+            <p class="text-sm text-surface-800 dark:text-surface-200 leading-relaxed">
                 {plan.description}
             </p>
         </header>
@@ -67,7 +67,7 @@
                     disabled={plan.cta.disabled}
                     type="button"
                     class="btn {plan.cta.disabled
-          ? 'variant-ghost-surface opacity-60 cursor-not-allowed'
+          ? 'opacity-60 cursor-not-allowed'
           : variant.button} w-full"
             >
                 {plan.cta.text}
