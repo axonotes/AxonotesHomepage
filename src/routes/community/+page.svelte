@@ -87,7 +87,7 @@
                         href="https://discord.gg/myBMaaDeQu"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn w-full preset-tonal-primary text-white inline-flex items-center justify-center gap-2"
+                        class="btn w-full dark:preset-tonal-primary preset-filled-primary-500 text-white inline-flex items-center justify-center gap-2"
                 >
                     Join Discord Server
                     <ExternalLink class="h-4 w-4"/>
