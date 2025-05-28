@@ -41,7 +41,7 @@ vite.config.ts.timestamp-*
 
 # Deployment & Platform Specific Output
 # -------------------------------------
-# Common output for some deployment platforms
+# Common output for deployment platforms
 .output/
 .vercel/
 .netlify/
