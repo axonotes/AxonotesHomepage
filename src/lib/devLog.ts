@@ -6,7 +6,7 @@ import {dev} from "$app/environment";
  *
  * @param {...string} args - The messages or objects to log.
  */
-export function devLog(...args: string[]): void {
+export function devLog(...args: unknown[]): void {
     if (dev) {
         console.log("[DEV]", ...args);
     }
@@ -17,7 +17,7 @@ export function devLog(...args: string[]): void {
  *
  * @param {...string} args - The messages or objects to log as a warning.
  */
-export function devWarn(...args: string[]): void {
+export function devWarn(...args: unknown[]): void {
     if (dev) {
         console.warn("[DEV WARN]", ...args);
     }
@@ -28,7 +28,7 @@ export function devWarn(...args: string[]): void {
  *
  * @param {...string} args - The messages or objects to log as an error.
  */
-export function devError(...args: string[]): void {
+export function devError(...args: unknown[]): void {
     if (dev) {
         console.error("[DEV ERROR]", ...args);
     }
