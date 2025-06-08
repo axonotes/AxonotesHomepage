@@ -12,5 +12,5 @@ export interface PricingPlan {
     description: string;
     features: string[];
     cta: CTAButton;
-    variant: 'default' | 'featured';
+    variant: "default" | "featured";
 }

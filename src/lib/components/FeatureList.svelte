@@ -9,15 +9,17 @@
 </script>
 
 <ul class="space-y-3 text-sm">
-    {#each features as feature}
+    {#each features as feature (feature.id)}
         <li class="flex items-start gap-3">
             <Check
-                    class="h-5 w-5 text-primary-500 shrink-0 mt-0.5"
-                    aria-hidden="true"
+                class="text-primary-500 mt-0.5 h-5 w-5 shrink-0"
+                aria-hidden="true"
             />
-            <span class="text-surface-700 dark:text-surface-200 leading-relaxed">
-        {feature}
-      </span>
+            <span
+                class="text-surface-700 dark:text-surface-200 leading-relaxed"
+            >
+                {feature}
+            </span>
         </li>
     {/each}
 </ul>
