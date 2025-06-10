@@ -1,8 +1,32 @@
 <script lang="ts">
     import "../app.css";
     import Navbar from "$lib/components/Navbar.svelte";
+    import {onMount} from "svelte";
+    import {browser} from "$app/environment";
+    import {PUBLIC_POSTHOG_HOST, PUBLIC_POSTHOG_KEY} from "$env/static/public";
+    import posthog from "posthog-js";
+    import {afterNavigate} from "$app/navigation";
 
     let {children} = $props();
+
+    onMount(() => {
+        initPostHog();
+    });
+
+    function initPostHog() {
+        if (!PUBLIC_POSTHOG_KEY || !PUBLIC_POSTHOG_HOST) return;
+        if (!browser) return;
+
+        posthog.init(PUBLIC_POSTHOG_KEY, {
+            api_host: PUBLIC_POSTHOG_HOST,
+            person_profiles: "identified_only",
+            loaded: (ph) => {
+                if (import.meta.env.MODE === "development") {
+                    ph.debug();
+                }
+            },
+        });
+    }
 </script>
 
 <svelte:head>
