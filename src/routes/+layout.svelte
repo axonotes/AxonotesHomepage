@@ -5,26 +5,43 @@
     import {browser} from "$app/environment";
     import {PUBLIC_POSTHOG_HOST, PUBLIC_POSTHOG_KEY} from "$env/static/public";
     import posthog from "posthog-js";
-    import {afterNavigate} from "$app/navigation";
+    import {navigating} from "$app/state";
 
     let {children} = $props();
 
     onMount(() => {
-        initPostHog();
+        if (browser) {
+            initPostHog();
+        }
+    });
+
+    $effect(() => {
+        if (browser && navigating) {
+            posthog.capture("$pageview");
+        }
     });
 
     function initPostHog() {
-        if (!PUBLIC_POSTHOG_KEY || !PUBLIC_POSTHOG_HOST) return;
-        if (!browser) return;
+        if (!PUBLIC_POSTHOG_KEY || !PUBLIC_POSTHOG_HOST) {
+            console.error("PostHog environment variables are not set.");
+            return;
+        }
 
         posthog.init(PUBLIC_POSTHOG_KEY, {
             api_host: PUBLIC_POSTHOG_HOST,
+            // This setting ensures that user profiles are only created for users who are explicitly identified.
+            // Since we will not be calling posthog.identify(), all users will be anonymous.
             person_profiles: "identified_only",
+            // PostHog automatically captures pageviews, but for SPAs like SvelteKit,
+            // it's more reliable to capture them manually on navigation.
+            capture_pageview: false,
             loaded: (ph) => {
                 if (import.meta.env.MODE === "development") {
                     ph.debug();
                 }
             },
+            // This will anonymize the user's IP address, enhancing privacy.
+            property_denylist: ["$ip"],
         });
     }
 </script>
