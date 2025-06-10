@@ -11,7 +11,6 @@
         Share2,
     } from "@lucide/svelte";
 
-
     let heartClicked = $state(false);
 </script>
 
@@ -41,11 +40,11 @@
             class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
         >
             <button
-                    onclick={() => (heartClicked = true)}
-                    class={heartClicked ? "cursor-default" : ""}
+                onclick={() => (heartClicked = true)}
+                class={heartClicked ? "cursor-default" : ""}
             >
                 <Heart
-                        class="h-4 w-4 {heartClicked
+                    class="h-4 w-4 {heartClicked
                         ? 'fill-red-500 text-transparent'
                         : 'hover:scale-110'} transition-all duration-200"
                 />

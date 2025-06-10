@@ -81,7 +81,7 @@
     <!-- Header Section -->
     <header class="mb-16 text-center">
         <h1
-                class="text-primary-600 dark:text-primary-400 mb-4 text-3xl !leading-tight font-bold sm:text-4xl md:text-5xl"
+            class="text-primary-600 dark:text-primary-400 mb-4 text-3xl !leading-tight font-bold sm:text-4xl md:text-5xl"
         >
             Pricing That Makes Sense
         </h1>
@@ -91,9 +91,8 @@
                 class="text-surface-800 dark:text-surface-200 text-md font-light"
             >
                 No hidden fees. No student discounts needed.
-                <br>
-                Just honest pricing
-                designed around real academic budgets.
+                <br />
+                Just honest pricing designed around real academic budgets.
             </h3>
 
             <p class="text-surface-600 dark:text-surface-400 text-sm">
@@ -104,14 +103,14 @@
         </div>
 
         <div
-                class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+            class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
         >
             <button
-                    onclick={() => (heartClicked = true)}
-                    class={heartClicked ? "cursor-default" : ""}
+                onclick={() => (heartClicked = true)}
+                class={heartClicked ? "cursor-default" : ""}
             >
                 <Heart
-                        class="h-4 w-4 {heartClicked
+                    class="h-4 w-4 {heartClicked
                         ? 'fill-red-500 text-transparent'
                         : 'hover:scale-110'} transition-all duration-200"
                 />
@@ -242,7 +241,7 @@
     <SelfHostingSection />
 
     <!-- FAQ Preview -->
-    <section class="text-center mt-20">
+    <section class="mt-20 text-center">
         <h2
             class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
         >
