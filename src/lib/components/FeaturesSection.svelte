@@ -32,7 +32,7 @@
 <section class="section-alt px-4 py-20">
     <div class="container mx-auto max-w-6xl">
         <div class="mb-16 text-center">
-            <h2 class="h2 text-surface-900 mb-4 text-3xl font-bold lg:text-4xl">
+            <h2 class="text-xl md:text-2xl text-surface-900 mb-4 font-bold">
                 Everything You Need, All in One Place
             </h2>
             <p class="text-surface-600 mx-auto max-w-2xl text-lg">
@@ -56,7 +56,7 @@
                                 size={32}
                             />
                         </div>
-                        <h3 class="h3 text-surface-900 text-xl font-semibold">
+                        <h3 class="h3 text-surface-900 text-md font-semibold">
                             {feature.title}
                         </h3>
                         <p class="text-surface-600 leading-relaxed">

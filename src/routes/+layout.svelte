@@ -2,21 +2,57 @@
     import "../app.css";
     import Navbar from "$lib/components/Navbar.svelte";
 
-    let {children} = $props();
+    let { children } = $props();
 </script>
 
-<div
-    class="from-primary-700/10 dark:to-primary-700/20 flex min-h-screen flex-col bg-gradient-to-br to-transparent dark:from-transparent"
->
-    <header class="sticky top-0 z-50 w-full">
-        <Navbar />
-    </header>
+<svelte:head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</svelte:head>
 
-    <main class="container mx-auto flex-grow p-4 sm:p-6 lg:p-8">
+<div class="bg-surface-50 dark:bg-surface-950 flex min-h-screen flex-col">
+    <Navbar />
+
+    <main class="flex-1 pb-20">
         {@render children()}
     </main>
 
-    <footer class="p-4 text-center text-sm">
-        © {new Date().getFullYear()} Axonotes. All rights reserved.
+    <footer
+            class="border-surface-200 dark:border-surface-700 bg-surface-100/50 dark:bg-surface-900/50 border-t py-8"
+    >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                    class="flex flex-col items-center justify-between gap-4 sm:flex-row"
+            >
+                <div
+                        class="text-primary-600 dark:text-primary-400 flex items-center gap-2 text-sm font-medium"
+                >
+                    <img src="/favicon.png" alt="Axonotes" class="h-5 w-5" />
+                    <span>Built by students, for students</span>
+                </div>
+
+                <div class="flex items-center gap-6 text-sm">
+                    <a
+                            href="https://github.com/axonotes/AxonotesCore"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    >
+                        GitHub
+                    </a>
+                    <a
+                            href="https://discord.gg/myBMaaDeQu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    >
+                        Discord
+                    </a>
+                    <span class="text-surface-500 dark:text-surface-500">
+                        © {new Date().getFullYear()} Axonotes
+                    </span>
+                </div>
+            </div>
+        </div>
     </footer>
 </div>

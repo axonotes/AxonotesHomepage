@@ -1,481 +1,452 @@
 <script lang="ts">
     import {
         ArrowRight,
-        ChevronRight,
-        ExternalLink,
-        FileText,
-        Github,
-        Globe,
-        GraduationCap,
-        Heart,
-        MessageCircle,
-        Shield,
-        Target,
+        BookOpen,
         Users,
-        Workflow,
+        Zap,
+        MessageCircle,
+        Github,
+        ExternalLink,
+        ChevronRight,
+        Camera,
+        Play,
+        Palette,
     } from "@lucide/svelte";
 
-    let heartClicked = $state(false);
-
-    const topFeatures = [
+    // Core value propositions - simplified to 3 key benefits
+    const coreValues = [
         {
-            icon: Workflow,
+            icon: BookOpen,
             title: "Unify Your Workflow",
             description:
-                "No more app-switching. Notes, tasks, chat, and learning tools seamlessly integrated.",
+                "Stop switching between apps. Notes, tasks, and collaboration in one place.",
         },
         {
             icon: Users,
             title: "Collaborate Effortlessly",
             description:
-                "Work together in real-time with integrated chat and shared channels.",
+                "Real-time editing and chat without the chaos of multiple platforms.",
         },
         {
-            icon: GraduationCap,
-            title: "Boost Your Learning",
+            icon: Zap,
+            title: "Study Smarter",
             description:
-                "Interactive exercises, reimagined flashcards, and powerful note-taking tools.",
-        },
-        {
-            icon: Shield,
-            title: "Smart & Secure",
-            description:
-                "Offline-first, version history, and Swiss-grade privacy with E2EE.",
+                "Interactive learning tools designed specifically for students.",
         },
     ];
 
-    // Featured items from the feature list
-    const featuredFeatures = [
+    // Problem/Solution comparison
+    const problemSolution = {
+        before: [
+            "Google Docs for writing",
+            "Discord for team chat",
+            "Notion for planning",
+            "WhatsApp for quick updates",
+        ],
+        after: [
+            "All writing in one place",
+            "Integrated team communication",
+            "Built-in planning tools",
+            "Everything synchronized",
+        ],
+    };
+
+    // Placeholder content for missing visuals
+    const placeholders = [
         {
-            name: "Arrange Your Views",
+            type: "demo",
+            icon: Play,
+            title: "🎬 Epic Demo Reel (In Progress)",
             description:
-                "Organize how Axonotes appears on your screen by splitting it into adjustable sections.",
+                "Imagine the smoothest workflow animation here. Now imagine we actually had time to make it.",
+            action: "Want to help us create amazing demos?",
         },
         {
-            name: "Smart Conflict Resolution",
+            type: "interface",
+            icon: Palette,
+            title: "🎨 Beautiful UI Loading... (Designer Needed!)",
             description:
-                "Make changes offline and let Axonotes handle synchronization when you reconnect.",
+                "This is where our stunning interface would be if we had a designer. Know Figma? We have cookies!",
+            action: "Join our design team",
         },
         {
-            name: "Live Collaboration",
+            type: "features",
+            icon: Camera,
+            title: "📱 App Preview Coming Soon™",
             description:
-                "Work on documents with others at the same time with changes appearing instantly.",
+                "Currently exists only in our dreams and messy wireframes. Help us make it real!",
+            action: "Help us build the future",
         },
     ];
 </script>
 
 <svelte:head>
-    <title>Axonotes - Your Unified Academic Command Center</title>
+    <title>Axonotes - Stop Juggling Apps. Start Studying Smarter.</title>
     <meta
-        name="description"
-        content="End the chaos of juggling multiple apps for school. Axonotes is your central academic hub for notes, collaboration, planning, and learning – all in one intuitive experience."
+            name="description"
+            content="One platform for notes, collaboration, and learning - built by students, for students. Join the waitlist and help shape the future of academic software."
     />
 </svelte:head>
 
 <div class="container mx-auto px-4 py-8">
     <!-- Hero Section -->
-    <section class="mb-16 md:mb-20">
-        <div class="grid items-center gap-12 lg:grid-cols-2">
-            <!-- Content -->
-            <div class="space-y-8">
-                <div>
-                    <h1
-                        class="text-primary-600 dark:text-primary-400 mb-4 text-4xl !leading-tight font-bold sm:text-5xl"
-                    >
-                        Tired of Juggling Apps for School & Studies?
-                    </h1>
-                    <h3
-                        class="text-surface-800 dark:text-surface-200 mb-3 max-w-2xl text-lg font-light"
-                    >
-                        Your central academic hub for notes, collaboration,
-                        planning, and learning – all in one intuitive
-                        experience.
-                    </h3>
-                    <p class="text-surface-700 dark:text-surface-300 text-sm">
-                        Currently in planning and early development – help us
-                        build the tool you need!
-                    </p>
-                </div>
+    <section class="mb-20 md:mb-28">
+        <div class="mx-auto max-w-4xl text-center">
+            <!-- Main Headline -->
+            <h1
+                    class="text-primary-600 dark:text-primary-400 mb-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl"
+            >
+                Stop Juggling Apps.<br />Start Studying Smarter.
+            </h1>
 
-                <div class="flex flex-col gap-4 sm:flex-row">
-                    <a
-                        href="#feedback"
-                        class="btn dark:preset-tonal-primary preset-filled-primary-500 inline-flex items-center gap-2 text-white"
-                    >
-                        <Users class="h-4 w-4" />
-                        Join the Waitlist & Shape Axonotes!
-                        <ArrowRight class="h-4 w-4" />
-                    </a>
-                    <a
-                        href="/features"
-                        class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
-                    >
-                        <Target class="h-4 w-4" />
-                        View Features
-                    </a>
-                </div>
-            </div>
+            <!-- Subheadline -->
+            <p
+                    class="text-surface-800 dark:text-surface-200 mx-auto mb-8 max-w-2xl text-lg md:text-xl"
+            >
+                One platform for notes, collaboration, and learning - built by students, for students.
+            </p>
 
-            <!-- Visual -->
-            <div class="flex justify-center">
+            <!-- Visual Element -->
+            <div class="mb-8 flex justify-center">
                 <div
-                    class="from-primary-50 to-primary-100 dark:from-primary-950/20 dark:to-primary-900/30 border-primary-200 dark:border-primary-800 flex aspect-square w-full max-w-md items-center justify-center rounded-3xl border bg-gradient-to-br"
+                        class="from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 flex h-32 w-32 items-center justify-center rounded-3xl border bg-gradient-to-br"
                 >
-                    <div class="space-y-4 p-8 text-center">
-                        <img
+                    <img
                             src="/favicon.png"
                             alt="Axonotes Logo"
-                            class="mx-auto h-32 w-32"
-                        />
-                        <p
-                            class="text-primary-600 dark:text-primary-400 text-lg font-semibold"
-                        >
-                            Organizing your academic life
-                        </p>
-                    </div>
+                            class="h-20 w-20"
+                    />
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Problem Section -->
-    <section id="problem" class="mb-16 md:mb-20">
-        <div
-            class="card from-secondary-50 to-surface-50 dark:from-secondary-950/20 dark:to-surface-900/30 border-secondary-200 dark:border-secondary-800 border bg-gradient-to-br p-8 lg:p-12"
-        >
-            <h2
-                class="text-surface-900 dark:text-surface-100 mb-6 text-center text-2xl font-bold"
+            <!-- Status Badge -->
+            <div
+                    class="bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 mb-8 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
             >
-                Sound Familiar?
-            </h2>
-            <div class="mx-auto max-w-4xl">
-                <div class="mb-8 text-center">
-                    <p
-                        class="text-surface-800 dark:text-surface-200 text-lg italic"
-                    >
-                        "It's 2 AM. Your group project is due tomorrow, and
-                        you're frantically switching between Google Docs for
-                        writing, Discord for team chat, Notion for project
-                        planning, and your phone for the group WhatsApp. Your
-                        notes are scattered across three different apps, you
-                        can't find that important research link, and half your
-                        team is confused about which version of the document is
-                        the latest."
-                    </p>
-                </div>
-                <div class="grid gap-8 md:grid-cols-2">
-                    <div>
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 mb-4 font-semibold"
-                        >
-                            😰 The Current Reality
-                        </h3>
-                        <ul
-                            class="text-surface-800 dark:text-surface-200 space-y-2"
-                        >
-                            <li>
-                                • Frantically switching between shared documents
-                            </li>
-                            <li>
-                                • Separate chat apps pinging with conflicting
-                                ideas
-                            </li>
-                            <li>
-                                • Personal notes scattered across different apps
-                            </li>
-                            <li>• Course portals for assignment details</li>
-                            <li>
-                                • Making flashcards feels like climbing a
-                                mountain
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 mb-4 font-semibold"
-                        >
-                            ✨ Our Vision
-                        </h3>
-                        <ul
-                            class="text-surface-800 dark:text-surface-200 space-y-2"
-                        >
-                            <li>
-                                • One unified platform for all academic needs
-                            </li>
-                            <li>
-                                • Seamless collaboration without app-switching
-                            </li>
-                            <li>
-                                • Notes, planning, and learning tools together
-                            </li>
-                            <li>• Built specifically for academic life</li>
-                            <li>• Privacy-focused and secure by design</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Overview -->
-    <section class="mb-16 md:mb-20">
-        <h2
-            class="text-surface-900 dark:text-surface-100 mb-8 text-center text-2xl font-bold"
-        >
-            Everything You Need, All in One Place
-        </h2>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {#each topFeatures as feature (feature.title)}
-                <div class="card p-6 text-center transition-all duration-300">
-                    <div
-                        class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
-                    >
-                        <svelte:component
-                            this={feature.icon}
-                            class="text-primary-600 dark:text-primary-400 h-6 w-6"
-                        />
-                    </div>
-                    <h3
-                        class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
-                    >
-                        {feature.title}
-                    </h3>
-                    <p class="text-surface-700 dark:text-surface-300 text-sm">
-                        {feature.description}
-                    </p>
-                </div>
-            {/each}
-        </div>
-        <div class="mt-8 flex justify-center">
-            <a href="/features" class="btn inline-flex items-center gap-2">
-                Explore All Features
-                <ChevronRight class="h-4 w-4" />
-            </a>
-        </div>
-    </section>
-
-    <!-- Featured Capabilities -->
-    <section class="mb-16 md:mb-20">
-        <div
-            class="card outline-primary-500 from-surface-50 to-primary-50 dark:from-surface-900/30 dark:to-primary-950/20 bg-gradient-to-br p-8 outline lg:p-12 dark:outline-0"
-        >
-            <div class="mx-auto max-w-4xl">
-                <h2
-                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-2xl font-bold"
-                >
-                    Highlighted Features
-                </h2>
-                <div class="grid gap-8 md:grid-cols-3">
-                    {#each featuredFeatures as feature (feature.name)}
-                        <div class="space-y-3">
-                            <h3
-                                class="text-surface-900 dark:text-surface-100 flex items-center gap-2 font-semibold"
-                            >
-                                <span
-                                    class="text-primary-600 dark:text-primary-400 group relative flex items-center"
-                                >
-                                    <ChevronRight
-                                        class="-mr-0.5 h-5 w-5 rotate-180 duration-200 group-hover:mr-1"
-                                    />
-                                    <span
-                                        class="absolute flex w-full justify-center"
-                                    >
-                                        <img
-                                            src="/favicon.png"
-                                            alt="surprise"
-                                            class="h-5 opacity-0 duration-200 group-hover:opacity-100"
-                                        />
-                                    </span>
-                                    <ChevronRight
-                                        class="-ml-0.5 h-5 w-5 duration-200 group-hover:ml-1"
-                                    />
-                                </span>
-                                {feature.name}
-                            </h3>
-                            <p class="text-surface-700 dark:text-surface-300">
-                                {feature.description}
-                            </p>
-                        </div>
-                    {/each}
-                </div>
-                <div class="mt-8 flex justify-center">
-                    <a
-                        href="/features"
-                        class="btn dark:preset-tonal-primary preset-filled-primary-500 inline-flex items-center gap-2 text-white"
-                    >
-                        See All Features
-                        <ExternalLink class="h-4 w-4" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Principles -->
-    <section class="mb-16 md:mb-20">
-        <h2
-            class="text-surface-900 dark:text-surface-100 mb-8 text-center text-2xl font-bold"
-        >
-            What Drives Us
-        </h2>
-        <div class="grid gap-6 md:grid-cols-3">
-            <!-- Unification -->
-            <div class="card p-6 text-center transition-all duration-300">
-                <div
-                    class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
-                >
-                    <Target
-                        class="text-primary-600 dark:text-primary-400 h-6 w-6"
-                    />
-                </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
-                >
-                    Unification
-                </h3>
-                <p class="text-surface-700 dark:text-surface-300 text-sm">
-                    No more app-switching chaos. Everything you need for
-                    academic success in one cohesive platform.
-                </p>
+                Currently in development - Join us in building the future
             </div>
 
-            <!-- Privacy -->
-            <div class="card p-6 text-center transition-all duration-300">
-                <div
-                    class="bg-secondary-100 dark:bg-secondary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
-                >
-                    <Shield
-                        class="text-secondary-600 dark:text-secondary-400 h-6 w-6"
-                    />
-                </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
-                >
-                    Privacy First
-                </h3>
-                <p class="text-surface-700 dark:text-surface-300 text-sm">
-                    Built with Swiss precision and end-to-end encryption. Your
-                    academic work stays yours.
-                </p>
-            </div>
-
-            <!-- Accessibility -->
-            <div class="card p-6 text-center transition-all duration-300">
-                <div
-                    class="bg-tertiary-100 dark:bg-tertiary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
-                >
-                    <Globe
-                        class="text-tertiary-600 dark:text-tertiary-400 h-6 w-6"
-                    />
-                </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
-                >
-                    Universal Access
-                </h3>
-                <p class="text-surface-700 dark:text-surface-300 text-sm">
-                    Works offline-first on all platforms. Academic tools should
-                    be accessible to everyone, everywhere.
-                </p>
-            </div>
-        </div>
-        <div class="mt-8 flex justify-center">
-            <a href="/about" class="btn inline-flex items-center gap-2">
-                Learn More About Us
-                <ChevronRight class="h-4 w-4" />
-            </a>
-        </div>
-    </section>
-
-    <!-- Feedback Section -->
-    <section id="feedback" class="mb-16 md:mb-20">
-        <div
-            class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 border bg-gradient-to-br p-8 lg:p-12"
-        >
-            <div class="mx-auto max-w-4xl text-center">
-                <div
-                    class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
-                >
-                    <button
-                        onclick={() => (heartClicked = true)}
-                        class={heartClicked ? "cursor-default" : ""}
-                    >
-                        <Heart
-                            class="h-4 w-4 {heartClicked
-                                ? 'fill-red-500 text-transparent'
-                                : 'hover:scale-110'} transition-all duration-200"
-                        />
-                    </button>
-                    Your Voice Matters
-                </div>
-                <h2
-                    class="text-surface-900 dark:text-surface-100 mb-4 text-2xl font-bold"
-                >
-                    Help Shape Axonotes
-                </h2>
-                <p
-                    class="text-surface-700 dark:text-surface-300 mx-auto mb-8 max-w-xl"
-                >
-                    Because we're building Axonotes right now, your feedback is
-                    invaluable. Tell us what you need to succeed. Help us build
-                    the ultimate tool for students and educators!
-                </p>
-                <div class="flex flex-col justify-center gap-4 sm:flex-row">
-                    <a
-                        href="mailto:oliver@axonotes.ch"
-                        class="btn inline-flex items-center gap-2"
-                    >
-                        Share Thoughts via Email
-                    </a>
-                    <a
-                        href="https://forms.gle/N2qFoXn4PonD6EnA9"
+            <!-- Primary CTA -->
+            <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+                <a
+                        href="https://discord.gg/myBMaaDeQu"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn inline-flex items-center gap-2"
-                    >
-                        <FileText class="h-4 w-4" />
-                        Fill Out Our Survey
-                        <ExternalLink class="h-4 w-4" />
-                    </a>
+                        class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
+                >
+                    <MessageCircle class="h-5 w-5" />
+                    Join Waitlist & Help Shape Axonotes
+                    <ArrowRight class="h-4 w-4" />
+                </a>
+                <a
+                        href="/features"
+                        class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                >
+                    Explore Features
+                    <ChevronRight class="h-4 w-4" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Demo Placeholder -->
+    <section class="mb-20 md:mb-24">
+        <div class="mx-auto max-w-4xl">
+            <div
+                    class="card border-2 border-dashed border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 p-12 text-center"
+            >
+                <div
+                        class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
+                >
+                    <Play class="text-primary-600 dark:text-primary-400 h-8 w-8" />
+                </div>
+                <h3
+                        class="text-surface-900 dark:text-surface-100 mb-3 text-xl font-bold"
+                >
+                    🎬 Epic Demo Reel (In Progress)
+                </h3>
+                <p
+                        class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-lg"
+                >
+                    Imagine the smoothest real-time collaboration demo here. We're too busy coding
+                    the actual features to make the fancy videos... yet.
+                </p>
+                <a
+                        href="https://discord.gg/myBMaaDeQu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                >
+                    Help Us Create Amazing Demos
+                    <MessageCircle class="h-4 w-4" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="mb-20 md:mb-24">
+        <div class="mx-auto max-w-6xl">
+            <h2
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+            >
+                From Academic Chaos to Seamless Flow
+            </h2>
+
+            <div class="grid gap-8 md:grid-cols-2">
+                <!-- Before: The Problem -->
+                <div
+                        class="card border-warning-200 dark:border-warning-800 bg-warning-50 dark:bg-warning-950/20 border p-6"
+                >
+                    <div class="mb-4 flex items-center gap-3">
+                        <span class="text-2xl">😰</span>
+                        <h3
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                        >
+                            Your Current Reality
+                        </h3>
+                    </div>
+                    <ul class="space-y-3">
+                        {#each problemSolution.before as item}
+                            <li
+                                    class="text-surface-800 dark:text-surface-200 flex items-center gap-2 text-sm"
+                            >
+                                <span
+                                        class="text-warning-500 h-2 w-2 rounded-full bg-current"
+                                ></span>
+                                {item}
+                            </li>
+                        {/each}
+                    </ul>
+                </div>
+
+                <!-- After: The Solution -->
+                <div
+                        class="card border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-950/20 border p-6"
+                >
+                    <div class="mb-4 flex items-center gap-3">
+                        <span class="text-2xl">✨</span>
+                        <h3
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                        >
+                            With Axonotes
+                        </h3>
+                    </div>
+                    <ul class="space-y-3">
+                        {#each problemSolution.after as item}
+                            <li
+                                    class="text-surface-800 dark:text-surface-200 flex items-center gap-2 text-sm"
+                            >
+                                <span
+                                        class="text-success-500 h-2 w-2 rounded-full bg-current"
+                                ></span>
+                                {item}
+                            </li>
+                        {/each}
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Section -->
+    <!-- Core Value Propositions -->
+    <section class="mb-20 md:mb-24">
+        <div class="mx-auto max-w-4xl">
+            <h2
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+            >
+                Everything Students Need
+            </h2>
+
+            <div class="grid gap-6 md:grid-cols-3">
+                {#each coreValues as value}
+                    <div class="card p-6 text-center">
+                        <div
+                                class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
+                        >
+                            <svelte:component
+                                    this={value.icon}
+                                    class="text-primary-600 dark:text-primary-400 h-6 w-6"
+                            />
+                        </div>
+                        <h3
+                                class="text-surface-900 dark:text-surface-100 mb-2 text-md font-semibold"
+                        >
+                            {value.title}
+                        </h3>
+                        <p class="text-surface-700 dark:text-surface-300 text-sm">
+                            {value.description}
+                        </p>
+                    </div>
+                {/each}
+            </div>
+        </div>
+    </section>
+
+    <!-- Interface Preview Placeholder -->
+    <section class="mb-20 md:mb-24">
+        <div class="mx-auto max-w-6xl">
+            <h2
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+            >
+                Beautiful Interface (Coming Soon)
+            </h2>
+            <div
+                    class="card border-2 border-dashed border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 aspect-video p-8 text-center"
+            >
+                <div class="flex h-full flex-col items-center justify-center">
+                    <div
+                            class="bg-primary-100 dark:bg-primary-900/30 mb-6 flex h-20 w-20 items-center justify-center rounded-2xl"
+                    >
+                        <Palette class="text-primary-600 dark:text-primary-400 h-10 w-10" />
+                    </div>
+                    <h3
+                            class="text-surface-900 dark:text-surface-100 mb-3 text-xl font-bold"
+                    >
+                        🎨 [INSERT GORGEOUS DESIGN HERE]
+                    </h3>
+                    <p
+                            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-md"
+                    >
+                        Our current UI is 90% placeholder text and 10% hope. Know the difference
+                        between serif and sans-serif? You're hired!
+                    </p>
+                    <div class="flex flex-col gap-3 sm:flex-row">
+                        <a
+                                href="https://discord.gg/myBMaaDeQu"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
+                        >
+                            <Palette class="h-4 w-4" />
+                            Join as Designer
+                        </a>
+                        <a
+                                href="https://github.com/axonotes/AxonotesCore"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                        >
+                            <Github class="h-4 w-4" />
+                            Contribute Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Showcase Placeholders -->
+    <section class="mb-20 md:mb-24">
+        <div class="mx-auto max-w-6xl">
+            <h2
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+            >
+                Revolutionary Features (In Development)
+            </h2>
+            <div class="grid gap-8 md:grid-cols-2">
+                <!-- Real-time Collaboration Placeholder -->
+                <div
+                        class="card border-2 border-dashed border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 p-6 text-center"
+                >
+                    <div
+                            class="bg-blue-100 dark:bg-blue-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
+                    >
+                        <Users class="text-blue-600 dark:text-blue-400 h-6 w-6" />
+                    </div>
+                    <h3
+                            class="text-surface-900 dark:text-surface-100 mb-2 text-md font-semibold"
+                    >
+                        ⚡ Real-time Magic (Loading...)
+                    </h3>
+                    <p class="text-surface-700 dark:text-surface-300 text-sm">
+                        Picture the most satisfying collaboration animation. Got it? Great,
+                        because that's all we have too.
+                    </p>
+                </div>
+
+                <!-- Flashcard System Placeholder -->
+                <div
+                        class="card border-2 border-dashed border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 p-6 text-center"
+                >
+                    <div
+                            class="bg-green-100 dark:bg-green-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
+                    >
+                        <BookOpen class="text-green-600 dark:text-green-400 h-6 w-6" />
+                    </div>
+                    <h3
+                            class="text-surface-900 dark:text-surface-100 mb-2 text-md font-semibold"
+                    >
+                        🧠 Smart Flashcards (Coming Soon)
+                    </h3>
+                    <p class="text-surface-700 dark:text-surface-300 text-sm">
+                        Revolutionary spaced repetition system that'll make Anki jealous.
+                        Currently in our brilliant minds.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof & Community -->
+    <section class="mb-20 md:mb-24">
+        <div
+                class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 mx-auto max-w-4xl border bg-gradient-to-br p-8 text-center"
+        >
+            <h2
+                    class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
+            >
+                Join Students Already Building the Future
+            </h2>
+            <p
+                    class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-2xl"
+            >
+                Your feedback shapes Axonotes. Connect with fellow students and help us build
+                the academic platform you've always wanted.
+            </p>
+
+            <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                <a
+                        href="https://discord.gg/myBMaaDeQu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
+                >
+                    <MessageCircle class="h-4 w-4" />
+                    Join Discord Community
+                </a>
+                <a
+                        href="https://github.com/axonotes/AxonotesCore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                >
+                    <Github class="h-4 w-4" />
+                    Star on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
     <section class="text-center">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-4 text-2xl font-bold"
+                class="text-surface-900 dark:text-surface-100 mb-4 text-xl md:text-2xl font-bold"
         >
-            Join Our Community
+            Ready to Transform Your Academic Life?
         </h2>
         <p class="text-surface-700 dark:text-surface-300 mx-auto mb-8 max-w-xl">
-            Connect with fellow students, educators, and developers who are
-            passionate about revolutionizing academic software.
+            Be among the first to experience academic software designed by students, for students.
         </p>
-        <div class="flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-                href="https://discord.gg/myBMaaDeQu"
+
+        <a
+                href="https://forms.gle/N2qFoXn4PonD6EnA9"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn inline-flex items-center gap-2"
-            >
-                <MessageCircle class="h-4 w-4" />
-                Join Discord
-            </a>
-            <a
-                href="https://github.com/axonotes/AxonotesCore"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn inline-flex items-center gap-2"
-            >
-                <Github class="h-4 w-4" />
-                Star on GitHub
-            </a>
-            <a href="/community" class="btn inline-flex items-center gap-2">
-                <Users class="h-4 w-4" />
-                Community Page
-            </a>
-        </div>
+                class="btn preset-filled-secondary-500 inline-flex items-center gap-2 text-white"
+        >
+            Join the Waitlist
+            <ExternalLink class="h-4 w-4" />
+        </a>
     </section>
 </div>

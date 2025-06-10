@@ -34,7 +34,7 @@
                 </div>
                 Self-Hosting Available
             </div>
-            <h2 class="h2 text-surface-900 dark:text-surface-100 mb-4">
+            <h2 class="text-xl md:text-2xl text-surface-900 dark:text-surface-100 mb-4">
                 Take Control of Your Data
             </h2>
             <p
@@ -55,7 +55,7 @@
                     />
                 </div>
                 <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
+                    class="text-surface-900 dark:text-surface-100 mb-2 text-md font-semibold"
                 >
                     Free for Small Teams
                 </h3>
@@ -73,7 +73,7 @@
                     />
                 </div>
                 <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
+                    class="text-surface-900 dark:text-surface-100 mb-2 text-md font-semibold"
                 >
                     Your Infrastructure
                 </h3>
@@ -91,7 +91,7 @@
                     />
                 </div>
                 <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
+                    class="text-surface-900 dark:text-surface-100 mb-2 text-md font-semibold"
                 >
                     Open Source Future
                 </h3>
@@ -114,7 +114,7 @@
                 </div>
                 <div>
                     <h3
-                        class="text-surface-900 dark:text-surface-100 mb-2 font-semibold"
+                        class="text-surface-900 dark:text-surface-100 mb-2 text-md font-semibold"
                     >
                         Commercial Use & Licensing
                     </h3>

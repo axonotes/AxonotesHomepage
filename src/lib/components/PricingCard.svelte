@@ -29,7 +29,7 @@
 <article class="flex flex-col {variant.container} h-full p-6">
     <div class="flex-grow">
         <header class="mb-6">
-            <h3 class="h3 {variant.title} mb-2">
+            <h3 class="text-md {variant.title} mb-2">
                 {plan.name}
             </h3>
             <div class="mb-3 flex items-baseline gap-1">
