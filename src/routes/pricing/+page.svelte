@@ -32,11 +32,10 @@
             price: "$8",
             priceUnit: "/month",
             description:
-                "Support our mission while unlocking enhanced capabilities and helping shape the future of academic software.",
+                "Support our mission while unlocking enhanced capabilities.",
             features: [
+                "Everything in Free Tier",
                 "10GB storage for extensive projects",
-                "AI-powered study assistance",
-                "Advanced collaboration features",
                 "Priority support & early access",
                 "Custom themes & personalization",
                 "Directly fund Axonotes development",
@@ -81,33 +80,19 @@
 <div class="container mx-auto px-4 py-8">
     <!-- Header Section -->
     <header class="mb-16 text-center">
-        <div
-            class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
-        >
-            <button
-                onclick={() => (heartClicked = true)}
-                class={heartClicked ? "cursor-default" : ""}
-            >
-                <Heart
-                    class="h-4 w-4 {heartClicked
-                        ? 'fill-red-500 text-transparent'
-                        : 'hover:scale-110'} transition-all duration-200"
-                />
-            </button>
-            Student-First Pricing
-        </div>
-
         <h1
-            class="text-primary-600 dark:text-primary-400 mb-4 text-3xl !leading-tight font-bold sm:text-4xl md:text-5xl"
+                class="text-primary-600 dark:text-primary-400 mb-4 text-3xl !leading-tight font-bold sm:text-4xl md:text-5xl"
         >
             Pricing That Makes Sense
         </h1>
 
-        <div class="mx-auto max-w-3xl space-y-4">
+        <div class="mx-auto mb-6 max-w-3xl space-y-4">
             <h3
                 class="text-surface-800 dark:text-surface-200 text-md font-light"
             >
-                No hidden fees. No student discounts needed. Just honest pricing
+                No hidden fees. No student discounts needed.
+                <br>
+                Just honest pricing
                 designed around real academic budgets.
             </h3>
 
@@ -116,6 +101,22 @@
                 be free. Premium features should be affordable. Institutions should
                 get enterprise-level flexibility.
             </p>
+        </div>
+
+        <div
+                class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+        >
+            <button
+                    onclick={() => (heartClicked = true)}
+                    class={heartClicked ? "cursor-default" : ""}
+            >
+                <Heart
+                        class="h-4 w-4 {heartClicked
+                        ? 'fill-red-500 text-transparent'
+                        : 'hover:scale-110'} transition-all duration-200"
+                />
+            </button>
+            Student-First Pricing
         </div>
     </header>
 
@@ -241,7 +242,7 @@
     <SelfHostingSection />
 
     <!-- FAQ Preview -->
-    <section class="text-center">
+    <section class="text-center mt-20">
         <h2
             class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
         >
@@ -255,7 +256,7 @@
         </p>
         <div class="flex flex-col justify-center gap-4 sm:flex-row">
             <a
-                href="mailto:hello@axonotes.ch"
+                href="mailto:info@axonotes.ch"
                 class="btn preset-outlined-primary-500 inline-flex items-center gap-2"
             >
                 Contact Us

@@ -10,6 +10,9 @@
         Code,
         Share2,
     } from "@lucide/svelte";
+
+
+    let heartClicked = $state(false);
 </script>
 
 <svelte:head>
@@ -37,7 +40,16 @@
         <div
             class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
         >
-            <Heart class="h-4 w-4" />
+            <button
+                    onclick={() => (heartClicked = true)}
+                    class={heartClicked ? "cursor-default" : ""}
+            >
+                <Heart
+                        class="h-4 w-4 {heartClicked
+                        ? 'fill-red-500 text-transparent'
+                        : 'hover:scale-110'} transition-all duration-200"
+                />
+            </button>
             Community-Driven Development
         </div>
     </header>
@@ -124,7 +136,7 @@
                     href="https://github.com/axonotes/AxonotesCore"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn preset-outlined-primary-200-800 inline-flex w-full items-center justify-center gap-2"
+                    class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex w-full items-center justify-center gap-2"
                 >
                     View on GitHub
                     <ExternalLink class="h-4 w-4" />
@@ -333,7 +345,7 @@
                 href="https://github.com/axonotes/AxonotesCore"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex items-center gap-2"
             >
                 <Github class="h-4 w-4" />
                 View on GitHub

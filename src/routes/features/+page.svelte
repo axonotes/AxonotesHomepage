@@ -232,7 +232,7 @@
             </a>
             <a
                 href="/community"
-                class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex items-center gap-2"
             >
                 Join Community
                 <ExternalLink class="h-4 w-4" />

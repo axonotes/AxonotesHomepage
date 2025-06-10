@@ -11,80 +11,62 @@
         Camera,
         Play,
         Palette,
+        Code,
+        GitMerge,
+        LayoutTemplate,
+        Brain,
+        Clock,
+        Shield,
+        Sparkles,
+        Coffee
     } from "@lucide/svelte";
 
-    // Core value propositions - simplified to 3 key benefits
+    // Core value propositions - simplified for students
     const coreValues = [
         {
-            icon: BookOpen,
-            title: "Unify Your Workflow",
+            icon: Brain,
+            title: "Notes That Actually Work",
             description:
-                "Stop switching between apps. Notes, tasks, and collaboration in one place.",
+                "Write notes that can run code, generate charts, and create interactive content. Turn your study materials into living documents.",
         },
         {
             icon: Users,
-            title: "Collaborate Effortlessly",
+            title: "Seamless Group Work",
             description:
-                "Real-time editing and chat without the chaos of multiple platforms.",
+                "Collaborate in real-time without the fear of losing work. Smart conflict resolution means everyone's changes matter.",
         },
         {
-            icon: Zap,
-            title: "Study Smarter",
+            icon: Sparkles,
+            title: "Your Perfect Study Space",
             description:
-                "Interactive learning tools designed specifically for students.",
+                "Customize everything. Split screens, create shortcuts, organize however you think. Make Axonotes work the way you work.",
         },
     ];
 
-    // Problem/Solution comparison
+    // Problem/Solution comparison - more relatable
     const problemSolution = {
         before: [
-            "Google Docs for writing",
-            "Discord for team chat",
-            "Notion for planning",
-            "WhatsApp for quick updates",
+            "Switching between 5+ apps just to work on one assignment",
+            "Lost work when someone edited while you were typing",
+            "Can't find that one important note you wrote last week",
+            "Studying with static, boring flashcards",
+            "Group projects turning into chaos",
         ],
         after: [
-            "All writing in one place",
-            "Integrated team communication",
-            "Built-in planning tools",
-            "Everything synchronized",
+            "Everything you need in one beautiful, organized space",
+            "Real-time collaboration that actually works smoothly",
+            "Find anything instantly with powerful search",
+            "Interactive study materials that adapt to how you learn",
+            "Group work that feels effortless and productive",
         ],
     };
-
-    // Placeholder content for missing visuals
-    const placeholders = [
-        {
-            type: "demo",
-            icon: Play,
-            title: "🎬 Epic Demo Reel (In Progress)",
-            description:
-                "Imagine the smoothest workflow animation here. Now imagine we actually had time to make it.",
-            action: "Want to help us create amazing demos?",
-        },
-        {
-            type: "interface",
-            icon: Palette,
-            title: "🎨 Beautiful UI Loading... (Designer Needed!)",
-            description:
-                "This is where our stunning interface would be if we had a designer. Know Figma? We have cookies!",
-            action: "Join our design team",
-        },
-        {
-            type: "features",
-            icon: Camera,
-            title: "📱 App Preview Coming Soon™",
-            description:
-                "Currently exists only in our dreams and messy wireframes. Help us make it real!",
-            action: "Help us build the future",
-        },
-    ];
 </script>
 
 <svelte:head>
-    <title>Axonotes - Stop Juggling Apps. Start Studying Smarter.</title>
+    <title>Axonotes - The Academic Platform That Actually Gets It</title>
     <meta
-        name="description"
-        content="One platform for notes, collaboration, and learning - built by students, for students. Join the waitlist and help shape the future of academic software."
+            name="description"
+            content="Stop juggling apps. Start studying smarter. One platform for notes, collaboration, and learning - built by students who understand your struggles."
     />
 </svelte:head>
 
@@ -94,57 +76,48 @@
         <div class="mx-auto max-w-4xl text-center">
             <!-- Main Headline -->
             <h1
-                class="text-primary-600 dark:text-primary-400 mb-6 text-3xl leading-tight font-bold sm:text-4xl md:text-5xl"
+                    class="text-primary-600 dark:text-primary-400 mb-6 text-3xl leading-tight font-bold sm:text-4xl md:text-5xl"
             >
-                Stop Juggling Apps.<br />Start Studying Smarter.
+                The Academic Platform<br/>That Actually Gets It
             </h1>
 
             <!-- Subheadline -->
             <p
-                class="text-surface-800 dark:text-surface-200 mx-auto mb-8 max-w-2xl text-lg md:text-xl"
+                    class="text-surface-800 dark:text-surface-200 mx-auto mb-8 max-w-2xl text-lg md:text-xl"
             >
-                One platform for notes, collaboration, and learning - built by
-                students, for students.
+                Stop juggling apps, losing work, and fighting with tools that weren't made for learning.
+                Built by students who've felt your pain.
             </p>
 
-            <!-- Visual Element -->
-            <div class="mb-8 flex justify-center">
-                <div
-                    class="from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 flex h-32 w-32 items-center justify-center rounded-3xl border bg-gradient-to-br"
-                >
-                    <img
-                        src="/favicon.png"
-                        alt="Axonotes Logo"
-                        class="h-20 w-20"
-                    />
-                </div>
-            </div>
 
             <!-- Status Badge -->
             <div
-                class="bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 mb-8 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+                    class="bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 mb-8 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
             >
-                Currently in development - Join us in building the future
+                <Coffee
+                        class="h-4 w-4"
+                />
+                Currently brewing - Help us shape the future
             </div>
 
             <!-- Primary CTA -->
             <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a
-                    href="https://discord.gg/myBMaaDeQu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
+                        href="https://discord.gg/myBMaaDeQu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
                 >
-                    <MessageCircle class="h-5 w-5" />
-                    Join Waitlist & Help Shape Axonotes
-                    <ArrowRight class="h-4 w-4" />
+                    <MessageCircle class="h-5 w-5"/>
+                    Join the Waitlist & Shape Axonotes
+                    <ArrowRight class="h-4 w-4"/>
                 </a>
                 <a
-                    href="/features"
-                    class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                        href="/about"
+                        class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex items-center gap-2"
                 >
-                    Explore Features
-                    <ChevronRight class="h-4 w-4" />
+                    Learn Our Story
+                    <ChevronRight class="h-4 w-4"/>
                 </a>
             </div>
         </div>
@@ -154,35 +127,35 @@
     <section class="mb-20 md:mb-24">
         <div class="mx-auto max-w-4xl">
             <div
-                class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 border-2 border-dashed p-12 text-center"
+                    class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 border-2 border-dashed p-12 text-center"
             >
                 <div
-                    class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
+                        class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
                 >
                     <Play
-                        class="text-primary-600 dark:text-primary-400 h-8 w-8"
+                            class="text-primary-600 dark:text-primary-400 h-8 w-8"
                     />
                 </div>
                 <h3
-                    class="text-surface-900 dark:text-surface-100 mb-3 text-xl font-bold"
+                        class="text-surface-900 dark:text-surface-100 mb-3 text-xl font-bold"
                 >
                     🎬 Epic Demo Reel (In Progress)
                 </h3>
                 <p
-                    class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-lg"
+                        class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-lg"
                 >
                     Imagine the smoothest real-time collaboration demo here.
                     We're too busy coding the actual features to make the fancy
                     videos... yet.
                 </p>
                 <a
-                    href="https://discord.gg/myBMaaDeQu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                        href="https://discord.gg/myBMaaDeQu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex items-center gap-2"
                 >
                     Help Us Create Amazing Demos
-                    <MessageCircle class="h-4 w-4" />
+                    <MessageCircle class="h-4 w-4"/>
                 </a>
             </div>
         </div>
@@ -192,7 +165,7 @@
     <section class="mb-20 md:mb-24">
         <div class="mx-auto max-w-6xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
             >
                 From Academic Chaos to Seamless Flow
             </h2>
@@ -200,23 +173,23 @@
             <div class="grid gap-8 md:grid-cols-2">
                 <!-- Before: The Problem -->
                 <div
-                    class="card border-warning-200 dark:border-warning-800 bg-warning-50 dark:bg-warning-950/20 border p-6"
+                        class="card border-warning-200 dark:border-warning-800 bg-warning-50 dark:bg-warning-950/20 border p-6"
                 >
                     <div class="mb-4 flex items-center gap-3">
                         <span class="text-2xl">😰</span>
                         <h3
-                            class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
                         >
-                            Your Current Reality
+                            Your Current Academic Life
                         </h3>
                     </div>
                     <ul class="space-y-3">
                         {#each problemSolution.before as item (item)}
                             <li
-                                class="text-surface-800 dark:text-surface-200 flex items-center gap-2 text-sm"
+                                    class="text-surface-800 dark:text-surface-200 flex items-center gap-2 text-sm"
                             >
                                 <span
-                                    class="text-warning-500 h-2 w-2 rounded-full bg-current"
+                                        class="text-warning-500 h-2 w-2 rounded-full bg-current"
                                 ></span>
                                 {item}
                             </li>
@@ -226,12 +199,12 @@
 
                 <!-- After: The Solution -->
                 <div
-                    class="card border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-950/20 border p-6"
+                        class="card border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-950/20 border p-6"
                 >
                     <div class="mb-4 flex items-center gap-3">
                         <span class="text-2xl">✨</span>
                         <h3
-                            class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
                         >
                             With Axonotes
                         </h3>
@@ -239,10 +212,10 @@
                     <ul class="space-y-3">
                         {#each problemSolution.after as item (item)}
                             <li
-                                class="text-surface-800 dark:text-surface-200 flex items-center gap-2 text-sm"
+                                    class="text-surface-800 dark:text-surface-200 flex items-center gap-2 text-sm"
                             >
                                 <span
-                                    class="text-success-500 h-2 w-2 rounded-full bg-current"
+                                        class="text-success-500 h-2 w-2 rounded-full bg-current"
                                 ></span>
                                 {item}
                             </li>
@@ -257,29 +230,29 @@
     <section class="mb-20 md:mb-24">
         <div class="mx-auto max-w-4xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
             >
-                Everything Students Need
+                Everything Students Need, Nothing They Don't
             </h2>
 
             <div class="grid gap-6 md:grid-cols-3">
                 {#each coreValues as value (value)}
                     <div class="card p-6 text-center">
                         <div
-                            class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
+                                class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
                         >
                             <svelte:component
-                                this={value.icon}
-                                class="text-primary-600 dark:text-primary-400 h-6 w-6"
+                                    this={value.icon}
+                                    class="text-primary-600 dark:text-primary-400 h-6 w-6"
                             />
                         </div>
                         <h3
-                            class="text-surface-900 dark:text-surface-100 text-md mb-2 font-semibold"
+                                class="text-surface-900 dark:text-surface-100 text-md mb-2 font-semibold"
                         >
                             {value.title}
                         </h3>
                         <p
-                            class="text-surface-700 dark:text-surface-300 text-sm"
+                                class="text-surface-700 dark:text-surface-300 text-sm"
                         >
                             {value.description}
                         </p>
@@ -293,50 +266,49 @@
     <section class="mb-20 md:mb-24">
         <div class="mx-auto max-w-6xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
             >
                 Beautiful Interface (Coming Soon)
             </h2>
             <div
-                class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 aspect-video border-2 border-dashed p-8 text-center"
+                    class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 aspect-video border-2 border-dashed p-8 text-center"
             >
                 <div class="flex h-full flex-col items-center justify-center">
                     <div
-                        class="bg-primary-100 dark:bg-primary-900/30 mb-6 flex h-20 w-20 items-center justify-center rounded-2xl"
+                            class="bg-primary-100 dark:bg-primary-900/30 mb-6 flex h-20 w-20 items-center justify-center rounded-2xl"
                     >
                         <Palette
-                            class="text-primary-600 dark:text-primary-400 h-10 w-10"
+                                class="text-primary-600 dark:text-primary-400 h-10 w-10"
                         />
                     </div>
                     <h3
-                        class="text-surface-900 dark:text-surface-100 mb-3 text-xl font-bold"
+                            class="text-surface-900 dark:text-surface-100 mb-3 text-xl font-bold"
                     >
                         🎨 [INSERT GORGEOUS DESIGN HERE]
                     </h3>
                     <p
-                        class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-md"
+                            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-md"
                     >
                         Our current UI is 90% placeholder text and 10% hope.
-                        Know the difference between serif and sans-serif? You're
-                        hired!
+                        Know the difference between serif and sans-serif? Join us!
                     </p>
                     <div class="flex flex-col gap-3 sm:flex-row">
                         <a
-                            href="https://discord.gg/myBMaaDeQu"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
+                                href="https://discord.gg/myBMaaDeQu"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
                         >
-                            <Palette class="h-4 w-4" />
+                            <Palette class="h-4 w-4"/>
                             Join as Designer
                         </a>
                         <a
-                            href="https://github.com/axonotes/AxonotesCore"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                                href="https://github.com/axonotes/AxonotesCore"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex items-center gap-2"
                         >
-                            <Github class="h-4 w-4" />
+                            <Github class="h-4 w-4"/>
                             Contribute Code
                         </a>
                     </div>
@@ -349,52 +321,89 @@
     <section class="mb-20 md:mb-24">
         <div class="mx-auto max-w-6xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
             >
-                Revolutionary Features (In Development)
+                Features You'll Accidentally Discover and Love
             </h2>
             <div class="grid gap-8 md:grid-cols-2">
-                <!-- Real-time Collaboration Placeholder -->
-                <div
-                    class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 border-2 border-dashed p-6 text-center"
-                >
-                    <div
-                        class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30"
-                    >
-                        <Users
-                            class="h-6 w-6 text-blue-600 dark:text-blue-400"
-                        />
+                <!-- Time Machine for Your Work -->
+                <div class="card p-6">
+                    <div class="mb-4 flex items-center gap-3">
+                        <div
+                                class="bg-primary-100 dark:bg-primary-900/30 flex h-10 w-10 items-center justify-center rounded-lg"
+                        >
+                            <Clock class="text-primary-600 dark:text-primary-400 h-5 w-5"/>
+                        </div>
+                        <h3
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                        >
+                            ⚡ Unbreakable History
+                        </h3>
                     </div>
-                    <h3
-                        class="text-surface-900 dark:text-surface-100 text-md mb-2 font-semibold"
-                    >
-                        ⚡ Real-time Magic (Loading...)
-                    </h3>
                     <p class="text-surface-700 dark:text-surface-300 text-sm">
-                        Picture the most satisfying collaboration animation. Got
-                        it? Great, because that's all we have too.
+                        Powered by SpaceTimeDB, every database transaction is saved
+                        permanently. Restore any version, see who changed what, and
+                        collaborate without fear. <em>Oh wow, I can actually undo that disaster from last week!</em>
                     </p>
                 </div>
 
-                <!-- Flashcard System Placeholder -->
-                <div
-                    class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 border-2 border-dashed p-6 text-center"
-                >
-                    <div
-                        class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/30"
-                    >
-                        <BookOpen
-                            class="h-6 w-6 text-green-600 dark:text-green-400"
-                        />
+                <!-- Smart Flashcards -->
+                <div class="card p-6">
+                    <div class="mb-4 flex items-center gap-3">
+                        <div
+                                class="bg-secondary-100 dark:bg-secondary-900/30 flex h-10 w-10 items-center justify-center rounded-lg"
+                        >
+                            <BookOpen class="text-secondary-600 dark:text-secondary-400 h-5 w-5"/>
+                        </div>
+                        <h3
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                        >
+                            🧠 Smart Flashcards
+                        </h3>
                     </div>
-                    <h3
-                        class="text-surface-900 dark:text-surface-100 text-md mb-2 font-semibold"
-                    >
-                        🧠 Smart Flashcards (Coming Soon)
-                    </h3>
                     <p class="text-surface-700 dark:text-surface-300 text-sm">
-                        Revolutionary spaced repetition system that'll make Anki
-                        jealous. Currently in our brilliant minds.
+                        Spaced repetition system that'll make Anki jealous. Currently in our brilliant minds.
+                        <em>Wait, I can make flashcards right here?</em>
+                    </p>
+                </div>
+
+                <!-- Global Search -->
+                <div class="card p-6">
+                    <div class="mb-4 flex items-center gap-3">
+                        <div
+                                class="bg-tertiary-100 dark:bg-tertiary-900/30 flex h-10 w-10 items-center justify-center rounded-lg"
+                        >
+                            <Zap class="text-tertiary-600 dark:text-tertiary-400 h-5 w-5"/>
+                        </div>
+                        <h3
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                        >
+                            🔍 Find Anything, Instantly
+                        </h3>
+                    </div>
+                    <p class="text-surface-700 dark:text-surface-300 text-sm">
+                        Search across all your notes, tasks, and even chat messages in seconds.
+                        <em>I can't believe it found that thing I wrote months ago!</em>
+                    </p>
+                </div>
+
+                <!-- Works Offline -->
+                <div class="card p-6">
+                    <div class="mb-4 flex items-center gap-3">
+                        <div
+                                class="bg-success-100 dark:bg-success-900/30 flex h-10 w-10 items-center justify-center rounded-lg"
+                        >
+                            <Shield class="text-success-600 dark:text-success-400 h-5 w-5"/>
+                        </div>
+                        <h3
+                                class="text-surface-900 dark:text-surface-100 text-md font-semibold"
+                        >
+                            🌐 Works Even When WiFi Doesn't
+                        </h3>
+                    </div>
+                    <p class="text-surface-700 dark:text-surface-300 text-sm">
+                        Keep working when the internet dies. Everything syncs perfectly when you're back online.
+                        <em>Wait, I was offline this whole time? Amazing!</em>
                     </p>
                 </div>
             </div>
@@ -404,37 +413,37 @@
     <!-- Social Proof & Community -->
     <section class="mb-20 md:mb-24">
         <div
-            class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 mx-auto max-w-4xl border bg-gradient-to-br p-8 text-center"
+                class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 mx-auto max-w-4xl border bg-gradient-to-br p-8 text-center"
         >
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
+                    class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
             >
-                Join Students Already Building the Future
+                Help Us Build What Students Actually Want
             </h2>
             <p
-                class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-2xl"
+                    class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-2xl"
             >
-                Your feedback shapes Axonotes. Connect with fellow students and
-                help us build the academic platform you've always wanted.
+                We're students building for students. Your feedback directly shapes every feature we create.
+                Join a community that actually listens.
             </p>
 
             <div class="flex flex-col justify-center gap-4 sm:flex-row">
                 <a
-                    href="https://discord.gg/myBMaaDeQu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
+                        href="https://discord.gg/myBMaaDeQu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn preset-filled-primary-500 inline-flex items-center gap-2 text-white"
                 >
-                    <MessageCircle class="h-4 w-4" />
+                    <MessageCircle class="h-4 w-4"/>
                     Join Discord Community
                 </a>
                 <a
-                    href="https://github.com/axonotes/AxonotesCore"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                        href="https://github.com/axonotes/AxonotesCore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex items-center gap-2"
                 >
-                    <Github class="h-4 w-4" />
+                    <Github class="h-4 w-4"/>
                     Star on GitHub
                 </a>
             </div>
@@ -444,23 +453,22 @@
     <!-- Final CTA -->
     <section class="text-center">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
         >
-            Ready to Transform Your Academic Life?
+            Ready to Stop Fighting With Your Tools?
         </h2>
         <p class="text-surface-700 dark:text-surface-300 mx-auto mb-8 max-w-xl">
-            Be among the first to experience academic software designed by
-            students, for students.
+            Be among the first to experience academic software that actually understands how you work and learn.
         </p>
 
         <a
-            href="https://forms.gle/N2qFoXn4PonD6EnA9"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn preset-filled-secondary-500 inline-flex items-center gap-2 text-white"
+                href="https://discord.gg/myBMaaDeQu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn preset-filled-secondary-500 inline-flex items-center gap-2 text-white"
         >
             Join the Waitlist
-            <ExternalLink class="h-4 w-4" />
+            <ExternalLink class="h-4 w-4"/>
         </a>
     </section>
 </div>

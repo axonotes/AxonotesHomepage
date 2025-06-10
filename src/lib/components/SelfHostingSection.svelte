@@ -138,7 +138,7 @@
         <!-- CTA -->
         <div class="text-center">
             <a
-                href="https://github.com/axonotes/AxonotesCore"
+                href="https://github.com/axonotes/AxonotesCore/blob/main/LICENSE"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn variant-filled-primary inline-flex items-center gap-2"
