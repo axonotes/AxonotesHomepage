@@ -225,7 +225,7 @@
             Everything You Need, All in One Place
         </h2>
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {#each topFeatures as feature (feature.id)}
+            {#each topFeatures as feature (feature.title)}
                 <div class="card p-6 text-center transition-all duration-300">
                     <div
                         class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
@@ -266,7 +266,7 @@
                     Highlighted Features
                 </h2>
                 <div class="grid gap-8 md:grid-cols-3">
-                    {#each featuredFeatures as feature (feature.id)}
+                    {#each featuredFeatures as feature (feature.name)}
                         <div class="space-y-3">
                             <h3
                                 class="text-surface-900 dark:text-surface-100 flex items-center gap-2 font-semibold"

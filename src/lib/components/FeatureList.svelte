@@ -9,7 +9,7 @@
 </script>
 
 <ul class="space-y-3 text-sm">
-    {#each features as feature (feature.id)}
+    {#each features as feature (feature)}
         <li class="flex items-start gap-3">
             <Check
                 class="text-primary-500 mt-0.5 h-5 w-5 shrink-0"

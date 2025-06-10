@@ -8,6 +8,8 @@
         if (data.error) {
             console.error(data.error);
         }
+
+        console.log(data.features)
     });
 
     /**

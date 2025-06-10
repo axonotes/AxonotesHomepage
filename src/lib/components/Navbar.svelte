@@ -39,7 +39,7 @@
         <!-- Desktop Navigation & LightSwitch -->
         <div class="hidden items-center space-x-4 md:flex">
             <ul class="flex space-x-1">
-                {#each navLinks as link (link.id)}
+                {#each navLinks as link (link.href)}
                     <li>
                         <a
                             href={link.href}
