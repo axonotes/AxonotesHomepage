@@ -7,7 +7,7 @@
         <div class="grid items-center gap-12 lg:grid-cols-2">
             <!-- Content -->
             <div class="space-y-6">
-                <h2 class="text-xl md:text-2xl text-surface-900 font-bold">
+                <h2 class="text-surface-900 text-xl font-bold md:text-2xl">
                     End the Chaos: Axonotes is Your
                     <span class="text-primary-600"
                         >Unified Academic Command Center</span

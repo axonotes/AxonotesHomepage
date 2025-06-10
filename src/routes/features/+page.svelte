@@ -1,7 +1,12 @@
 <script lang="ts">
     import type {PageData} from "./$types";
     import {onMount} from "svelte";
-    import {ExternalLink, Lightbulb, ThumbsUp, ArrowRight} from "@lucide/svelte";
+    import {
+        ExternalLink,
+        Lightbulb,
+        ThumbsUp,
+        ArrowRight,
+    } from "@lucide/svelte";
 
     export let data: PageData;
 
@@ -14,8 +19,8 @@
     // Get top 6 features by upvotes for priority section
     $: priorityFeatures = data.features
         ? [...data.features]
-            .sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0))
-            .slice(0, 6)
+              .sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0))
+              .slice(0, 6)
         : [];
 
     /**
@@ -47,8 +52,8 @@
 <svelte:head>
     <title>Features - Axonotes</title>
     <meta
-            name="description"
-            content="Explore Axonotes features designed for academic success. Help us prioritize what matters most to students and educators."
+        name="description"
+        content="Explore Axonotes features designed for academic success. Help us prioritize what matters most to students and educators."
     />
 </svelte:head>
 
@@ -56,18 +61,18 @@
     <!-- Hero Section -->
     <header class="mb-12 text-center md:mb-16">
         <h1
-                class="text-primary-600 dark:text-primary-400 mb-4 text-3xl !leading-tight font-bold sm:text-4xl md:text-5xl"
+            class="text-primary-600 dark:text-primary-400 mb-4 text-3xl !leading-tight font-bold sm:text-4xl md:text-5xl"
         >
             Features Built for Academic Success
         </h1>
         <p
-                class="text-surface-800 dark:text-surface-200 mx-auto mb-6 max-w-2xl text-lg"
+            class="text-surface-800 dark:text-surface-200 mx-auto mb-6 max-w-2xl text-lg"
         >
             Help us prioritize what matters most to you. Vote on features and
             share your ideas for the ultimate academic platform.
         </p>
         <div
-                class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+            class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mx-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
         >
             <Lightbulb class="h-4 w-4" />
             Currently in development - your feedback shapes our priorities
@@ -79,28 +84,28 @@
         {#if priorityFeatures.length > 0}
             <section class="mb-20 md:mb-24">
                 <h2
-                        class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl md:text-2xl font-bold"
+                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
                 >
                     Most Requested Features
                 </h2>
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {#each priorityFeatures as feature (feature.url)}
                         <a
-                                href={feature.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="card group from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 border bg-gradient-to-br p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
-                                aria-label={`View ${feature.name} on GitHub`}
+                            href={feature.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="card group from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 border bg-gradient-to-br p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                            aria-label={`View ${feature.name} on GitHub`}
                         >
                             <div class="mb-4 flex items-start justify-between">
                                 <h3
-                                        class="text-surface-900 dark:text-surface-100 text-md font-semibold group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors"
+                                    class="text-surface-900 dark:text-surface-100 text-md group-hover:text-primary-600 dark:group-hover:text-primary-400 font-semibold transition-colors"
                                 >
                                     {feature.name}
                                 </h3>
                                 {#if feature.upvotes !== undefined && feature.upvotes !== null}
                                     <div
-                                            class="bg-primary-500 flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium text-white"
+                                        class="bg-primary-500 flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium text-white"
                                     >
                                         <ThumbsUp class="h-3 w-3" />
                                         {feature.upvotes}
@@ -108,12 +113,12 @@
                                 {/if}
                             </div>
                             <p
-                                    class="text-surface-700 dark:text-surface-300 mb-4 text-sm leading-relaxed"
+                                class="text-surface-700 dark:text-surface-300 mb-4 text-sm leading-relaxed"
                             >
                                 {truncateDescription(feature.description, 2)}
                             </p>
                             <div
-                                    class="text-primary-600 dark:text-primary-400 flex items-center gap-1 text-sm font-medium"
+                                class="text-primary-600 dark:text-primary-400 flex items-center gap-1 text-sm font-medium"
                             >
                                 View on GitHub
                                 <ExternalLink class="h-3 w-3" />
@@ -127,28 +132,28 @@
         <!-- All Features Section -->
         <section class="mb-20 md:mb-24">
             <h2
-                    class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl md:text-2xl font-bold"
+                class="text-surface-900 dark:text-surface-100 mb-8 text-center text-xl font-bold md:text-2xl"
             >
                 All Planned Features
             </h2>
             <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {#each data.features as feature (feature.url)}
                     <a
-                            href={feature.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="card group border-surface-200 dark:border-surface-700 hover:border-primary-500/50 dark:hover:border-primary-500/70 p-4 transition-all duration-200 hover:shadow-md"
-                            aria-label={`View ${feature.name} on GitHub`}
+                        href={feature.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="card group border-surface-200 dark:border-surface-700 hover:border-primary-500/50 dark:hover:border-primary-500/70 p-4 transition-all duration-200 hover:shadow-md"
+                        aria-label={`View ${feature.name} on GitHub`}
                     >
                         <div class="mb-3 flex items-start justify-between">
                             <h3
-                                    class="text-surface-900 dark:text-surface-100 font-semibold group-hover:text-primary-600 dark:group-hover:text-primary-400 text-md transition-colors"
+                                class="text-surface-900 dark:text-surface-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 text-md font-semibold transition-colors"
                             >
                                 {feature.name}
                             </h3>
                             {#if feature.upvotes !== undefined && feature.upvotes !== null && feature.upvotes > 0}
                                 <div
-                                        class="bg-surface-200 dark:bg-surface-700 text-surface-700 dark:text-surface-300 flex items-center gap-1 rounded px-2 py-0.5 text-xs"
+                                    class="bg-surface-200 dark:bg-surface-700 text-surface-700 dark:text-surface-300 flex items-center gap-1 rounded px-2 py-0.5 text-xs"
                                 >
                                     <ThumbsUp class="h-3 w-3" />
                                     {feature.upvotes}
@@ -156,12 +161,12 @@
                             {/if}
                         </div>
                         <p
-                                class="text-surface-600 dark:text-surface-400 mb-3 text-sm"
+                            class="text-surface-600 dark:text-surface-400 mb-3 text-sm"
                         >
                             {truncateDescription(feature.description, 1)}
                         </p>
                         <div
-                                class="text-primary-500 group-hover:text-primary-600 dark:group-hover:text-primary-400 flex items-center gap-1 text-xs font-medium"
+                            class="text-primary-500 group-hover:text-primary-600 dark:group-hover:text-primary-400 flex items-center gap-1 text-xs font-medium"
                         >
                             Vote & Discuss
                             <ExternalLink class="h-3 w-3" />
@@ -174,12 +179,14 @@
         <!-- Empty State -->
         <section class="py-16 text-center">
             <div
-                    class="bg-surface-100 dark:bg-surface-800 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
+                class="bg-surface-100 dark:bg-surface-800 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
             >
-                <Lightbulb class="text-surface-600 dark:text-surface-400 h-8 w-8" />
+                <Lightbulb
+                    class="text-surface-600 dark:text-surface-400 h-8 w-8"
+                />
             </div>
             <h2
-                    class="text-surface-900 dark:text-surface-100 mb-3 text-xl md:text-2xl font-semibold"
+                class="text-surface-900 dark:text-surface-100 mb-3 text-xl font-semibold md:text-2xl"
             >
                 Features Coming Soon
             </h2>
@@ -192,40 +199,40 @@
 
     <!-- Feature Request CTA -->
     <section
-            class="card from-secondary-50 to-surface-50 dark:from-secondary-950/20 dark:to-surface-900/30 border-secondary-200 dark:border-secondary-800 border bg-gradient-to-br p-8 text-center lg:p-12"
+        class="card from-secondary-50 to-surface-50 dark:from-secondary-950/20 dark:to-surface-900/30 border-secondary-200 dark:border-secondary-800 border bg-gradient-to-br p-8 text-center lg:p-12"
     >
         <div
-                class="bg-secondary-100 dark:bg-secondary-900/30 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
+            class="bg-secondary-100 dark:bg-secondary-900/30 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
         >
             <Lightbulb
-                    class="text-secondary-600 dark:text-secondary-400 h-8 w-8"
+                class="text-secondary-600 dark:text-secondary-400 h-8 w-8"
             />
         </div>
         <h2
-                class="text-surface-900 dark:text-surface-100 mb-4 text-xl md:text-2xl font-bold"
+            class="text-surface-900 dark:text-surface-100 mb-4 text-xl font-bold md:text-2xl"
         >
             Don't See What You Need?
         </h2>
         <p
-                class="text-surface-700 dark:text-surface-300 mx-auto mb-8 max-w-2xl"
+            class="text-surface-700 dark:text-surface-300 mx-auto mb-8 max-w-2xl"
         >
-            Help us build the features that matter most to you. Share your ideas,
-            vote on existing proposals, or join our community to discuss what
-            would make your academic life easier.
+            Help us build the features that matter most to you. Share your
+            ideas, vote on existing proposals, or join our community to discuss
+            what would make your academic life easier.
         </p>
         <div class="flex flex-col justify-center gap-4 sm:flex-row">
             <a
-                    href="https://github.com/axonotes/AxonotesCore/issues/new"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn dark:preset-tonal-primary preset-filled-primary-500 inline-flex items-center gap-2 text-white"
+                href="https://github.com/axonotes/AxonotesCore/issues/new"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn dark:preset-tonal-primary preset-filled-primary-500 inline-flex items-center gap-2 text-white"
             >
                 Suggest a Feature
                 <ArrowRight class="h-4 w-4" />
             </a>
             <a
-                    href="/community"
-                    class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
+                href="/community"
+                class="btn preset-outlined-primary-200-800 inline-flex items-center gap-2"
             >
                 Join Community
                 <ExternalLink class="h-4 w-4" />

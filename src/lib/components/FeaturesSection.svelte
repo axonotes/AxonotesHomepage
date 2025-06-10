@@ -32,7 +32,7 @@
 <section class="section-alt px-4 py-20">
     <div class="container mx-auto max-w-6xl">
         <div class="mb-16 text-center">
-            <h2 class="text-xl md:text-2xl text-surface-900 mb-4 font-bold">
+            <h2 class="text-surface-900 mb-4 text-xl font-bold md:text-2xl">
                 Everything You Need, All in One Place
             </h2>
             <p class="text-surface-600 mx-auto max-w-2xl text-lg">
