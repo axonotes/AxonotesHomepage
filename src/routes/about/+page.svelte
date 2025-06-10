@@ -41,7 +41,7 @@
         >
             We got tired of switching between 5+ apps just to work on one
             assignment. So we decided to build the unified academic platform we
-            always wanted – and make available it for everyone.
+            always wanted – and make it available for everyone.
         </p>
     </header>
 

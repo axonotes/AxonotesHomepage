@@ -84,8 +84,8 @@
                 class="text-surface-800 dark:text-surface-200 mx-auto mb-6 max-w-2xl px-2 text-base leading-relaxed sm:mb-8 sm:px-0 sm:text-lg md:text-xl"
             >
                 Stop juggling apps, losing work, and fighting with tools that
-                weren't made for learning. Built by students who've felt your
-                pain.
+                weren't made for learning. Axonotes is built by students who've
+                felt your pain.
             </p>
 
             <!-- Status Badge -->
