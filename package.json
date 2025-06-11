@@ -50,7 +50,6 @@
     },
     "dependencies": {
         "@lucide/svelte": "^0.511.0",
-        "node-cache": "^5.1.2",
-        "posthog-js": "^1.250.1"
+        "node-cache": "^5.1.2"
     }
 }
