@@ -1,0 +1,51 @@
+<svelte:head>
+    <title>Imprint & Legal Notice - Axonotes</title>
+    <meta
+        name="description"
+        content="Official Imprint (Impressum) and Legal Notice for Axonotes. This page contains our official contact information, details on legal responsibility, and other required legal disclosures."
+    />
+</svelte:head>
+
+# Imprint
+
+Information provided according to Swiss law.
+
+### Responsible for the Content
+
+Axonotes<br>
+c/o [Name of the Virtual Office Provider]<br>
+[Street Name and Number of the Virtual Office]<br>
+[Postal Code of the Virtual Office] Bern<br>
+Switzerland<br>
+
+**Represented by:**<br>
+Oliver Seifert
+
+**Note:** This is our official business and legal correspondence address provided by our domicile service. It is not a physical office location for visits.
+### Contact
+
+**Email:** info@axonotes.ch<br>
+
+### Copyright & Licensing
+
+The copyright for the general content of this website, including texts, branding elements (such as the Axonotes name and logo), and specific images, belongs to **Oliver Seifert**, unless otherwise stated.
+
+However, the underlying source code for this website and our core software is made available under open-source licenses:
+
+*   **Website Source Code:** The source code for this website (`axonotes/website`) is available on GitHub and is licensed under the **[MIT License](https://github.com/axonotes/website/blob/main/LICENSE)**. You are free to use, modify, and distribute it according to the terms of that license.
+
+*   **Core Software Source Code:** The source code for our core application (`axonotes/AxonotesCore`) is available on GitHub and is licensed under the **[Business Source License 1.1 (BSL)](https://github.com/axonotes/AxonotesCore/blob/main/LICENSE)**. This license allows for non-production use. After a specified period, it will convert to the **[GNU General Public License v3.0 (GPL)](https://www.gnu.org/licenses/gpl-3.0.en.html)**. Please refer to the license file in the repository for specific terms and conditions.
+
+For the reproduction of any copyrighted elements not covered by these open-source licenses, the written consent of the copyright holders must be obtained in advance.
+
+### Disclaimer of Liability
+
+The author assumes no liability whatsoever with regard to the correctness, accuracy, timeliness, reliability, or completeness of the information provided.
+
+Liability claims against the author for material or immaterial damage arising from access to, use of, or non-use of the published information, from misuse of the connection, or from technical faults are excluded.
+
+All offers are non-binding. The author expressly reserves the right to change, supplement, or delete parts of the pages or the entire offer without separate announcement, or to cease publication temporarily or permanently.
+
+### Liability for Links
+
+References and links to third-party websites are outside our area of responsibility. Any responsibility for such websites is declined. Access and use of such websites are at the user's own risk.
