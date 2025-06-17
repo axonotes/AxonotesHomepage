@@ -7,5 +7,5 @@
 </svelte:head>
 
 <div>
-    Terms
+    To be added
 </div>
