@@ -2,7 +2,7 @@
     <title>Privacy Policy - Axonotes</title>
     <meta
         name="description"
-        content="Review the official Privacy Policy for Axonotes. This document details what information we collect, how we use it to manage our waitlist, and our commitment to protecting your data."
+        content="Review the official Privacy Policy for Axonotes. This document details what information we collect, how we use it, our hosting infrastructure, and our commitment to protecting your data."
     />
 </svelte:head>
 
@@ -12,7 +12,7 @@
 
 ## 1. Introduction
 
-Welcome to Axonotes ("we," "us," "our"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website at axonotes.ch (the "Site"), primarily when you sign up for our waitlist.
+Welcome to Axonotes ("we," "us," "our"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website at axonotes.ch (the "Site").
 
 Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
 
@@ -26,50 +26,68 @@ Email: info@axonotes.ch
 
 ## 3. Information We Collect
 
-We collect information from you in a very limited way. The only personal information we collect is your **email address**.
+We collect information in a few different ways:
 
-This information is collected only when you voluntarily provide it to us by submitting the "Join the Waitlist" form on our Site.
+### a) Information You Voluntarily Provide
+
+The only personal information we actively collect is your **email address**. This occurs only when you voluntarily provide it to us by submitting the "Join the Waitlist" form on our Site.
+
+### b) Server Log Files
+
+Our web server automatically creates and maintains access logs. This is a standard practice for monitoring the security and performance of the server. These logs may include:
+
+-   Your IP address
+-   The date and time of your request
+-   The page you requested
+-   Your browser type and version
+-   Your operating system
+
+This data is used exclusively for security analysis, debugging, and ensuring the stable operation of our services. It is not combined with other data sources. These logs are stored for a limited period of **14 days** and are then automatically deleted.
 
 ## 4. How We Use Your Information
 
-We use the email address you provide for the following purposes:
+We use the information we collect for the following specific purposes:
 
--   To add you to the waitlist for the Axonotes application.
--   To notify you when the Axonotes application is launched or ready for early access.
--   To send you occasional updates about the development and progress of Axonotes.
--   To invite you to become a user of the service.
+-   **To Manage the Waitlist:** Your email address is used to notify you about the launch and progress of the Axonotes application.
+-   **To Ensure Security:** Server log data is used to protect our infrastructure from attacks and to troubleshoot technical issues.
+-   **To Improve Our Website:** Anonymized analytics data helps us understand user engagement and improve the site experience.
 
-We will not use your email address for any other purpose, and we will not sell or rent your email address to any third parties.
+## 5. Hosting and Data Location
 
-## 5. Third-Party Data Processing
+Our website is hosted on a server provided by **Contabo GmbH**, located in **Germany**. We manage our server infrastructure using the self-hosted platform **Coolify**.
 
-To manage our waitlist form, we use a third-party service called **Formspree**. When you submit your email address through our form, it is sent directly to Formspree's servers for processing and storage on our behalf.
+By hosting our infrastructure in Germany, your data is protected by strong data privacy laws, including the General Data Protection Regulation (GDPR).
 
-Formspree has its own privacy policy and security measures. We encourage you to review Formspree's Privacy Policy to understand how they handle data: [https://formspree.io/legal/privacy-policy](https://formspree.io/legal/privacy-policy).
+## 6. Third-Party Data Processing
 
-## 6. Data Storage and Security
+To manage our waitlist form, we use a third-party service called **Formspree**. When you submit your email address through our form, it is sent directly to Formspree's servers for processing and storage on our behalf. You can review their privacy policy here: [https://formspree.io/legal/privacy-policy](https://formspree.io/legal/privacy-policy).
 
-We are committed to ensuring that your information is secure. We rely on the security infrastructure of our data processor, Formspree, to protect your email address from unauthorized access, use, or disclosure. Access to this data is limited to authorized personnel of Axonotes.
+## 7. Analytics and Tracking Technologies
 
-## 7. Your Data Protection Rights
+We are interested in understanding how our website is used in a privacy-respecting way. For this purpose, we use **Plausible Analytics**, a privacy-focused analytics tool.
 
-You have rights regarding your personal data. Depending on your location, these may include:
+Key features of our analytics approach are:
 
--   **The right to access:** You can request a copy of the email address we hold for you.
--   **The right to rectification:** You can request that we correct any information you believe is inaccurate.
--   **The right to erasure (Right to be forgotten):** You can request that we delete your email address from our records.
+-   **Self-Hosted:** Our Plausible Analytics instance runs on our own server infrastructure. No data is shared with external analytics companies.
+-   **Cookie-Free:** Plausible does not use cookies or generate any persistent identifiers.
+-   **Anonymous:** It does not collect any personal data or personally identifiable information (PII). All data is aggregated, making it impossible to track individual users.
 
-To exercise any of these rights, please contact us at [Your Contact Email]. We will respond to your request within a reasonable timeframe.
+## 8. Your Data Protection Rights
 
-## 8. Cookies and Tracking Technologies
+Under data protection laws like the Swiss Federal Act on Data Protection (FADP) and GDPR, you have rights over your personal data. These include:
 
-Our website, axonotes.ch, does not use cookies for tracking, analytics, or advertising. The site is designed to be functional without storing any information on your device.
+-   **Right to Information:** You can ask for a copy of the personal data we hold about you.
+-   **Right to Rectification:** You can ask us to correct any inaccurate or incomplete data.
+-   **Right to Erasure (Deletion):** You can request that we delete your personal data from our systems.
+-   **Right to Restrict Processing:** You can ask us to temporarily or permanently stop processing all or some of your personal data.
+-   **Right to Data Portability:** You can request a copy of your data in a machine-readable format.
+-   **Right to Object:** You can object to us processing your personal data for certain purposes.
 
-Our third-party form provider, Formspree, may use cookies as necessary for security and spam prevention for their form services. This is governed by their own policies.
+To exercise any of these rights, please contact us at **info@axonotes.ch**.
 
 ## 9. Children's Privacy
 
-Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will take steps to delete such information.
+Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children.
 
 ## 10. Changes to This Privacy Policy
 
@@ -77,6 +95,8 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 
 ## 11. Contact Us
 
-If you have any questions or concerns about this Privacy Policy, please contact us at:
+If you have any questions or concerns about this Privacy Policy, please contact us.
+
+When you contact us via email at **info@axonotes.ch** or through any provided contact forms (such as a Google Form), the information you provide (e.g., your email address, name, and the content of your inquiry) will be stored to process your request and for any follow-up correspondence. Please note that if you use a third-party form like a Google Form, your submission is also subject to that provider's privacy policy.
 
 **Email:** info@axonotes.ch
