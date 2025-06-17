@@ -48,6 +48,22 @@
 
                 <div class="flex items-center gap-6 text-sm">
                     <a
+                        href="/imprint"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        >
+                        Imprint
+                    </a>
+                    <a
+                            href="/legal/privacy-policy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    >
+                        Privacy Policy
+                    </a>
+                    <a
                         href="https://github.com/axonotes/AxonotesCore"
                         target="_blank"
                         rel="noopener noreferrer"
