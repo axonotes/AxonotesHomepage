@@ -1,9 +1,10 @@
 // src/routes/sitemap.xml/+server.js
 
-const site = "https://axonotes.ch";
-
 /** @type {import('./$types').RequestHandler} */
-export const GET = async ({ setHeaders }) => {
+export const GET = async ({ setHeaders, url }) => {
+    // Get the site's origin from the request URL
+    const site = url.origin;
+
     // Use Vite's glob import to find all +page.svelte files
     const pages = import.meta.glob("/src/routes/**/+page.svelte");
 
@@ -39,7 +40,7 @@ export const GET = async ({ setHeaders }) => {
 
     setHeaders({
         "Content-Type": "application/xml",
-        "Cache-Control": `max-age=0, s-maxage=${60 * 60 * 24}`,
+        "Cache-Control": `max-age=0, s-maxage=${60 * 60 * 24}`, // 24 hours
     });
 
     return new Response(xml);
