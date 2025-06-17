@@ -19,14 +19,14 @@ c/o [Name of your Domicile Service Provider]<br>
 [Postal Code] Bern<br>
 Switzerland<br>
 
-<!-- TODO: Change address -->
+<!-- TODO: Update address note -->
 **Note:** This is our official business and legal correspondence address provided by our domicile service. It is not a physical office location for visits.
 
 ### How to Contact Us
 
+The primary and most efficient way to contact us is via email.
 
-<!-- TODO: Add second contact way -->
-**Email:** info@axonotes.ch<br>
+**Email:** info@axonotes.ch
 
 ### Copyright & Licensing
 
