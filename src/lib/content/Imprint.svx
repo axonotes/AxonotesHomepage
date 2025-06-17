@@ -6,25 +6,27 @@
     />
 </svelte:head>
 
-# Imprint
+# Imprint & Legal Notice
 
-Information provided according to Swiss law.
+Information provided according to Art. 3 Swiss Unfair Competition Act (UWG) & Sec. 5 German Telemedia Act (TMG).
 
-### Responsible for the Content
+### Responsible for the content of this website:
 
-Axonotes<br>
-c/o [Name of the Virtual Office Provider]<br>
-[Street Name and Number of the Virtual Office]<br>
-[Postal Code of the Virtual Office] Bern<br>
+<!-- TODO: Change address -->
+Oliver Seifert<br>
+c/o [Name of your Domicile Service Provider]<br>
+[Street Name and Number of the Domicile Service]<br>
+[Postal Code] Bern<br>
 Switzerland<br>
 
-**Represented by:**<br>
-Oliver Seifert
-
+<!-- TODO: Update address note -->
 **Note:** This is our official business and legal correspondence address provided by our domicile service. It is not a physical office location for visits.
-### Contact
 
-**Email:** info@axonotes.ch<br>
+### How to Contact Us
+
+The primary and most efficient way to contact us is via email.
+
+**Email:** info@axonotes.ch
 
 ### Copyright & Licensing
 
@@ -32,9 +34,8 @@ The copyright for the general content of this website, including texts, branding
 
 However, the underlying source code for this website and our core software is made available under open-source licenses:
 
-*   **Website Source Code:** The source code for this website (`axonotes/website`) is available on GitHub and is licensed under the **[MIT License](https://github.com/axonotes/website/blob/main/LICENSE)**. You are free to use, modify, and distribute it according to the terms of that license.
-
-*   **Core Software Source Code:** The source code for our core application (`axonotes/AxonotesCore`) is available on GitHub and is licensed under the **[Business Source License 1.1 (BSL)](https://github.com/axonotes/AxonotesCore/blob/main/LICENSE)**. This license allows for non-production use. After a specified period, it will convert to the **[GNU General Public License v3.0 (GPL)](https://www.gnu.org/licenses/gpl-3.0.en.html)**. Please refer to the license file in the repository for specific terms and conditions.
+-   **Website Source Code:** The source code for this website (`axonotes/AxonotesHomepage`) is available on GitHub and is licensed under the **[MIT License](https://github.com/axonotes/AxonotesHomepage/blob/main/LICENSE)**.
+-   **Core Software Source Code:** The source code for our core application (`axonotes/AxonotesCore`) is available on GitHub and is licensed under the **[Business Source License 1.1 (BSL)](https://github.com/axonotes/AxonotesCore/blob/main/LICENSE)**. This license allows for non-production use and will convert to the **[GNU General Public License v3.0 (GPL)](https://www.gnu.org/licenses/gpl-3.0.en.html)** after a specified period. Please refer to the license file in the repository for specific terms.
 
 For the reproduction of any copyrighted elements not covered by these open-source licenses, the written consent of the copyright holders must be obtained in advance.
 
