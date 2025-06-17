@@ -1,0 +1,82 @@
+<svelte:head>
+    <title>Privacy Policy - Axonotes</title>
+    <meta
+        name="description"
+        content="Review the official Privacy Policy for Axonotes. This document details what information we collect, how we use it to manage our waitlist, and our commitment to protecting your data."
+    />
+</svelte:head>
+
+# Privacy Policy for Axonotes
+
+**Effective Date:** 17th June 2025
+
+## 1. Introduction
+
+Welcome to Axonotes ("we," "us," "our"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website at axonotes.ch (the "Site"), primarily when you sign up for our waitlist.
+
+Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+
+## 2. Who is Responsible for Your Data?
+
+The data controller responsible for your personal data is:
+
+Oliver Seifert,
+Bern,
+Email: info@axonotes.ch
+
+## 3. Information We Collect
+
+We collect information from you in a very limited way. The only personal information we collect is your **email address**.
+
+This information is collected only when you voluntarily provide it to us by submitting the "Join the Waitlist" form on our Site.
+
+## 4. How We Use Your Information
+
+We use the email address you provide for the following purposes:
+
+-   To add you to the waitlist for the Axonotes application.
+-   To notify you when the Axonotes application is launched or ready for early access.
+-   To send you occasional updates about the development and progress of Axonotes.
+-   To invite you to become a user of the service.
+
+We will not use your email address for any other purpose, and we will not sell or rent your email address to any third parties.
+
+## 5. Third-Party Data Processing
+
+To manage our waitlist form, we use a third-party service called **Formspree**. When you submit your email address through our form, it is sent directly to Formspree's servers for processing and storage on our behalf.
+
+Formspree has its own privacy policy and security measures. We encourage you to review Formspree's Privacy Policy to understand how they handle data: [https://formspree.io/legal/privacy-policy](https://formspree.io/legal/privacy-policy).
+
+## 6. Data Storage and Security
+
+We are committed to ensuring that your information is secure. We rely on the security infrastructure of our data processor, Formspree, to protect your email address from unauthorized access, use, or disclosure. Access to this data is limited to authorized personnel of Axonotes.
+
+## 7. Your Data Protection Rights
+
+You have rights regarding your personal data. Depending on your location, these may include:
+
+-   **The right to access:** You can request a copy of the email address we hold for you.
+-   **The right to rectification:** You can request that we correct any information you believe is inaccurate.
+-   **The right to erasure (Right to be forgotten):** You can request that we delete your email address from our records.
+
+To exercise any of these rights, please contact us at [Your Contact Email]. We will respond to your request within a reasonable timeframe.
+
+## 8. Cookies and Tracking Technologies
+
+Our website, axonotes.ch, does not use cookies for tracking, analytics, or advertising. The site is designed to be functional without storing any information on your device.
+
+Our third-party form provider, Formspree, may use cookies as necessary for security and spam prevention for their form services. This is governed by their own policies.
+
+## 9. Children's Privacy
+
+Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will take steps to delete such information.
+
+## 10. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top.
+
+## 11. Contact Us
+
+If you have any questions or concerns about this Privacy Policy, please contact us at:
+
+**Email:** info@axonotes.ch

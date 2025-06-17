@@ -1,5 +1,5 @@
 <svelte:head>
-    <title>Imprint & Legal Notice - Axonotes</title>
+    <title>Imprint - Axonotes</title>
     <meta
         name="description"
         content="Official Imprint (Impressum) and Legal Notice for Axonotes. This page contains our official contact information, details on legal responsibility, and other required legal disclosures."
