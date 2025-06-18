@@ -49,11 +49,13 @@
         "tailwindcss": "^4.1.8",
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.33.1",
-        "vite": "^6.3.5"
+        "vite": "^6.3.5",
+        "@inlang/paraglide-js": "1.11.8"
     },
     "dependencies": {
         "@bitmachina/highlighter": "^1.0.0-alpha.7",
         "@lucide/svelte": "^0.511.0",
-        "node-cache": "^5.1.2"
+        "node-cache": "^5.1.2",
+        "@inlang/paraglide-sveltekit": "0.16.0"
     }
 }

@@ -3,65 +3,64 @@
     import SelfHostingSection from "$lib/components/SelfHostingSection.svelte";
     import {Heart, DollarSign} from "@lucide/svelte";
     import type {PricingPlan} from "$lib/types/pricing.js";
+    import * as m from "$lib/paraglide/messages.js";
 
     let heartClicked = $state(false);
 
+    // Reconstruct the structured data from the flat message strings
     const pricingPlans: PricingPlan[] = [
         {
             id: "free",
-            name: "Free Tier",
-            price: "Free",
-            description:
-                "Everything you need to excel academically. Perfect for students starting their journey with Axonotes.",
+            name: m.pricing_plan_free_name(),
+            price: m.pricing_plan_free_price(),
+            description: m.pricing_plan_free_description(),
             features: [
-                "1GB storage for thousands of notes",
-                "Core note-taking & organization tools",
-                "Learning features (flashcards, exercises)",
-                "Offline access across all devices",
-                "End-to-end security",
+                m.pricing_plan_free_feature_1(),
+                m.pricing_plan_free_feature_2(),
+                m.pricing_plan_free_feature_3(),
+                m.pricing_plan_free_feature_4(),
+                m.pricing_plan_free_feature_5(),
             ],
             cta: {
-                text: "Coming Soon",
+                text: m.pricing_plan_cta_comingSoon(),
                 disabled: true,
             },
             variant: "default",
         },
         {
             id: "pro",
-            name: "Pro Supporter",
-            price: "$8",
-            priceUnit: "/month",
-            description:
-                "Support our mission while unlocking enhanced capabilities.",
+            name: m.pricing_plan_pro_name(),
+            price: "$8", // Price is hardcoded, if it needs to be localized, it should also come from messages.
+            priceUnit: m.pricing_plan_pro_priceUnit(),
+            description: m.pricing_plan_pro_description(),
             features: [
-                "Everything in Free Tier",
-                "10GB storage for extensive projects",
-                "Priority support & early access",
-                "Custom themes & personalization",
-                "Directly fund Axonotes development",
+                m.pricing_plan_pro_feature_1(),
+                m.pricing_plan_pro_feature_2(),
+                m.pricing_plan_pro_feature_3(),
+                m.pricing_plan_pro_feature_4(),
+                m.pricing_plan_pro_feature_5(),
             ],
             cta: {
-                text: "Coming Soon",
+                text: m.pricing_plan_cta_comingSoon(),
                 disabled: true,
             },
             variant: "featured",
         },
         {
             id: "institutional",
-            name: "Institutional",
-            price: "Custom",
-            description:
-                "Empower your entire educational organization with tailored deployment and management solutions.",
+            name: m.pricing_plan_institutional_name(),
+            price: m.pricing_plan_institutional_price(),
+            description: m.pricing_plan_institutional_description(),
             features: [
-                "Unlimited storage & users",
-                "Centralized account management",
-                "Custom deployment options",
-                "Dedicated support & training",
-                "Advanced analytics & reporting",
-                "Flexible billing & contracts",
+                m.pricing_plan_institutional_feature_1(),
+                m.pricing_plan_institutional_feature_2(),
+                m.pricing_plan_institutional_feature_3(),
+                m.pricing_plan_institutional_feature_4(),
+                m.pricing_plan_institutional_feature_5(),
+                m.pricing_plan_institutional_feature_6(),
             ],
             cta: {
-                text: "Contact Us",
+                text: m.pricing_plan_cta_contactUs(),
                 disabled: true,
             },
             variant: "default",
@@ -70,11 +69,8 @@
 </script>
 
 <svelte:head>
-    <title>Pricing - Axonotes</title>
-    <meta
-        name="description"
-        content="Transparent, student-friendly pricing for Axonotes. Free for individual use, affordable Pro features, and custom solutions for institutions."
-    />
+    <title>{m.pricing_meta_title()}</title>
+    <meta name="description" content={m.pricing_meta_description()} />
 </svelte:head>
 
 <div class="container mx-auto px-4 py-6 md:py-8">
@@ -83,24 +79,23 @@
         <h1
             class="text-primary-600 dark:text-primary-400 mb-3 text-2xl !leading-tight font-bold sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl"
         >
-            Pricing That Makes Sense
+            {m.pricing_header_title()}
         </h1>
 
         <div class="mx-auto mb-4 max-w-3xl space-y-3 md:mb-6 md:space-y-4">
             <h3
                 class="text-surface-800 dark:text-surface-200 text-sm leading-relaxed font-light md:text-base"
             >
-                No hidden fees. No student discounts needed.
+                {m.pricing_header_subtitle_line1()}
                 <br />
-                Just honest pricing designed around real academic budgets.
+                {m.pricing_header_subtitle_line2()}
             </h3>
 
             <p
                 class="text-surface-600 dark:text-surface-400 text-xs leading-relaxed md:text-sm"
             >
-                <strong>Our Philosophy:</strong> Essential academic tools should
-                be free. Premium features should be affordable. Institutions should
-                get enterprise-level flexibility.
+                <strong>{m.pricing_header_philosophy_strong()}</strong>
+                {m.pricing_header_philosophy_text()}
             </p>
         </div>
 
@@ -117,7 +112,7 @@
                         : 'hover:scale-110'} transition-all duration-200 md:h-4 md:w-4"
                 />
             </button>
-            Student-First Pricing
+            {m.pricing_header_badge()}
         </div>
     </header>
 
@@ -138,13 +133,12 @@
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
                     >
-                        Transparent Always
+                        {m.pricing_philosophy_transparent_title()}
                     </h3>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed md:text-sm"
                     >
-                        What you see is what you pay. No surprise charges or
-                        hidden premium features.
+                        {m.pricing_philosophy_transparent_description()}
                     </p>
                 </div>
 
@@ -159,13 +153,12 @@
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
                     >
-                        Student Budget Friendly
+                        {m.pricing_philosophy_budgetFriendly_title()}
                     </h3>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed md:text-sm"
                     >
-                        Pro features cost less than a monthly coffee habit,
-                        because education shouldn't break the bank.
+                        {m.pricing_philosophy_budgetFriendly_description()}
                     </p>
                 </div>
 
@@ -181,13 +174,12 @@
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
                     >
-                        Scale When Ready
+                        {m.pricing_philosophy_scale_title()}
                     </h3>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed md:text-sm"
                     >
-                        Start free, upgrade when you need more, or host it
-                        yourself for complete control.
+                        {m.pricing_philosophy_scale_description()}
                     </p>
                 </div>
             </div>
@@ -199,13 +191,12 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-1.5 text-center text-lg font-bold md:mb-2 md:text-xl lg:text-2xl"
         >
-            Choose Your Plan
+            {m.pricing_plans_title()}
         </h2>
         <p
             class="text-surface-600 dark:text-surface-400 mb-8 text-center text-xs leading-relaxed md:mb-10 md:text-sm lg:mb-12"
         >
-            All plans include our core academic features. Upgrade for enhanced
-            capabilities and to support development.
+            {m.pricing_plans_description()}
         </p>
 
         <div class="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-3 lg:gap-8">
@@ -233,14 +224,12 @@
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
                     >
-                        Development Pricing
+                        {m.pricing_disclaimer_title()}
                     </h3>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed md:text-sm"
                     >
-                        These plans represent our current vision. Final
-                        features, storage limits, and pricing may evolve as we
-                        develop and refine Axonotes based on community feedback.
+                        {m.pricing_disclaimer_description()}
                     </p>
                 </div>
             </div>
@@ -255,27 +244,30 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 md:text-xl lg:text-2xl"
         >
-            Questions About Pricing?
+            {m.pricing_faq_title()}
         </h2>
         <p
             class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-2xl text-xs leading-relaxed md:mb-6 md:text-sm"
         >
-            We're building Axonotes with transparency in mind. Have questions
-            about our pricing model or need a custom solution?
+            {m.pricing_faq_description()}
         </p>
         <div class="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
             <a
                 href="mailto:info@axonotes.ch"
                 class="btn preset-outlined-primary-500 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium md:px-6 md:py-3 md:text-base"
             >
-                Contact Us
+                {m.pricing_faq_cta_contact()}
             </a>
             <a
                 href="/community"
                 class="btn preset-outlined-secondary-500 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium md:px-6 md:py-3 md:text-base"
             >
-                <span class="hidden sm:inline">Join Community Discussion</span>
-                <span class="sm:hidden">Join Community</span>
+                <span class="hidden sm:inline"
+                    >{m.pricing_faq_cta_community_full()}</span
+                >
+                <span class="sm:hidden"
+                    >{m.pricing_faq_cta_community_mobile()}</span
+                >
             </a>
         </div>
     </section>

@@ -15,17 +15,122 @@
         MapPin,
         Calendar,
     } from "@lucide/svelte";
+    import * as m from "$lib/paraglide/messages.js";
 
     let heartClicked = $state(false);
     let coffeeClicked = $state(false);
+
+    // Reconstruct structured data for the team members
+    const teamMembers = [
+        {
+            name: m.about_team_oliver_name(),
+            title: m.about_team_oliver_title(),
+            age: m.about_team_oliver_age(),
+            location: m.about_team_oliver_location(),
+            description: m.about_team_oliver_description(),
+            funFact: m.about_team_oliver_funFact(),
+            linkText: m.about_team_oliver_linkText(),
+            linkHref: "https://oseifert.ch",
+            icon: Code,
+            iconClass:
+                "text-primary-600 dark:text-primary-400 h-6 w-6 md:h-8 md:w-8",
+            bgClass: "bg-primary-100 dark:bg-primary-900/30",
+            titleClass: "text-primary-600 dark:text-primary-400",
+        },
+        {
+            name: m.about_team_ionut_name(),
+            title: m.about_team_ionut_title(),
+            university: m.about_team_ionut_university(),
+            description: m.about_team_ionut_description(),
+            background: m.about_team_ionut_background(),
+            icon: Brain,
+            iconClass:
+                "text-secondary-600 dark:text-secondary-400 h-6 w-6 md:h-8 md:w-8",
+            bgClass: "bg-secondary-100 dark:bg-secondary-900/30",
+            titleClass: "text-secondary-600 dark:text-secondary-400",
+        },
+    ];
+
+    // Reconstruct structured data for the approach section
+    const approachItems = [
+        {
+            icon: Users,
+            title: m.about_approach_item1_title(),
+            description: m.about_approach_item1_description(),
+            iconClass:
+                "text-primary-600 dark:text-primary-400 h-5 w-5 md:h-6 md:w-6",
+            bgClass: "bg-primary-100 dark:bg-primary-900/30",
+        },
+        {
+            icon: Globe,
+            title: m.about_approach_item2_title(),
+            description: m.about_approach_item2_description(),
+            iconClass:
+                "text-secondary-600 dark:text-secondary-400 h-5 w-5 md:h-6 md:w-6",
+            bgClass: "bg-secondary-100 dark:bg-secondary-900/30",
+        },
+        {
+            icon: Shield,
+            title: m.about_approach_item3_title(),
+            description: m.about_approach_item3_description(),
+            iconClass:
+                "text-tertiary-600 dark:text-tertiary-400 h-5 w-5 md:h-6 md:w-6",
+            bgClass: "bg-tertiary-100 dark:bg-tertiary-900/30",
+        },
+    ];
+
+    // Reconstruct structured data for the technical foundation section
+    const techFoundationItems = [
+        {
+            icon: Globe,
+            title: m.about_tech_item1_title(),
+            description: m.about_tech_item1_description(),
+            iconClass:
+                "text-primary-600 dark:text-primary-400 h-4 w-4 md:h-5 md:w-5",
+            bgClass: "bg-primary-100 dark:bg-primary-900/30",
+        },
+        {
+            icon: Code,
+            title: m.about_tech_item2_title(),
+            description: m.about_tech_item2_description(),
+            iconClass:
+                "text-secondary-600 dark:text-secondary-400 h-4 w-4 md:h-5 md:w-5",
+            bgClass: "bg-secondary-100 dark:bg-secondary-900/30",
+        },
+    ];
+
+    // Reconstruct structured data for core values
+    const coreValues = [
+        {
+            icon: Target,
+            title: m.about_values_item1_title(),
+            description: m.about_values_item1_description(),
+            iconClass:
+                "text-primary-600 dark:text-primary-400 h-5 w-5 md:h-6 md:w-6",
+            bgClass: "bg-primary-100 dark:bg-primary-900/30",
+        },
+        {
+            icon: Users,
+            title: m.about_values_item2_title(),
+            description: m.about_values_item2_description(),
+            iconClass:
+                "text-secondary-600 dark:text-secondary-400 h-5 w-5 md:h-6 md:w-6",
+            bgClass: "bg-secondary-100 dark:bg-secondary-900/30",
+        },
+        {
+            icon: Shield,
+            title: m.about_values_item3_title(),
+            description: m.about_values_item3_description(),
+            iconClass:
+                "text-tertiary-600 dark:text-tertiary-400 h-5 w-5 md:h-6 md:w-6",
+            bgClass: "bg-tertiary-100 dark:bg-tertiary-900/30",
+        },
+    ];
 </script>
 
 <svelte:head>
-    <title>About - Axonotes</title>
-    <meta
-        name="description"
-        content="Meet the student founders building Axonotes - the academic platform that actually understands your struggles. Our story, mission, and vision."
-    />
+    <title>{m.about_meta_title()}</title>
+    <meta name="description" content={m.about_meta_description()} />
 </svelte:head>
 
 <div class="container mx-auto px-4 py-6 md:py-8">
@@ -34,14 +139,12 @@
         <h1
             class="text-primary-600 dark:text-primary-400 mb-4 text-2xl !leading-tight font-bold md:mb-6 md:text-4xl lg:text-5xl"
         >
-            Built by Students Who Get It
+            {m.about_hero_title()}
         </h1>
         <p
             class="text-surface-800 dark:text-surface-200 mx-auto max-w-3xl text-base md:text-lg"
         >
-            We got tired of switching between 5+ apps just to work on one
-            assignment. So we decided to build the unified academic platform we
-            always wanted – and make it available for everyone.
+            {m.about_hero_subtitle()}
         </p>
     </header>
 
@@ -51,34 +154,23 @@
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
             >
-                How It All Started
+                {m.about_story_title()}
             </h2>
             <div class="card p-6 md:p-8">
                 <p
                     class="text-surface-700 dark:text-surface-300 mb-4 text-sm md:text-base"
                 >
-                    Picture this: It's 2 AM. Your group project is due tomorrow.
-                    You're frantically switching between your shared document
-                    (where someone just accidentally deleted a crucial
-                    paragraph), a separate chat app pinging with conflicting
-                    ideas, your personal notes scattered across three different
-                    apps, and the course portal for assignment details.
+                    {m.about_story_paragraph1()}
                 </p>
                 <p
                     class="text-surface-700 dark:text-surface-300 mb-4 text-sm md:text-base"
                 >
-                    Sound familiar? That's exactly what sparked Axonotes. We're
-                    students who experienced this chaos firsthand and thought: <em
-                        >"There has to be a better way."</em
-                    >
+                    {@html m.about_story_paragraph2()}
                 </p>
                 <p
                     class="text-surface-700 dark:text-surface-300 text-sm md:text-base"
                 >
-                    Two years ago, Oliver built a private version for his own
-                    flashcard needs. As university approached, the vision grew:
-                    What if we could create one beautiful platform that handles
-                    everything students actually need?
+                    {m.about_story_paragraph3()}
                 </p>
             </div>
         </div>
@@ -89,117 +181,81 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
-            Meet the Founders
+            {m.about_team_title()}
         </h2>
         <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 md:gap-8">
-            <!-- Oliver Seifert -->
-            <div class="card p-4 md:p-6">
-                <div class="mb-4 flex items-start gap-3 md:mb-6 md:gap-4">
-                    <div
-                        class="bg-primary-100 dark:bg-primary-900/30 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full md:h-16 md:w-16"
-                    >
-                        <Code
-                            class="text-primary-600 dark:text-primary-400 h-6 w-6 md:h-8 md:w-8"
-                        />
-                    </div>
-                    <div class="min-w-0 flex-1">
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 text-base font-bold md:text-lg"
-                        >
-                            Oliver Seifert
-                        </h3>
-                        <p
-                            class="text-primary-600 dark:text-primary-400 text-sm font-medium md:text-base"
-                        >
-                            Founder & Lead Developer
-                        </p>
+            {#each teamMembers as member}
+                <div class="card p-4 md:p-6">
+                    <div class="mb-4 flex items-start gap-3 md:mb-6 md:gap-4">
                         <div
-                            class="text-surface-600 dark:text-surface-400 mt-2 flex flex-col gap-2 text-xs md:flex-row md:items-center md:gap-4 md:text-sm"
+                            class="{member.bgClass} flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full md:h-16 md:w-16"
                         >
-                            <div class="flex items-center gap-1">
-                                <Calendar class="h-3 w-3" />
-                                <span>18 years old</span>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <MapPin class="h-3 w-3" />
-                                <span>Switzerland</span>
+                            <svelte:component
+                                this={member.icon}
+                                class={member.iconClass}
+                            />
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <h3
+                                class="text-surface-900 dark:text-surface-100 text-base font-bold md:text-lg"
+                            >
+                                {member.name}
+                            </h3>
+                            <p
+                                class="{member.titleClass} text-sm font-medium md:text-base"
+                            >
+                                {member.title}
+                            </p>
+                            <div
+                                class="text-surface-600 dark:text-surface-400 mt-2 flex flex-col gap-2 text-xs md:flex-row md:items-center md:gap-4 md:text-sm"
+                            >
+                                {#if member.age}
+                                    <div class="flex items-center gap-1">
+                                        <Calendar class="h-3 w-3" />
+                                        <span>{member.age}</span>
+                                    </div>
+                                {/if}
+                                {#if member.location}
+                                    <div class="flex items-center gap-1">
+                                        <MapPin class="h-3 w-3" />
+                                        <span>{member.location}</span>
+                                    </div>
+                                {/if}
+                                {#if member.university}
+                                    <div class="flex items-center gap-1">
+                                        <Lightbulb class="h-3 w-3" />
+                                        <span>{member.university}</span>
+                                    </div>
+                                {/if}
                             </div>
                         </div>
                     </div>
-                </div>
-                <p
-                    class="text-surface-700 dark:text-surface-300 mb-3 text-sm md:mb-4 md:text-base"
-                >
-                    "I've been coding for 9+ years across everything from web
-                    development to systems programming. The idea for Axonotes
-                    came from my own frustration with academic tools that just
-                    don't work the way students actually think."
-                </p>
-                <p
-                    class="text-surface-700 dark:text-surface-300 mb-3 text-xs md:mb-4 md:text-sm"
-                >
-                    <strong>Fun fact:</strong> Uses Fedora Linux and got frustrated
-                    when school tools like MS Teams didn't work well on his setup.
-                    That's partly what motivated building something better.
-                </p>
-                <div class="mt-3 md:mt-4">
-                    <a
-                        href="https://oseifert.ch"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-primary-600 dark:text-primary-400 inline-flex items-center gap-1 text-xs hover:underline md:text-sm"
+                    <p
+                        class="text-surface-700 dark:text-surface-300 mb-3 text-sm md:mb-4 md:text-base"
                     >
-                        Learn more about Oliver
-                        <ExternalLink class="h-3 w-3" />
-                    </a>
-                </div>
-            </div>
-
-            <!-- Ionut-Sorin Vladu -->
-            <div class="card p-4 md:p-6">
-                <div class="mb-4 flex items-start gap-3 md:mb-6 md:gap-4">
-                    <div
-                        class="bg-secondary-100 dark:bg-secondary-900/30 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full md:h-16 md:w-16"
+                        "{member.description}"
+                    </p>
+                    <p
+                        class="text-surface-700 dark:text-surface-300 mb-3 text-xs md:mb-4 md:text-sm"
                     >
-                        <Brain
-                            class="text-secondary-600 dark:text-secondary-400 h-6 w-6 md:h-8 md:w-8"
-                        />
-                    </div>
-                    <div class="min-w-0 flex-1">
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 text-base font-bold md:text-lg"
-                        >
-                            Ionut-Sorin Vladu
-                        </h3>
-                        <p
-                            class="text-secondary-600 dark:text-secondary-400 text-sm font-medium md:text-base"
-                        >
-                            Co-founder & Engineer
-                        </p>
-                        <div
-                            class="text-surface-600 dark:text-surface-400 mt-2 flex items-center gap-1 text-xs md:text-sm"
-                        >
-                            <Lightbulb class="h-3 w-3" />
-                            <span>University of Edinburgh</span>
+                        <strong>{m.about_team_funFact_label()}:</strong>
+                        {member.funFact || member.background}
+                    </p>
+                    {#if member.linkHref}
+                        <div class="mt-3 md:mt-4">
+                            <a
+                                href={member.linkHref}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-primary-600 dark:text-primary-400 inline-flex items-center gap-1 text-xs hover:underline md:text-sm"
+                            >
+                                {member.linkText}
+                                <ExternalLink class="h-3 w-3" />
+                            </a>
                         </div>
-                    </div>
+                    {/if}
                 </div>
-                <p
-                    class="text-surface-700 dark:text-surface-300 mb-3 text-sm md:mb-4 md:text-base"
-                >
-                    "I bring 4+ years of software engineering experience and a
-                    background in AI and Computer Science. I love the challenge
-                    of building complex systems that actually make people's
-                    lives easier."
-                </p>
-                <p
-                    class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                >
-                    <strong>Background:</strong> Competed in Math and Physics Olympiads
-                    in high school, which sparked his passion for solving complex
-                    problems with code.
-                </p>
-            </div>
+            {/each}
         </div>
     </section>
 
@@ -208,71 +264,31 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
-            How We're Building It Different
+            {m.about_approach_title()}
         </h2>
         <div class="grid gap-4 md:grid-cols-3 md:gap-6">
-            <div class="card p-4 text-center md:p-6">
-                <div
-                    class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
-                >
-                    <Users
-                        class="text-primary-600 dark:text-primary-400 h-5 w-5 md:h-6 md:w-6"
-                    />
+            {#each approachItems as item}
+                <div class="card p-4 text-center md:p-6">
+                    <div
+                        class="{item.bgClass} mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
+                    >
+                        <svelte:component
+                            this={item.icon}
+                            class={item.iconClass}
+                        />
+                    </div>
+                    <h3
+                        class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
+                    >
+                        {item.title}
+                    </h3>
+                    <p
+                        class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
+                    >
+                        {item.description}
+                    </p>
                 </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                >
-                    Student-First Design
-                </h3>
-                <p
-                    class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                >
-                    Every feature is designed by students who actually use these
-                    tools daily. No corporate guessing about what students need.
-                </p>
-            </div>
-
-            <div class="card p-4 text-center md:p-6">
-                <div
-                    class="bg-secondary-100 dark:bg-secondary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
-                >
-                    <Globe
-                        class="text-secondary-600 dark:text-secondary-400 h-5 w-5 md:h-6 md:w-6"
-                    />
-                </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                >
-                    Works Everywhere
-                </h3>
-                <p
-                    class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                >
-                    Built to work seamlessly on Windows, Mac, Linux, and mobile.
-                    Your work follows you, no matter what device you prefer.
-                </p>
-            </div>
-
-            <div class="card p-4 text-center md:p-6">
-                <div
-                    class="bg-tertiary-100 dark:bg-tertiary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
-                >
-                    <Shield
-                        class="text-tertiary-600 dark:text-tertiary-400 h-5 w-5 md:h-6 md:w-6"
-                    />
-                </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                >
-                    Privacy by Design
-                </h3>
-                <p
-                    class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                >
-                    End-to-end security and Swiss data protection standards.
-                    Your academic work stays private and secure.
-                </p>
-            </div>
+            {/each}
         </div>
     </section>
 
@@ -284,7 +300,7 @@
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-6 text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
             >
-                Where We Are Right Now
+                {m.about_developmentStatus_title()}
             </h2>
             <div class="mb-6 flex justify-center md:mb-8">
                 <div
@@ -298,7 +314,7 @@
                         <span
                             class="text-surface-800 dark:text-surface-200 text-xs md:text-sm"
                         >
-                            Planning Complete
+                            {m.about_developmentStatus_planning()}
                         </span>
                     </div>
                     <div
@@ -319,7 +335,7 @@
                         <span
                             class="text-primary-600 dark:text-primary-400 text-xs font-medium md:text-sm"
                         >
-                            Active Development
+                            {m.about_developmentStatus_activeDevelopment()}
                         </span>
                     </div>
                     <div
@@ -332,7 +348,7 @@
                         <span
                             class="text-surface-600 dark:text-surface-400 text-xs md:text-sm"
                         >
-                            Beta Testing
+                            {m.about_developmentStatus_betaTesting()}
                         </span>
                     </div>
                 </div>
@@ -340,15 +356,13 @@
             <p
                 class="text-surface-700 dark:text-surface-300 mb-4 text-sm md:mb-6 md:text-base lg:text-lg"
             >
-                We're currently building the core features based on feedback
-                from students like you. Every feature request and pain point you
-                share directly influences what we build next.
+                {m.about_developmentStatus_description()}
             </p>
             <div
                 class="bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium md:inline-flex md:px-4 md:py-2 md:text-sm"
             >
                 <Zap class="mx-auto h-5 w-5 md:m-0 md:h-4 md:w-4" />
-                Your input shapes our roadmap in real-time
+                {m.about_developmentStatus_badge()}
             </div>
         </div>
     </section>
@@ -358,53 +372,33 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
-            Built on Solid Ground
+            {m.about_tech_title()}
         </h2>
         <div class="mx-auto max-w-4xl">
             <div class="card p-6 md:p-8">
                 <div class="grid gap-4 md:grid-cols-2 md:gap-6">
-                    <div class="text-center">
-                        <div
-                            class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-3 flex h-8 w-8 items-center justify-center rounded-lg md:h-10 md:w-10"
-                        >
-                            <Globe
-                                class="text-primary-600 dark:text-primary-400 h-4 w-4 md:h-5 md:w-5"
-                            />
+                    {#each techFoundationItems as item}
+                        <div class="text-center">
+                            <div
+                                class="{item.bgClass} mx-auto mb-3 flex h-8 w-8 items-center justify-center rounded-lg md:h-10 md:w-10"
+                            >
+                                <svelte:component
+                                    this={item.icon}
+                                    class={item.iconClass}
+                                />
+                            </div>
+                            <h3
+                                class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
+                            >
+                                {item.title}
+                            </h3>
+                            <p
+                                class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
+                            >
+                                {item.description}
+                            </p>
                         </div>
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                        >
-                            Offline-First Architecture
-                        </h3>
-                        <p
-                            class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                        >
-                            Powered by SpaceTimeDB for real-time collaboration
-                            and bulletproof sync. Work anywhere, sync
-                            everywhere.
-                        </p>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="bg-secondary-100 dark:bg-secondary-900/30 mx-auto mb-3 flex h-8 w-8 items-center justify-center rounded-lg md:h-10 md:w-10"
-                        >
-                            <Code
-                                class="text-secondary-600 dark:text-secondary-400 h-4 w-4 md:h-5 md:w-5"
-                            />
-                        </div>
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                        >
-                            Native Performance
-                        </h3>
-                        <p
-                            class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                        >
-                            Built with Tauri and SvelteKit for fast, secure,
-                            cross-platform apps that feel native on every
-                            device.
-                        </p>
-                    </div>
+                    {/each}
                 </div>
             </div>
         </div>
@@ -415,71 +409,31 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
-            What Drives Us
+            {m.about_values_title()}
         </h2>
         <div class="grid gap-4 md:grid-cols-3 md:gap-6">
-            <div class="card p-4 text-center md:p-6">
-                <div
-                    class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
-                >
-                    <Target
-                        class="text-primary-600 dark:text-primary-400 h-5 w-5 md:h-6 md:w-6"
-                    />
+            {#each coreValues as value}
+                <div class="card p-4 text-center md:p-6">
+                    <div
+                        class="{value.bgClass} mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
+                    >
+                        <svelte:component
+                            this={value.icon}
+                            class={value.iconClass}
+                        />
+                    </div>
+                    <h3
+                        class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
+                    >
+                        {value.title}
+                    </h3>
+                    <p
+                        class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
+                    >
+                        {value.description}
+                    </p>
                 </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                >
-                    Solve Real Problems
-                </h3>
-                <p
-                    class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                >
-                    We build features that solve actual pain points students
-                    face every day, not just cool tech for the sake of it.
-                </p>
-            </div>
-
-            <div class="card p-4 text-center md:p-6">
-                <div
-                    class="bg-secondary-100 dark:bg-secondary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
-                >
-                    <Users
-                        class="text-secondary-600 dark:text-secondary-400 h-5 w-5 md:h-6 md:w-6"
-                    />
-                </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                >
-                    Open Source Spirit
-                </h3>
-                <p
-                    class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                >
-                    Academic tools should be accessible to everyone. Our core is
-                    open source and self-hostable.
-                </p>
-            </div>
-
-            <div class="card p-4 text-center md:p-6">
-                <div
-                    class="bg-tertiary-100 dark:bg-tertiary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
-                >
-                    <Shield
-                        class="text-tertiary-600 dark:text-tertiary-400 h-5 w-5 md:h-6 md:w-6"
-                    />
-                </div>
-                <h3
-                    class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
-                >
-                    Swiss Privacy Standards
-                </h3>
-                <p
-                    class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
-                >
-                    Built with the same privacy principles and data protection
-                    standards that Switzerland is known for.
-                </p>
-            </div>
+            {/each}
         </div>
     </section>
 
@@ -498,19 +452,17 @@
                         : 'hover:scale-110'} transition-all duration-200 md:h-4 md:w-4"
                 />
             </button>
-            Crafted in Switzerland
+            {m.about_swissExcellence_badge()}
         </div>
         <h2
             class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 md:text-xl lg:text-2xl"
         >
-            Precision, Privacy, and Quality
+            {m.about_swissExcellence_title()}
         </h2>
         <p
             class="text-surface-700 dark:text-surface-300 mx-auto max-w-2xl text-sm md:text-base"
         >
-            Just like Swiss watches and chocolates, we're building Axonotes with
-            attention to detail, reliability, and a commitment to excellence
-            that students can trust.
+            {m.about_swissExcellence_description()}
         </p>
     </section>
 
@@ -519,14 +471,12 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 md:text-xl lg:text-2xl"
         >
-            Be Part of the Story
+            {m.about_cta_title()}
         </h2>
         <p
             class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-xl text-sm md:mb-8 md:text-base"
         >
-            We're not just building software – we're building the future of
-            academic work. Your feedback, ideas, and experiences shape every
-            feature we develop.
+            {m.about_cta_description()}
         </p>
         <div class="flex flex-col gap-3 md:flex-row md:justify-center md:gap-4">
             <a
@@ -536,7 +486,7 @@
                 class="btn preset-filled-primary-500 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm text-white md:px-6 md:py-3 md:text-base"
             >
                 <Users class="h-4 w-4" />
-                Join Our Community
+                {m.about_cta_button1()}
             </a>
             <a
                 href="https://forms.gle/N2qFoXn4PonD6EnA9"
@@ -545,7 +495,7 @@
                 class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm md:px-6 md:py-3 md:text-base"
             >
                 <Target class="h-4 w-4" />
-                Share Your Feedback
+                {m.about_cta_button2()}
             </a>
         </div>
     </section>

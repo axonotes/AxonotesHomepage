@@ -6,6 +6,7 @@
         Code,
         ChevronRight,
     } from "@lucide/svelte";
+    import * as m from "$lib/paraglide/messages.js";
 </script>
 
 <section
@@ -32,17 +33,17 @@
                         class="-ml-0.5 h-3 w-3 duration-200 group-hover:ml-1 md:h-4 md:w-4"
                     />
                 </div>
-                Self-Hosting Available
+                {m.selfHosting_badge()}
             </div>
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 md:text-xl lg:text-2xl"
             >
-                Take Control of Your Data
+                {m.selfHosting_title()}
             </h2>
             <p
                 class="text-surface-800 dark:text-surface-200 mx-auto max-w-2xl text-base leading-relaxed md:text-lg lg:text-xl"
             >
-                Host AxonotesCore yourself with our Business Source License
+                {m.selfHosting_subtitle()}
             </p>
         </div>
 
@@ -59,12 +60,12 @@
                 <h3
                     class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
                 >
-                    Free for Small Teams
+                    {m.selfHosting_feature1_title()}
                 </h3>
                 <p
                     class="text-surface-800 dark:text-surface-200 text-xs md:text-sm"
                 >
-                    Up to 50 users at no cost
+                    {m.selfHosting_feature1_description()}
                 </p>
             </div>
 
@@ -79,12 +80,12 @@
                 <h3
                     class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
                 >
-                    Your Infrastructure
+                    {m.selfHosting_feature2_title()}
                 </h3>
                 <p
                     class="text-surface-800 dark:text-surface-200 text-xs md:text-sm"
                 >
-                    Complete control over your deployment, no limits
+                    {m.selfHosting_feature2_description()}
                 </p>
             </div>
 
@@ -99,12 +100,12 @@
                 <h3
                     class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
                 >
-                    Open Source Future
+                    {m.selfHosting_feature3_title()}
                 </h3>
                 <p
                     class="text-surface-800 dark:text-surface-200 text-xs md:text-sm"
                 >
-                    Will transition to AGPLv3
+                    {m.selfHosting_feature3_description()}
                 </p>
             </div>
         </div>
@@ -126,20 +127,17 @@
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
                     >
-                        Commercial Use & Licensing
+                        {m.selfHosting_license_title()}
                     </h3>
                     <p
                         class="text-surface-800 dark:text-surface-200 mb-2 text-xs leading-relaxed md:text-sm"
                     >
-                        Free for up to 50 users. For larger deployments or
-                        commercial services, you can purchase a commercial
-                        license from us.
+                        {m.selfHosting_license_description1()}
                     </p>
                     <p
                         class="text-surface-800 dark:text-surface-200 text-xs leading-relaxed md:text-sm"
                     >
-                        Perfect for internal use, development, and personal
-                        projects under the BSL 1.1 terms.
+                        {m.selfHosting_license_description2()}
                     </p>
                 </div>
             </div>
@@ -153,13 +151,20 @@
                 rel="noopener noreferrer"
                 class="btn variant-filled-primary inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium md:px-6 md:py-3 md:text-base"
             >
-                View on GitHub
+                {m.selfHosting_cta_button()}
                 <ExternalLink class="h-3 w-3 md:h-4 md:w-4" />
             </a>
             <p
                 class="text-surface-500 dark:text-surface-400 mt-2 text-xs leading-relaxed md:mt-3 md:text-sm"
             >
-                Licensed under BSL 1.1 • Full terms available in repository
+                {m.selfHosting_cta_disclaimer1()}
+                <a
+                    href="https://github.com/axonotes/AxonotesCore/blob/main/LICENSE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary-600 dark:text-primary-400 hover:underline"
+                    >{m.selfHosting_cta_disclaimer2()}</a
+                >
             </p>
         </div>
     </div>

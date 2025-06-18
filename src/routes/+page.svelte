@@ -16,54 +16,48 @@
         Sparkles,
         Coffee,
     } from "@lucide/svelte";
+    import * as m from "$lib/paraglide/messages.js";
 
-    // Core value propositions - simplified for students
+    // Reconstruct the structured data from the flat message strings
     const coreValues = [
         {
             icon: Brain,
-            title: "Notes That Actually Work",
-            description:
-                "Write notes that can run code, generate charts, and create interactive content. Turn your study materials into living documents.",
+            title: m.home_coreValues_item1_title(),
+            description: m.home_coreValues_item1_description(),
         },
         {
             icon: Users,
-            title: "Seamless Group Work",
-            description:
-                "Collaborate in real-time without the fear of losing work. Smart conflict resolution means everyone's changes matter.",
+            title: m.home_coreValues_item2_title(),
+            description: m.home_coreValues_item2_description(),
         },
         {
             icon: Sparkles,
-            title: "Your Perfect Study Space",
-            description:
-                "Customize everything. Split screens, create shortcuts, organize however you think. Make Axonotes work the way you work.",
+            title: m.home_coreValues_item3_title(),
+            description: m.home_coreValues_item3_description(),
         },
     ];
 
-    // Problem/Solution comparison - more relatable
     const problemSolution = {
         before: [
-            "Switching between 5+ apps just to work on one assignment",
-            "Lost work when someone edited while you were typing",
-            "Can't find that one important note you wrote last week",
-            "Studying with static, boring flashcards",
-            "Group projects turning into chaos",
+            m.home_problemSolution_before_item_1(),
+            m.home_problemSolution_before_item_2(),
+            m.home_problemSolution_before_item_3(),
+            m.home_problemSolution_before_item_4(),
+            m.home_problemSolution_before_item_5(),
         ],
         after: [
-            "Everything you need in one beautiful, organized space",
-            "Real-time collaboration that actually works smoothly",
-            "Find anything instantly with powerful search",
-            "Interactive study materials that adapt to how you learn",
-            "Group work that feels effortless and productive",
+            m.home_problemSolution_after_item_1(),
+            m.home_problemSolution_after_item_2(),
+            m.home_problemSolution_after_item_3(),
+            m.home_problemSolution_after_item_4(),
+            m.home_problemSolution_after_item_5(),
         ],
     };
 </script>
 
 <svelte:head>
-    <title>Axonotes - The Academic Platform That Actually Gets It</title>
-    <meta
-        name="description"
-        content="Stop juggling apps. Start studying smarter. One platform for notes, collaboration, and learning - built by students who understand your struggles."
-    />
+    <title>{m.home_meta_title()}</title>
+    <meta name="description" content={m.home_meta_description()} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </svelte:head>
 
@@ -75,17 +69,14 @@
             <h1
                 class="text-primary-600 dark:text-primary-400 mb-4 text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl"
             >
-                The Academic Platform<br class="hidden sm:block" />That Actually
-                Gets It
+                {@html m.home_hero_title()}
             </h1>
 
             <!-- Subheadline -->
             <p
                 class="text-surface-800 dark:text-surface-200 mx-auto mb-6 max-w-2xl px-2 text-base leading-relaxed sm:mb-8 sm:px-0 sm:text-lg md:text-xl"
             >
-                Stop juggling apps, losing work, and fighting with tools that
-                weren't made for learning. Axonotes is built by students who've
-                felt your pain.
+                {m.home_hero_subtitle()}
             </p>
 
             <!-- Status Badge -->
@@ -93,8 +84,8 @@
                 class="bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 mb-6 inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-medium sm:mb-8 sm:px-4 sm:text-sm"
             >
                 <Coffee class="h-3 w-3 sm:h-4 sm:w-4" />
-                <span class="xs:inline hidden">Currently brewing - </span>Help
-                us shape the future
+                <span class="xs:inline hidden">{m.home_hero_badge_text()}</span>
+                {m.home_hero_badge_text_mobile()}
             </div>
 
             <!-- Primary CTA -->
@@ -109,15 +100,16 @@
                 >
                     <MessageCircle class="h-4 w-4 sm:h-5 sm:w-5" />
                     <span class="xs:inline hidden"
-                        >Join the Waitlist &
-                    </span>Shape Axonotes
+                        >{m.home_hero_cta_primary()}</span
+                    >
+                    {m.home_hero_cta_primary_mobile()}
                     <ArrowRight class="h-3 w-3 sm:h-4 sm:w-4" />
                 </a>
                 <a
                     href="/about"
                     class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex min-h-[44px] items-center justify-center gap-2 px-4 text-sm sm:px-6 sm:text-base"
                 >
-                    Learn Our Story
+                    {m.home_hero_cta_secondary()}
                     <ChevronRight class="h-3 w-3 sm:h-4 sm:w-4" />
                 </a>
             </div>
@@ -140,16 +132,12 @@
                 <h3
                     class="text-surface-900 dark:text-surface-100 mb-2 text-lg font-bold sm:mb-3 sm:text-xl"
                 >
-                    🎬 Epic Demo Reel <span class="hidden sm:inline"
-                        >(In Progress)</span
-                    >
+                    {@html m.home_demo_title()}
                 </h3>
                 <p
                     class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-lg text-sm leading-relaxed sm:mb-6 sm:text-base"
                 >
-                    Imagine the smoothest real-time collaboration demo here.
-                    We're too busy coding the actual features to make the fancy
-                    videos<span class="hidden sm:inline">... yet</span>.
+                    {@html m.home_demo_description()}
                 </p>
                 <a
                     href="https://discord.gg/myBMaaDeQu"
@@ -157,7 +145,7 @@
                     rel="noopener noreferrer"
                     class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex min-h-[44px] items-center gap-2 px-4 text-sm sm:px-6 sm:text-base"
                 >
-                    Help Us Create Amazing Demos
+                    {m.home_demo_cta()}
                     <MessageCircle class="h-3 w-3 sm:h-4 sm:w-4" />
                 </a>
             </div>
@@ -170,7 +158,7 @@
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
             >
-                From Academic Chaos to Seamless Flow
+                {m.home_problemSolution_title()}
             </h2>
 
             <div class="grid gap-6 sm:gap-8 lg:grid-cols-2">
@@ -183,7 +171,7 @@
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
-                            Your Current Academic Life
+                            {m.home_problemSolution_before_title()}
                         </h3>
                     </div>
                     <ul class="space-y-2 sm:space-y-3">
@@ -209,7 +197,7 @@
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
-                            With Axonotes
+                            {m.home_problemSolution_after_title()}
                         </h3>
                     </div>
                     <ul class="space-y-2 sm:space-y-3">
@@ -235,11 +223,11 @@
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
             >
-                Everything Students Need, Nothing They Don't
+                {m.home_coreValues_title()}
             </h2>
 
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-                {#each coreValues as value (value)}
+                {#each coreValues as value (value.title)}
                     <div class="card p-4 text-center sm:p-6">
                         <div
                             class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg sm:mb-4 sm:h-12 sm:w-12"
@@ -265,15 +253,14 @@
         </div>
     </section>
 
+    <!-- The rest of the component remains the same... -->
     <!-- Interface Preview Placeholder -->
     <section class="mb-16 sm:mb-20 md:mb-24">
         <div class="mx-auto max-w-6xl">
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
             >
-                Beautiful Interface <span class="hidden sm:inline"
-                    >(Coming Soon)</span
-                >
+                {@html m.home_interface_title()}
             </h2>
             <div
                 class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 border-2 border-dashed p-4 text-center sm:p-6 md:aspect-video lg:p-8"
@@ -289,19 +276,12 @@
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-2 text-lg font-bold sm:mb-3 sm:text-xl"
                     >
-                        🎨 <span class="xs:inline hidden"
-                            >[INSERT GORGEOUS DESIGN HERE]</span
-                        >
-                        <span class="xs:hidden">Gorgeous Design Coming</span>
+                        {@html m.home_interface_subtitle()}
                     </h3>
                     <p
                         class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-md text-xs leading-relaxed sm:mb-6 sm:text-sm"
                     >
-                        Our current UI is 90% placeholder text and 10% hope.
-                        <span class="hidden sm:inline"
-                            >Know the difference between serif and sans-serif?
-                            Join us!</span
-                        >
+                        {@html m.home_interface_description()}
                     </p>
                     <div
                         class="flex w-full max-w-xs flex-col gap-2 sm:max-w-none sm:flex-row sm:justify-center sm:gap-3"
@@ -313,7 +293,7 @@
                             class="btn preset-filled-primary-500 inline-flex min-h-[44px] items-center justify-center gap-2 px-4 text-sm text-white sm:px-6 sm:text-base"
                         >
                             <Palette class="h-3 w-3 sm:h-4 sm:w-4" />
-                            Join as Designer
+                            {m.home_interface_cta_primary()}
                         </a>
                         <a
                             href="https://github.com/axonotes/AxonotesCore"
@@ -322,7 +302,7 @@
                             class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex min-h-[44px] items-center justify-center gap-2 px-4 text-sm sm:px-6 sm:text-base"
                         >
                             <Github class="h-3 w-3 sm:h-4 sm:w-4" />
-                            Contribute Code
+                            {m.home_interface_cta_secondary()}
                         </a>
                     </div>
                 </div>
@@ -336,7 +316,7 @@
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
             >
-                Features You'll Accidentally Discover and Love
+                {m.home_features_title()}
             </h2>
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:gap-8">
                 <!-- Time Machine for Your Work -->
@@ -352,19 +332,13 @@
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
-                            ⚡ Unbreakable History
+                            {m.home_features_unbreakableHistory_title()}
                         </h3>
                     </div>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed sm:text-sm"
                     >
-                        Powered by SpaceTimeDB, every database transaction is
-                        saved permanently. Restore any version, see who changed
-                        what, and collaborate without fear. <em
-                            class="hidden sm:inline"
-                            >Oh wow, I can actually undo that disaster from last
-                            week!</em
-                        >
+                        {@html m.home_features_unbreakableHistory_description()}
                     </p>
                 </div>
 
@@ -381,17 +355,13 @@
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
-                            🧠 Smart Flashcards
+                            {m.home_features_smartFlashcards_title()}
                         </h3>
                     </div>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed sm:text-sm"
                     >
-                        Spaced repetition system that'll make Anki jealous.
-                        Currently in our brilliant minds.
-                        <em class="hidden sm:inline"
-                            >Wait, I can make flashcards right here?</em
-                        >
+                        {@html m.home_features_smartFlashcards_description()}
                     </p>
                 </div>
 
@@ -408,18 +378,13 @@
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
-                            🔍 Find Anything, Instantly
+                            {m.home_features_globalSearch_title()}
                         </h3>
                     </div>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed sm:text-sm"
                     >
-                        Search across all your notes, tasks, and even chat
-                        messages in seconds.
-                        <em class="hidden sm:inline"
-                            >I can't believe it found that thing I wrote months
-                            ago!</em
-                        >
+                        {@html m.home_features_globalSearch_description()}
                     </p>
                 </div>
 
@@ -436,17 +401,13 @@
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
-                            🌐 Works Even When WiFi Doesn't
+                            {m.home_features_offline_title()}
                         </h3>
                     </div>
                     <p
                         class="text-surface-700 dark:text-surface-300 text-xs leading-relaxed sm:text-sm"
                     >
-                        Keep working when the internet dies. Everything syncs
-                        perfectly when you're back online.
-                        <em class="hidden sm:inline"
-                            >Wait, I was offline this whole time? Amazing!</em
-                        >
+                        {@html m.home_features_offline_description()}
                     </p>
                 </div>
             </div>
@@ -461,14 +422,12 @@
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold sm:mb-4 sm:text-xl md:text-2xl"
             >
-                Help Us Build What Students Actually Want
+                {m.home_community_title()}
             </h2>
             <p
                 class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-2xl text-sm leading-relaxed sm:mb-6 sm:text-base"
             >
-                We're students building for students. Your feedback directly
-                shapes every feature we create. Join a community that actually
-                listens.
+                {m.home_community_description()}
             </p>
 
             <div
@@ -481,7 +440,7 @@
                     class="btn preset-filled-primary-500 inline-flex min-h-[44px] items-center justify-center gap-2 px-4 text-sm text-white sm:px-6 sm:text-base"
                 >
                     <MessageCircle class="h-3 w-3 sm:h-4 sm:w-4" />
-                    Join Discord Community
+                    {m.home_community_cta_primary()}
                 </a>
                 <a
                     href="https://github.com/axonotes/AxonotesCore"
@@ -490,7 +449,7 @@
                     class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex min-h-[44px] items-center justify-center gap-2 px-4 text-sm sm:px-6 sm:text-base"
                 >
                     <Github class="h-3 w-3 sm:h-4 sm:w-4" />
-                    Star on GitHub
+                    {m.home_community_cta_secondary()}
                 </a>
             </div>
         </div>
@@ -501,13 +460,12 @@
         <h2
             class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold sm:mb-4 sm:text-xl md:text-2xl"
         >
-            Ready to Stop Fighting With Your Tools?
+            {m.home_finalCta_title()}
         </h2>
         <p
             class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-xl text-sm leading-relaxed sm:mb-8 sm:text-base"
         >
-            Be among the first to experience academic software that actually
-            understands how you work and learn.
+            {m.home_finalCta_description()}
         </p>
 
         <a
@@ -516,7 +474,7 @@
             rel="noopener noreferrer"
             class="btn preset-filled-secondary-500 inline-flex min-h-[44px] items-center justify-center gap-2 px-4 text-sm text-white sm:px-6 sm:text-base"
         >
-            Join the Waitlist
+            {m.home_finalCta_button()}
             <ExternalLink class="h-3 w-3 sm:h-4 sm:w-4" />
         </a>
     </section>

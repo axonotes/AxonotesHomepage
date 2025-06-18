@@ -2,18 +2,21 @@
     import {dev} from "$app/environment";
     import {page} from "$app/state";
     import {AlertTriangle, Undo2} from "@lucide/svelte";
+    import * as m from "$lib/paraglide/messages.js";
 </script>
 
 <svelte:head>
     <title>
-        {page.status === 404 ? "Page Not Found" : "Error"} - Axonotes
+        {page.status === 404
+            ? m.error_meta_title_404()
+            : m.error_meta_title_generic()}
     </title>
     <meta charset="utf-8" />
     <meta
         name="description"
         content={page.status === 404
-            ? "The page you were looking for could not be found."
-            : "An unexpected error occurred."}
+            ? m.error_meta_description_404()
+            : m.error_meta_description_generic()}
     />
 </svelte:head>
 
@@ -22,7 +25,7 @@
 >
     <img
         src="/page-not-found.png"
-        alt="An illustration indicating a page could not be found."
+        alt={m.error_image_alt()}
         class="mb-8 h-auto w-full max-w-xs md:max-w-sm"
     />
 
@@ -30,30 +33,28 @@
         <h1
             class="text-primary-600 dark:text-primary-400 mb-4 text-4xl !leading-tight font-bold md:text-5xl lg:text-6xl"
         >
-            Page Not Found
+            {m.error_404_title()}
         </h1>
         <p
             class="text-surface-700 dark:text-surface-300 mx-auto mb-2 max-w-xl text-lg md:text-xl"
         >
-            We've searched these waters high and wide...
+            {m.error_404_text_1()}
         </p>
         <p
             class="text-surface-600 dark:text-surface-400 mx-auto mb-8 max-w-xl md:text-lg"
         >
-            but it seems this page has swam away. Let's go back and try a
-            different path.
+            {m.error_404_text_2()}
         </p>
     {:else}
         <h1
             class="text-warning-600 dark:text-warning-400 mb-4 text-4xl !leading-tight font-bold md:text-5xl lg:text-6xl"
         >
-            Oops! An Error Occurred
+            {m.error_generic_title()}
         </h1>
         <p
             class="text-surface-700 dark:text-surface-300 mx-auto mb-8 max-w-xl text-lg md:text-xl"
         >
-            We're sorry, but something went wrong on our end. Our team has been
-            notified and is looking into it.
+            {m.error_generic_description()}
         </p>
     {/if}
 
@@ -62,7 +63,7 @@
         class="btn dark:preset-tonal-primary preset-filled-primary-500 inline-flex items-center justify-center gap-2 text-base text-white"
     >
         <Undo2 class="h-4 w-4" />
-        Go Back Home
+        {m.error_backHome_button()}
     </a>
 
     {#if dev && page.error?.message}
@@ -73,7 +74,7 @@
                 class="text-surface-800 dark:text-surface-200 mb-2 flex items-center gap-2 text-sm font-bold"
             >
                 <AlertTriangle class="text-warning-500 h-4 w-4" />
-                Developer Log (Visible in 'dev' mode only)
+                {m.error_devLog_title()}
             </p>
             <pre
                 class="text-error-600 dark:text-error-400 font-mono text-xs whitespace-pre-wrap"><code
