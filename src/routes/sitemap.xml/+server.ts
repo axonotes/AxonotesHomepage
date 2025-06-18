@@ -1,15 +1,12 @@
 import type {RequestHandler} from "./$types";
 
+const pages: Record<string, () => Promise<unknown>> = import.meta.glob(
+    "/src/routes/**/+page.svelte"
+);
+
 export const GET: RequestHandler = async ({setHeaders, url}) => {
     // Get the site's origin from the request URL
     const site: string = url.origin;
-
-    // Use Vite's glob import to find all +page.svelte files
-    // The type for import.meta.glob is generally { [key: string]: () => Promise<unknown> }
-    const pages: Record<string, () => Promise<unknown>> = import.meta.glob(
-        "/src/routes/**/+page.svelte"
-    );
-
     const paths: string[] = Object.keys(pages).map((path) => {
         return (
             path
