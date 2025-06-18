@@ -1,0 +1,94 @@
+<svelte:head>
+    <title>Privacy Policy - Axonotes</title>
+    <meta
+        name="description"
+        content="Review the official Privacy Policy for Axonotes. This document details what information we collect, how we use it, our hosting infrastructure, and our commitment to protecting your data."
+    />
+</svelte:head>
+
+# Privacy Policy
+
+**Effective Date:** 17th June 2025
+
+### Summary of How We Handle Your Data
+
+We value your privacy. Here’s the short version:
+-   We don't sell your data. Ever.
+-   Our feedback form is anonymous by default. We only collect personal data (like your email) when you voluntarily provide it.
+-   We use privacy-first, self-hosted Plausible Analytics, which collects **no personal data**.
+-   We minimize data collection to what is essential for security and providing our service.
+-   Our servers are in Germany, protected by strong GDPR laws.
+
+---
+
+### 1. Who is Responsible for Your Data?
+
+This Privacy Policy explains how Axonotes ("we," "us," "our") collects, uses, and safeguards your information when you visit our website `axonotes.ch` (the "Site").
+
+The data controller responsible for your personal data is **Oliver Seifert**.
+
+Full contact details are available in our **[Imprint](/legal/imprint)**.
+
+For any questions specifically related to data protection, you can reach us at **info@axonotes.ch**.
+
+### 2. The Information We Process
+
+We process data in three distinct ways: data you give us, data our server collects for security, and anonymous data for analytics.
+
+#### a) Information You Voluntarily Provide to Us
+
+We collect personal information only when you voluntarily provide it.
+
+-   **Feedback Form (via Google Forms):** Our Site includes a form for you to provide feedback. This form is **anonymous by default**. You have the *option* to provide your email address if you would like us to contact you about your feedback. Please note that this form is provided by Google, and your submission is subject to Google's Privacy Policy.
+-   **Direct Email Contact:** When you contact us at `info@axonotes.ch`, we process your email address and any other information you include in your correspondence to respond to your inquiry.
+
+#### b) Server and Application Logs
+
+To ensure the security, stability, and health of our services, our infrastructure automatically creates temporary logs.
+
+-   Our web server logs technical data for every request, including your IP address, the time of the request, and the page visited. This data is used exclusively for security analysis (e.g., to defend against attacks) and to diagnose technical problems. **These logs are automatically and permanently deleted after 14 days.**
+
+#### c) Anonymous Website Analytics (Plausible)
+
+We use a self-hosted instance of **Plausible Analytics**, a privacy-first analytics tool, to understand our website traffic.
+
+-   **No Personal Data:** Plausible does not use cookies and does not collect any personal data.
+-   **Anonymous & Aggregated:** All data, such as the pages visited and the visitor's country, is collected in an aggregated, anonymous form. No information is ever stored that could be used to identify an individual visitor.
+
+### 3. Hosting, Data Location, and Security
+
+Our website and all its data are hosted on a virtual private server provided by **Contabo GmbH**, located in **Germany**. We manage this server infrastructure ourselves using **Coolify**.
+
+Your data is protected by the strong privacy laws of the European Union (GDPR). We have a formal **Data Processing Agreement (DPA)** in place with Contabo GmbH, which legally obligates them to protect your data to GDPR standards.
+
+### 4. Links to Other Websites and Services
+
+Our Site contains links to other websites and services that are not operated by us, such as our **Discord** community server, our **GitHub** repository, and **Google Forms**. If you click on a third-party link, you will be directed to that third party's site.
+
+We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services. We strongly advise you to review the privacy policy of every site you visit.
+
+### 5. Your Data Protection Rights
+
+As we are based in Switzerland and process data in the EU, you are protected by both the Swiss Federal Act on Data Protection (FADP) and the GDPR. You have the following rights regarding your personal data:
+
+-   The right to **access** a copy of the personal information we hold about you.
+-   The right to **rectification** to have any inaccurate information corrected.
+-   The right to **erasure** to have your personal data deleted.
+-   The right to **restrict processing** of your personal data.
+-   The right to **object** to the processing of your data.
+
+To exercise any of these rights, please contact us at **info@axonotes.ch**.
+
+### 6. Our Policy on Children's Privacy
+
+Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children under 16. If we become aware that we have collected personal information from a child, we will take steps to delete such information from our systems immediately.
+
+### 7. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Effective Date" at the top.
+
+### 8. Contact Us
+
+If you have any questions or concerns about this Privacy Policy, please do not hesitate to contact us.
+
+**Email:** info@axonotes.ch

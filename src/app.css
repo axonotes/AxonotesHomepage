@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import "@skeletonlabs/skeleton";
+@import "@skeletonlabs/skeleton/optional/presets";
+@import "../axonotes-theme.css";
+
+@plugin '@tailwindcss/forms';
+
+@config "../tailwind.config.js";
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+@layer base {
+    /* --- Custom Checkbox Styling for Prose --- */
+    [data-theme="axonotes-theme"] .prose ul > li > input[type="checkbox"] {
+        /* Reset default appearance */
+        appearance: none;
+        -webkit-appearance: none;
+
+        /* Size and Shape */
+        width: 1.15em;
+        height: 1.15em;
+        border-radius: 0.2rem;
+        margin-top: -0.2em;
+        flex-shrink: 0;
+
+        /* Light Mode Styling */
+        background-color: var(--color-surface-200);
+        border: 2px solid var(--color-surface-400);
+    }
+
+    /* --- Checked State --- */
+    [data-theme="axonotes-theme"]
+        .prose
+        ul
+        > li
+        > input[type="checkbox"]:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        /* Light Mode Checked Colors */
+        opacity: 1;
+        background-color: var(--color-primary-500);
+        border-color: var(--color-primary-500);
+    }
+
+    /* --- Dark Mode Overrides --- */
+    [data-theme="axonotes-theme"][data-mode="dark"]
+        .prose
+        ul
+        > li
+        > input[type="checkbox"] {
+        /* Dark Mode Unchecked */
+        background-color: var(--color-surface-800);
+        border-color: var(--color-surface-600);
+    }
+
+    [data-theme="axonotes-theme"][data-mode="dark"]
+        .prose
+        ul
+        > li
+        > input[type="checkbox"]:checked {
+        /* Dark Mode Checked */
+        opacity: 1;
+        background-color: var(--color-primary-500);
+        border-color: var(--color-primary-500);
+    }
+}
