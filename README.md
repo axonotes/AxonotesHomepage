@@ -117,12 +117,12 @@ Please read our `CONTRIBUTING.md` (once created) for more detailed guidelines.
 
 Follow the overall Axonotes project for updates, announcements, and community discussion:
 
-*   **Website:** [axonotes.ch](https://axonotes.ch) (Coming Soon!)
-*   **Discord Server:** [https://discord.gg/myBMaaDeQu](https://discord.gg/myBMaaDeQu)
-*   **X (Twitter):** [@axonotes](https://twitter.com/axonotes)
-*   **YouTube:** [@axonotes](https://youtube.com/@axonotes)
-*   **Reddit:** [r/axonotes](https://www.reddit.com/r/Axonotes/)
-*   **BlueSky:** [@axonotes.bsky.social](https://bsky.app/profile/axonotes.bsky.social)
+- **Website:** [axonotes.ch](https://axonotes.ch) (Coming Soon!)
+- **Discord Server:** [https://discord.gg/myBMaaDeQu](https://discord.gg/myBMaaDeQu)
+- **X (Twitter):** [@axonotes](https://twitter.com/axonotes)
+- **YouTube:** [@axonotes](https://youtube.com/@axonotes)
+- **Reddit:** [r/axonotes](https://www.reddit.com/r/Axonotes/)
+- **BlueSky:** [@axonotes.bsky.social](https://bsky.app/profile/axonotes.bsky.social)
 
 ## 📜 License
 

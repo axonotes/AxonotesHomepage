@@ -18,7 +18,7 @@
                 "Core note-taking & organization tools",
                 "Learning features (flashcards, exercises)",
                 "Offline access across all devices",
-                "End-to-end encryption",
+                "End-to-end security",
             ],
             cta: {
                 text: "Coming Soon",

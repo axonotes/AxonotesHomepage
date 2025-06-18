@@ -269,7 +269,7 @@
                 <p
                     class="text-surface-700 dark:text-surface-300 text-xs md:text-sm"
                 >
-                    End-to-end encryption and Swiss data protection standards.
+                    End-to-end security and Swiss data protection standards.
                     Your academic work stays private and secure.
                 </p>
             </div>
