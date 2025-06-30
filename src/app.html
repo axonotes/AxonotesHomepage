@@ -1,0 +1,69 @@
+<!doctype html>
+<html
+    lang="%paraglide.lang%"
+    dir="%paraglide.textDirection%"
+    data-theme="axonotes-theme"
+>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Default meta (will be overridden by page-specific meta) -->
+        <meta name="description" content="Stop juggling apps. Start studying smarter. One platform for notes, collaboration, and learning - built by students who understand your struggles." />
+        <title>Axonotes</title>
+
+        <!-- Favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="%sveltekit.assets%/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="%sveltekit.assets%/favicon.svg"
+        />
+        <link rel="shortcut icon" href="%sveltekit.assets%/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="%sveltekit.assets%/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="Axonotes" />
+        <link rel="manifest" href="%sveltekit.assets%/site.webmanifest" />
+
+        <!-- Theme and colors -->
+        <meta
+            name="theme-color"
+            content="#f9fafd"
+            media="(prefers-color-scheme: light)"
+        />
+        <meta
+            name="theme-color"
+            content="#1f1f22"
+            media="(prefers-color-scheme: dark)"
+        />
+        <meta name="color-scheme" content="light dark" />
+
+        <!-- Performance optimizations -->
+        <link
+            rel="preconnect"
+            href="https://plausible.axonotes.ch"
+            crossorigin
+        />
+        <link rel="dns-prefetch" href="//discord.gg" />
+        <link rel="dns-prefetch" href="//github.com" />
+
+        <!-- Security -->
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        %sveltekit.head%
+    </head>
+    <body
+        data-sveltekit-preload-data="hover"
+        class="bg-surface-50 dark:bg-surface-950"
+    >
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
+</html>
