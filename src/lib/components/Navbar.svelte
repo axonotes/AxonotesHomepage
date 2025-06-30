@@ -52,9 +52,9 @@
                         <li>
                             <a
                                 href={link.href}
-                                class="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg px-3 py-2 text-sm font-medium transition-colors
+                                class="text-surface-800 dark:text-surface-200 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg px-3 py-2 text-sm font-medium transition-colors
                                        {isCurrentPage(link.href)
-                                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/50'
+                                    ? 'bg-primary-200/80 dark:bg-primary-800/80'
                                     : ''}"
                                 aria-current={isCurrentPage(link.href)
                                     ? "page"
