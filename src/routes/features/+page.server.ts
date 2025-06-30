@@ -134,12 +134,18 @@ function parseBody(body: string | null): {
         return {names, descriptions};
     }
 
-    const commentRegex = /<!--\s*([a-z_]+):\s*(.*?)\s*-->/g;
+    const commentRegex =
+        /<!--\s{0,10}([a-z_]{1,20}):\s{0,10}(.{0,500}?)\s{0,10}-->/g;
     let match;
 
     while ((match = commentRegex.exec(body)) !== null) {
         const key = match[1]; // e.g., "name", "description", "name_de"
         const value = match[2].trim();
+
+        // Only allows 2 lettered language codes.
+        if (!/^(name|description)(_[a-z]{2})?$/.test(key)) {
+            continue;
+        }
 
         const [type, lang = "en"] = key.split("_"); // "name_de" -> ["name", "de"]; "name" -> ["name"]
 

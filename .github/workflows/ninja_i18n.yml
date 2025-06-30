@@ -15,7 +15,6 @@ jobs:
 
         steps:
             - name: Run Ninja i18n
-              # @main ensures that the latest version of the action is used
-              uses: opral/ninja-i18n-action@main
+              uses: opral/ninja-i18n-action@0.3.20
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
