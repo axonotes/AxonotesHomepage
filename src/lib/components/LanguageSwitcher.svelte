@@ -1,4 +1,3 @@
-<!-- src/lib/components/LanguageSwitcher.svelte -->
 <script lang="ts">
     import {Popover} from "@skeletonlabs/skeleton-svelte";
     import {page} from "$app/state";
@@ -9,13 +8,11 @@
     import {i18n} from "$lib/i18n.js";
     import {Globe} from "@lucide/svelte";
 
-    let open = $state(true);
+    let open = $state(false);
 
-    // Sprachdetails mit nativen Namen und Flaggen
     const languageDetails: Record<string, {name: string; short: string}> = {
         en: {name: "English", short: "en"},
         de: {name: "Deutsch", short: "de"},
-        // Weitere Sprachen hier hinzufügen
     };
 
     function closePopover() {
@@ -35,7 +32,7 @@
     {/snippet}
 
     {#snippet content()}
-        <div class="card min-w-36 p-2 shadow-xl bg-surface-100-900">
+        <div class="card bg-surface-100-900 min-w-36 p-2 shadow-xl">
             <nav class="list-nav">
                 <ul class="space-y-1">
                     {#each availableLanguageTags as lang}
@@ -48,7 +45,7 @@
                             <a
                                 href={i18n.route(page.url.pathname)}
                                 hreflang={lang}
-                                class="flex justify-between items-center px-2 py-1 rounded-md text-surface-900-100"
+                                class="text-surface-900-100 flex items-center justify-between rounded-md px-2 py-1"
                                 class:preset-filled-primary-300-700={isActive}
                                 onclick={closePopover}
                                 rel="alternate"
@@ -57,7 +54,9 @@
                                 <span class="flex-auto text-start"
                                     >{details.name}</span
                                 >
-                                <span class="font-light opacity-70">{details.short}</span>
+                                <span class="font-light opacity-70"
+                                    >{details.short}</span
+                                >
                             </a>
                         </li>
                     {/each}

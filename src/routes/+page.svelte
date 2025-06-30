@@ -167,7 +167,6 @@
                     class="card border-warning-200 dark:border-warning-800 bg-warning-50 dark:bg-warning-950/20 border p-4 sm:p-6"
                 >
                     <div class="mb-3 flex items-center gap-2 sm:mb-4 sm:gap-3">
-                        <span class="text-xl sm:text-2xl">😰</span>
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
@@ -180,7 +179,7 @@
                                 class="text-surface-800 dark:text-surface-200 flex items-start gap-2 text-xs leading-relaxed sm:text-sm"
                             >
                                 <span
-                                    class="text-warning-500 mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-current"
+                                    class="text-warning-500 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-current"
                                 ></span>
                                 <span>{item}</span>
                             </li>
@@ -193,7 +192,6 @@
                     class="card border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-950/20 border p-4 sm:p-6"
                 >
                     <div class="mb-3 flex items-center gap-2 sm:mb-4 sm:gap-3">
-                        <span class="text-xl sm:text-2xl">✨</span>
                         <h3
                             class="text-surface-900 dark:text-surface-100 text-sm font-semibold sm:text-base"
                         >
@@ -206,7 +204,7 @@
                                 class="text-surface-800 dark:text-surface-200 flex items-start gap-2 text-xs leading-relaxed sm:text-sm"
                             >
                                 <span
-                                    class="text-success-500 mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-current"
+                                    class="text-success-500 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-current"
                                 ></span>
                                 <span>{item}</span>
                             </li>
