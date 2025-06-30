@@ -26,7 +26,7 @@
     <div class="bg-surface-50 dark:bg-surface-950 flex min-h-screen flex-col">
         <Navbar />
 
-        <main class="flex-1 pb-20">
+        <main id="main-content" class="flex-1 pb-20">
             {@render children()}
         </main>
 
@@ -42,7 +42,7 @@
                         class="text-primary-600 dark:text-primary-400 flex items-center gap-2 text-sm font-medium"
                     >
                         <img
-                            src="/favicon.png"
+                            src="/favicon.svg"
                             alt={m.footer_logo_alt()}
                             class="h-5 w-5"
                         />

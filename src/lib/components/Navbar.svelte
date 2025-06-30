@@ -37,7 +37,7 @@
                 class="text-primary-600 dark:text-primary-400 flex items-center gap-3 text-xl font-bold transition-opacity hover:opacity-80"
             >
                 <img
-                    src="/favicon.png"
+                    src="/favicon.svg"
                     alt={m.nav_logo_alt()}
                     class="h-8 w-8"
                     loading="eager"
@@ -106,7 +106,7 @@
                                     class="text-primary-600 dark:text-primary-400 flex items-center gap-2 text-lg font-bold"
                                 >
                                     <img
-                                        src="/favicon.png"
+                                        src="/favicon.svg"
                                         alt={m.nav_logo_alt()}
                                         class="h-6 w-6"
                                     />

@@ -24,7 +24,7 @@
                     />
                     <div class="absolute flex w-full justify-center">
                         <img
-                            src="/favicon.png"
+                            src="/favicon.svg"
                             alt="surprise"
                             class="h-3 opacity-0 duration-200 group-hover:opacity-100 md:h-4"
                         />
