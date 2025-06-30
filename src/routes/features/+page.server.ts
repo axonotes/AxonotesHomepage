@@ -26,8 +26,8 @@ const cache = new NodeCache({
 });
 
 interface Feature {
-    name: string;
-    description: string | null;
+    name: {[lang: string]: string};
+    description: {[lang: string]: string | null};
     upvotes: number;
     url: string;
     // id is added for Svelte's #each key, even though it's not used
@@ -115,30 +115,42 @@ function parseLinkHeader(header: string | null): {[key: string]: string} {
     return links;
 }
 
+/**
+ * Parses the body of a GitHub issue to extract multilingual names and descriptions.
+ * They are expected to be in HTML comments, e.g.:
+ * <!-- name: English Name -->
+ * <!-- description: English description. -->
+ * <!-- name_de: German Name -->
+ * <!-- description_de: German description. -->
+ */
 function parseBody(body: string | null): {
-    name: string | null;
-    description: string | null;
+    names: {[lang: string]: string};
+    descriptions: {[lang: string]: string | null};
 } {
+    const names: {[lang: string]: string} = {};
+    const descriptions: {[lang: string]: string | null} = {};
+
     if (!body) {
-        return {
-            name: null,
-            description: null,
-        };
+        return {names, descriptions};
     }
 
-    /*
-     * name and description are hidden in html comments.
-     * the first comment is the name, the second is the description.
-     * */
+    const commentRegex = /<!--\s*([a-z_]+):\s*(.*?)\s*-->/g;
+    let match;
 
-    const nameMatch = body.match(/<!--\s*name:\s*(.*?)\s*-->/);
-    const descriptionMatch = body.match(/<!--\s*description:\s*(.*?)\s*-->/);
-    const name = nameMatch ? nameMatch[1] : null;
-    const description = descriptionMatch ? descriptionMatch[1] : null;
-    return {
-        name,
-        description,
-    };
+    while ((match = commentRegex.exec(body)) !== null) {
+        const key = match[1]; // e.g., "name", "description", "name_de"
+        const value = match[2].trim();
+
+        const [type, lang = "en"] = key.split("_"); // "name_de" -> ["name", "de"]; "name" -> ["name"]
+
+        if (type === "name") {
+            names[lang] = value;
+        } else if (type === "description") {
+            descriptions[lang] = value;
+        }
+    }
+
+    return {names, descriptions};
 }
 
 async function fetchFeatures(
@@ -187,17 +199,15 @@ async function fetchFeatures(
                         errorMessage += ` See: ${errorBody.documentation_url}`;
                     }
                 } catch {
-                    // The catch above should be empty as we don't care about the exception being caught
                     const textError = await response.text();
                     errorMessage += ` Response: ${textError}`;
                 }
                 console.error(`[${new Date().toISOString()}] ${errorMessage}`);
-                // Return partial data if some pages were fetched, or error if the first page failed
                 if (allIssues.length > 0) {
                     console.warn(
                         `[${new Date().toISOString()}] Returning partially fetched data due to API error on a subsequent page.`
                     );
-                    break; // Exit loop and process what we have
+                    break;
                 }
                 return {
                     features: [],
@@ -237,16 +247,30 @@ async function fetchFeatures(
 
             const linkHeader = response.headers.get("Link");
             const links = parseLinkHeader(linkHeader);
-            nextPageUrl = links.next; // If 'next' link doesn't exist, this will be undefined and loop will terminate
+            nextPageUrl = links.next;
         }
 
-        const features: Feature[] = allIssues.map((issue) => ({
-            id: issue.id,
-            name: parseBody(issue.body).name || issue.title,
-            description: parseBody(issue.body).description,
-            url: issue.html_url,
-            upvotes: issue.reactions ? issue.reactions["+1"] : 0,
-        }));
+        const features: Feature[] = allIssues.map((issue) => {
+            const {names, descriptions} = parseBody(issue.body);
+
+            // Use issue title as a fallback for the default language ('en') if not parsed
+            if (!names.en) {
+                names.en = issue.title;
+            }
+
+            // Ensure a default empty description object for English if none exists
+            if (descriptions.en === undefined) {
+                descriptions.en = null;
+            }
+
+            return {
+                id: issue.id,
+                name: names,
+                description: descriptions,
+                url: issue.html_url,
+                upvotes: issue.reactions ? issue.reactions["+1"] : 0,
+            };
+        });
 
         features.sort((a, b) => b.upvotes - a.upvotes);
 

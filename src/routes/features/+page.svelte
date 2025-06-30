@@ -1,6 +1,7 @@
 <script lang="ts">
     import type {PageData} from "./$types";
     import {onMount} from "svelte";
+    import {languageTag} from "$lib/paraglide/runtime.js";
     import {
         ExternalLink,
         Lightbulb,
@@ -98,7 +99,9 @@
                             rel="noopener noreferrer"
                             class="card group from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 border bg-gradient-to-br p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg md:p-6"
                             aria-label={m.features_priority_card_ariaLabel({
-                                featureName: feature.name,
+                                featureName:
+                                    feature.name[languageTag()] ||
+                                    feature.name.en,
                             })}
                         >
                             <div
@@ -107,7 +110,8 @@
                                 <h3
                                     class="text-surface-900 dark:text-surface-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 text-sm font-semibold transition-colors md:text-base"
                                 >
-                                    {feature.name}
+                                    {feature.name[languageTag()] ||
+                                        feature.name.en}
                                 </h3>
                                 {#if feature.upvotes !== undefined && feature.upvotes !== null}
                                     <div
@@ -123,7 +127,11 @@
                             <p
                                 class="text-surface-700 dark:text-surface-300 mb-3 text-xs leading-relaxed md:mb-4 md:text-sm"
                             >
-                                {truncateDescription(feature.description, 2)}
+                                {truncateDescription(
+                                    feature.description[languageTag()] ||
+                                        feature.description.en,
+                                    2
+                                )}
                             </p>
                             <div
                                 class="text-primary-600 dark:text-primary-400 flex items-center gap-1 text-xs font-medium md:text-sm"
@@ -159,7 +167,8 @@
                         rel="noopener noreferrer"
                         class="card group border-surface-200 dark:border-surface-700 hover:border-primary-500/50 dark:hover:border-primary-500/70 p-3 transition-all duration-200 hover:shadow-md md:p-4"
                         aria-label={m.features_all_card_ariaLabel({
-                            featureName: feature.name,
+                            featureName:
+                                feature.name[languageTag()] || feature.name.en,
                         })}
                     >
                         <div
@@ -168,7 +177,7 @@
                             <h3
                                 class="text-surface-900 dark:text-surface-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 text-sm font-semibold transition-colors md:text-base"
                             >
-                                {feature.name}
+                                {feature.name[languageTag()] || feature.name.en}
                             </h3>
                             {#if feature.upvotes !== undefined && feature.upvotes !== null && feature.upvotes > 0}
                                 <div
@@ -184,7 +193,11 @@
                         <p
                             class="text-surface-600 dark:text-surface-400 mb-2 text-xs leading-relaxed md:mb-3 md:text-sm"
                         >
-                            {truncateDescription(feature.description, 1)}
+                            {truncateDescription(
+                                feature.description[languageTag()] ||
+                                    feature.description.en,
+                                1
+                            )}
                         </p>
                         <div
                             class="text-primary-500 group-hover:text-primary-600 dark:group-hover:text-primary-400 flex items-center gap-1 text-xs font-medium"
