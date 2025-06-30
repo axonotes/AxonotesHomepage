@@ -73,7 +73,7 @@
 
 <div class="container mx-auto px-4 py-6 md:px-6 md:py-8">
     <!-- Hero Section -->
-    <header class="mb-12 text-center md:mb-16 lg:mb-20">
+    <header class="mb-16 sm:mb-24 md:mb-32 text-center">
         <h1
             class="text-primary-600 dark:text-primary-400 mb-3 text-2xl !leading-tight font-bold sm:text-3xl md:text-4xl lg:text-5xl"
         >
@@ -102,9 +102,9 @@
     </header>
 
     <!-- Main Connection Paths -->
-    <section class="mb-16 md:mb-20 lg:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"
         >
             {m.community_connect_title()}
         </h2>
@@ -113,90 +113,102 @@
             <div
                 class="card border-primary-200 dark:border-primary-700 group hover:border-primary-500 border-2 p-6 transition-all md:p-8"
             >
-                <div class="mb-4 flex items-center gap-3 md:mb-6 md:gap-4">
-                    <div
-                        class="bg-primary-100 dark:bg-primary-900/30 flex h-12 w-12 items-center justify-center rounded-xl md:h-16 md:w-16"
-                    >
-                        <MessageCircle
-                            class="text-primary-600 dark:text-primary-400 h-6 w-6 md:h-8 md:w-8"
-                        />
-                    </div>
+                <div class="flex h-full flex-col justify-between">
                     <div>
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 text-sm font-bold md:text-base"
+                        <div
+                            class="mb-4 flex items-center gap-3 md:mb-6 md:gap-4"
                         >
-                            {m.community_discord_title()}
-                        </h3>
+                            <div
+                                class="bg-primary-100 dark:bg-primary-900/30 flex h-12 w-12 items-center justify-center rounded-xl md:h-16 md:w-16"
+                            >
+                                <MessageCircle
+                                    class="text-primary-600 dark:text-primary-400 h-6 w-6 md:h-8 md:w-8"
+                                />
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-surface-900 dark:text-surface-100 text-sm font-bold md:text-base"
+                                >
+                                    {m.community_discord_title()}
+                                </h3>
+                                <p
+                                    class="text-surface-600 dark:text-surface-400 text-xs md:text-sm"
+                                >
+                                    {m.community_discord_subtitle()}
+                                </p>
+                            </div>
+                        </div>
                         <p
-                            class="text-surface-600 dark:text-surface-400 text-xs md:text-sm"
+                            class="text-surface-700 dark:text-surface-300 mb-4 text-sm leading-relaxed md:mb-6 md:text-base"
                         >
-                            {m.community_discord_subtitle()}
+                            {m.community_discord_description()}
                         </p>
                     </div>
+                    <a
+                        href="https://discord.gg/myBMaaDeQu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn dark:preset-tonal-primary preset-filled-primary-500 inline-flex w-full items-center justify-center gap-2 text-sm text-white md:text-base"
+                    >
+                        {m.community_discord_cta()}
+                        <ExternalLink class="h-3 w-3 md:h-4 md:w-4" />
+                    </a>
                 </div>
-                <p
-                    class="text-surface-700 dark:text-surface-300 mb-4 text-sm leading-relaxed md:mb-6 md:text-base"
-                >
-                    {m.community_discord_description()}
-                </p>
-                <a
-                    href="https://discord.gg/myBMaaDeQu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn dark:preset-tonal-primary preset-filled-primary-500 inline-flex w-full items-center justify-center gap-2 text-sm text-white md:text-base"
-                >
-                    {m.community_discord_cta()}
-                    <ExternalLink class="h-3 w-3 md:h-4 md:w-4" />
-                </a>
             </div>
 
             <!-- GitHub Community -->
             <div
                 class="card border-surface-200 dark:border-surface-700 group hover:border-surface-400 border-2 p-6 transition-all md:p-8"
             >
-                <div class="mb-4 flex items-center gap-3 md:mb-6 md:gap-4">
-                    <div
-                        class="bg-surface-100 dark:bg-surface-800 flex h-12 w-12 items-center justify-center rounded-xl md:h-16 md:w-16"
-                    >
-                        <Github
-                            class="text-surface-700 dark:text-surface-300 h-6 w-6 md:h-8 md:w-8"
-                        />
-                    </div>
+                <div class="flex h-full flex-col justify-between">
                     <div>
-                        <h3
-                            class="text-surface-900 dark:text-surface-100 text-sm font-bold md:text-base"
+                        <div
+                            class="mb-4 flex items-center gap-3 md:mb-6 md:gap-4"
                         >
-                            {m.community_github_title()}
-                        </h3>
+                            <div
+                                class="bg-surface-100 dark:bg-surface-800 flex h-12 w-12 items-center justify-center rounded-xl md:h-16 md:w-16"
+                            >
+                                <Github
+                                    class="text-surface-700 dark:text-surface-300 h-6 w-6 md:h-8 md:w-8"
+                                />
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-surface-900 dark:text-surface-100 text-sm font-bold md:text-base"
+                                >
+                                    {m.community_github_title()}
+                                </h3>
+                                <p
+                                    class="text-surface-600 dark:text-surface-400 text-xs md:text-sm"
+                                >
+                                    {m.community_github_subtitle()}
+                                </p>
+                            </div>
+                        </div>
                         <p
-                            class="text-surface-600 dark:text-surface-400 text-xs md:text-sm"
+                            class="text-surface-700 dark:text-surface-300 mb-4 text-sm leading-relaxed md:mb-6 md:text-base"
                         >
-                            {m.community_github_subtitle()}
+                            {m.community_github_description()}
                         </p>
                     </div>
+                    <a
+                        href="https://github.com/axonotes/AxonotesCore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex w-full items-center justify-center gap-2 text-sm md:text-base"
+                    >
+                        {m.community_github_cta()}
+                        <ExternalLink class="h-3 w-3 md:h-4 md:w-4" />
+                    </a>
                 </div>
-                <p
-                    class="text-surface-700 dark:text-surface-300 mb-4 text-sm leading-relaxed md:mb-6 md:text-base"
-                >
-                    {m.community_github_description()}
-                </p>
-                <a
-                    href="https://github.com/axonotes/AxonotesCore"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn dark:preset-outlined-primary-200-800 preset-outlined-primary-400-600 inline-flex w-full items-center justify-center gap-2 text-sm md:text-base"
-                >
-                    {m.community_github_cta()}
-                    <ExternalLink class="h-3 w-3 md:h-4 md:w-4" />
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Ways to Contribute -->
-    <section class="mb-16 md:mb-20 lg:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"
         >
             {m.community_howToHelp_title()}
         </h2>
@@ -204,16 +216,14 @@
             class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4"
         >
             {#each waysToHelp as item (item.title)}
+                {@const Icon = item.icon}
                 <div class="card p-4 text-center md:p-6">
                     <div
                         class="{item.colorClass} mx-auto mb-3 flex h-10 w-10
                         items-center justify-center rounded-lg md:mb-4 md:h-12
                         md:w-12"
                     >
-                        <svelte:component
-                            this={item.icon}
-                            class="{item.iconColorClass} h-5 w-5 md:h-6 md:w-6"
-                        />
+                        <Icon class="{item.iconColorClass} h-5 w-5 md:h-6 md:w-6"/>
                     </div>
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
@@ -232,10 +242,10 @@
 
     <!-- Community Guidelines -->
     <section
-        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 mb-12 bg-gradient-to-br p-6 md:mb-16 md:p-8"
+        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 bg-gradient-to-br p-6 md:p-12 mb-16 sm:mb-32 md:mb-48"
     >
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-4 text-center text-lg font-bold md:mb-6 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-4 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"
         >
             {m.community_guidelines_title()}
         </h2>
@@ -268,14 +278,14 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="text-center">
+    <section class="mt-12 text-center md:mt-16 lg:mt-20">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
             {m.community_finalCta_title()}
         </h2>
         <p
-            class="text-surface-600 dark:text-surface-400 mx-auto mb-6 max-w-xl text-sm md:mb-8 md:text-base"
+            class="text-surface-600 dark:text-surface-400 mx-auto mb-6 max-w-xl text-sm md:mb-12 md:text-base"
         >
             {m.community_finalCta_description()}
         </p>

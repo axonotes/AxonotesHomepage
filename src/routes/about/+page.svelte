@@ -135,7 +135,7 @@
 
 <div class="container mx-auto px-4 py-6 md:py-8">
     <!-- Mission Hero -->
-    <header class="mb-12 text-center md:mb-16 lg:mb-20">
+    <header class="mb-16 sm:mb-24 md:mb-32 text-center">
         <h1
             class="text-primary-600 dark:text-primary-400 mb-4 text-2xl !leading-tight font-bold md:mb-6 md:text-4xl lg:text-5xl"
         >
@@ -149,7 +149,7 @@
     </header>
 
     <!-- Our Story -->
-    <section class="mb-16 md:mb-20 lg:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div class="mx-auto max-w-4xl">
             <h2
                 class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
@@ -177,21 +177,21 @@
     </section>
 
     <!-- Team Section -->
-    <section class="mb-16 md:mb-20 lg:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"
         >
             {m.about_team_title()}
         </h2>
         <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 md:gap-8">
             {#each teamMembers as member}
+                {@const Icon = member.icon}
                 <div class="card p-4 md:p-6">
                     <div class="mb-4 flex items-start gap-3 md:mb-6 md:gap-4">
                         <div
                             class="{member.bgClass} flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full md:h-16 md:w-16"
                         >
-                            <svelte:component
-                                this={member.icon}
+                            <Icon
                                 class={member.iconClass}
                             />
                         </div>
@@ -260,20 +260,20 @@
     </section>
 
     <!-- Our Approach -->
-    <section class="mb-16 md:mb-20 lg:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"
         >
             {m.about_approach_title()}
         </h2>
         <div class="grid gap-4 md:grid-cols-3 md:gap-6">
             {#each approachItems as item}
+                {@const Icon = item.icon}
                 <div class="card p-4 text-center md:p-6">
                     <div
                         class="{item.bgClass} mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
                     >
-                        <svelte:component
-                            this={item.icon}
+                        <Icon
                             class={item.iconClass}
                         />
                     </div>
@@ -294,7 +294,7 @@
 
     <!-- Development Status -->
     <section
-        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 mb-12 border bg-gradient-to-br p-6 md:mb-16 md:p-8 lg:p-12"
+        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 border bg-gradient-to-br p-6 md:p-8 lg:p-12 mb-16 sm:mb-32 md:mb-48"
     >
         <div class="mx-auto max-w-4xl text-center">
             <h2
@@ -368,7 +368,7 @@
     </section>
 
     <!-- Technical Foundation -->
-    <section class="mb-16 md:mb-20 lg:mb-24">
+    <section class="mb-16 sm:mb-24 md:mb-32">
         <h2
             class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
@@ -378,12 +378,12 @@
             <div class="card p-6 md:p-8">
                 <div class="grid gap-4 md:grid-cols-2 md:gap-6">
                     {#each techFoundationItems as item}
+                        {@const Icon = item.icon}
                         <div class="text-center">
                             <div
                                 class="{item.bgClass} mx-auto mb-3 flex h-8 w-8 items-center justify-center rounded-lg md:h-10 md:w-10"
                             >
-                                <svelte:component
-                                    this={item.icon}
+                                <Icon
                                     class={item.iconClass}
                                 />
                             </div>
@@ -405,7 +405,7 @@
     </section>
 
     <!-- Core Values -->
-    <section class="mb-16 md:mb-20 lg:mb-24">
+    <section class="mb-16 sm:mb-24 md:mb-32">
         <h2
             class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
@@ -413,12 +413,12 @@
         </h2>
         <div class="grid gap-4 md:grid-cols-3 md:gap-6">
             {#each coreValues as value}
+                {@const Icon = value.icon}
                 <div class="card p-4 text-center md:p-6">
                     <div
                         class="{value.bgClass} mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
                     >
-                        <svelte:component
-                            this={value.icon}
+                        <Icon
                             class={value.iconClass}
                         />
                     </div>
@@ -438,9 +438,9 @@
     </section>
 
     <!-- Swiss Excellence -->
-    <section class="mb-12 text-center md:mb-16">
+    <section class="mb-12 text-center md:mb-24">
         <div
-            class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium md:mb-6 md:px-4 md:py-2 md:text-sm"
+            class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium md:mb-16 md:px-4 md:py-2 md:text-sm"
         >
             <button
                 onclick={() => (heartClicked = true)}
@@ -474,7 +474,7 @@
             {m.about_cta_title()}
         </h2>
         <p
-            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-xl text-sm md:mb-8 md:text-base"
+            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-xl text-sm md:mb-16 md:text-base"
         >
             {m.about_cta_description()}
         </p>

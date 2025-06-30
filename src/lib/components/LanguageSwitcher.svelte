@@ -45,7 +45,7 @@
                             <a
                                 href={i18n.route(page.url.pathname)}
                                 hreflang={lang}
-                                class="text-surface-900-100 flex items-center justify-between rounded-md px-2 py-1"
+                                class="text-surface-900-100 flex items-center justify-between rounded-md px-2 py-1 hover:bg-primary-100-900 duration-200"
                                 class:preset-filled-primary-300-700={isActive}
                                 onclick={closePopover}
                                 rel="alternate"

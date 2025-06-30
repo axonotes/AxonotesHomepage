@@ -63,7 +63,7 @@
 
 <div class="container mx-auto px-4 py-6 sm:py-8 lg:py-12">
     <!-- Hero Section -->
-    <section class="mb-16 sm:mb-20 md:mb-28">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div class="mx-auto max-w-4xl text-center">
             <!-- Main Headline -->
             <h1
@@ -117,7 +117,7 @@
     </section>
 
     <!-- Product Demo Placeholder -->
-    <section class="mb-16 sm:mb-20 md:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div class="mx-auto max-w-4xl">
             <div
                 class="card border-surface-300 dark:border-surface-700 bg-surface-50 dark:bg-surface-900/50 border-2 border-dashed p-6 text-center sm:p-8 lg:p-12"
@@ -153,10 +153,10 @@
     </section>
 
     <!-- Problem/Solution Section -->
-    <section class="mb-16 sm:mb-20 md:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div class="mx-auto max-w-6xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-16 sm:px-0 sm:text-xl md:text-2xl"
             >
                 {m.home_problemSolution_title()}
             </h2>
@@ -216,24 +216,22 @@
     </section>
 
     <!-- Core Value Propositions -->
-    <section class="mb-16 sm:mb-20 md:mb-24">
-        <div class="mx-auto max-w-4xl">
+    <section class="mb-16 sm:mb-32 md:mb-48">
+        <div class="mx-auto max-w-6xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-16 sm:px-0 sm:text-xl md:text-2xl"
             >
                 {m.home_coreValues_title()}
             </h2>
 
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
                 {#each coreValues as value (value.title)}
+                    {@const Icon = value.icon}
                     <div class="card p-4 text-center sm:p-6">
                         <div
                             class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg sm:mb-4 sm:h-12 sm:w-12"
                         >
-                            <svelte:component
-                                this={value.icon}
-                                class="text-primary-600 dark:text-primary-400 h-5 w-5 sm:h-6 sm:w-6"
-                            />
+                            <Icon class="text-primary-600 dark:text-primary-400 h-5 w-5 sm:h-6 sm:w-6"/>
                         </div>
                         <h3
                             class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold sm:text-base"
@@ -251,12 +249,11 @@
         </div>
     </section>
 
-    <!-- The rest of the component remains the same... -->
     <!-- Interface Preview Placeholder -->
-    <section class="mb-16 sm:mb-20 md:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div class="mx-auto max-w-6xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-16 sm:px-0 sm:text-xl md:text-2xl"
             >
                 {@html m.home_interface_title()}
             </h2>
@@ -277,7 +274,7 @@
                         {@html m.home_interface_subtitle()}
                     </h3>
                     <p
-                        class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-md text-xs leading-relaxed sm:mb-6 sm:text-sm"
+                        class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-lg text-xs leading-relaxed sm:mb-6 sm:text-sm"
                     >
                         {@html m.home_interface_description()}
                     </p>
@@ -309,10 +306,10 @@
     </section>
 
     <!-- Feature Showcase Placeholders -->
-    <section class="mb-16 sm:mb-20 md:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div class="mx-auto max-w-6xl">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-8 sm:px-0 sm:text-xl md:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mb-6 px-2 text-center text-lg font-bold sm:mb-16 sm:px-0 sm:text-xl md:text-2xl"
             >
                 {m.home_features_title()}
             </h2>
@@ -413,17 +410,17 @@
     </section>
 
     <!-- Social Proof & Community -->
-    <section class="mb-16 sm:mb-20 md:mb-24">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div
             class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 mx-auto max-w-4xl border bg-gradient-to-br p-6 text-center sm:p-8"
         >
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold sm:mb-4 sm:text-xl md:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold sm:mb-6 sm:text-xl md:text-2xl"
             >
                 {m.home_community_title()}
             </h2>
             <p
-                class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-2xl text-sm leading-relaxed sm:mb-6 sm:text-base"
+                class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-2xl text-sm leading-relaxed sm:mb-12 sm:text-base"
             >
                 {m.home_community_description()}
             </p>
@@ -456,12 +453,12 @@
     <!-- Final CTA -->
     <section class="px-2 text-center sm:px-0">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold sm:mb-4 sm:text-xl md:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold sm:mb-6 sm:text-xl md:text-2xl"
         >
             {m.home_finalCta_title()}
         </h2>
         <p
-            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-xl text-sm leading-relaxed sm:mb-8 sm:text-base"
+            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-xl text-sm leading-relaxed sm:mb-12 sm:text-base"
         >
             {m.home_finalCta_description()}
         </p>

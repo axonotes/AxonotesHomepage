@@ -58,14 +58,14 @@
 
 <div class="container mx-auto px-4 py-6 md:py-8">
     <!-- Hero Section -->
-    <header class="mb-8 text-center md:mb-12 lg:mb-16">
+    <header class="mb-8 text-center md:mb-18 lg:mb-24">
         <h1
-            class="text-primary-600 dark:text-primary-400 mb-3 text-2xl !leading-tight font-bold sm:text-3xl md:text-4xl lg:text-5xl"
+            class="text-primary-600 dark:text-primary-400 mb-6 text-2xl !leading-tight font-bold sm:text-3xl md:text-4xl lg:text-5xl"
         >
             {m.features_hero_title()}
         </h1>
         <p
-            class="text-surface-800 dark:text-surface-200 mx-auto mb-4 max-w-2xl text-base leading-relaxed md:mb-6 md:text-lg"
+            class="text-surface-800 dark:text-surface-200 mx-auto mb-4 max-w-2xl text-base leading-relaxed md:mb-10 md:text-lg"
         >
             {m.features_hero_subtitle()}
         </p>
@@ -85,9 +85,9 @@
     {#if data.features && data.features.length > 0}
         <!-- Priority Features Section -->
         {#if priorityFeatures.length > 0}
-            <section class="mb-12 md:mb-16 lg:mb-20">
+            <section class="mb-16 sm:mb-32 md:mb-48">
                 <h2
-                    class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
+                    class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"
                 >
                     {m.features_priority_title()}
                 </h2>
@@ -153,13 +153,13 @@
         {/if}
 
         <!-- All Features Section -->
-        <section class="mb-12 md:mb-16 lg:mb-20">
+        <section class="mb-16 sm:mb-32 md:mb-48">
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mb-6 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"
             >
                 {m.features_all_title()}
             </h2>
-            <div class="grid gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
+            <div class="grid gap-3 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
                 {#each data.features as feature (feature.url)}
                     <a
                         href={feature.url}
@@ -249,12 +249,12 @@
             />
         </div>
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-6 md:text-xl lg:text-2xl"
         >
             {m.features_cta_title()}
         </h2>
         <p
-            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-2xl text-sm leading-relaxed md:mb-8 md:text-base"
+            class="text-surface-700 dark:text-surface-300 mx-auto mb-6 max-w-2xl text-sm leading-relaxed md:mb-12 md:text-base"
         >
             {m.features_cta_description()}
         </p>

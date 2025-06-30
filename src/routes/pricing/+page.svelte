@@ -1,7 +1,7 @@
 <script lang="ts">
     import PricingCard from "$lib/components/PricingCard.svelte";
     import SelfHostingSection from "$lib/components/SelfHostingSection.svelte";
-    import {Heart, DollarSign} from "@lucide/svelte";
+    import {Heart, DollarSign, Infinity} from "@lucide/svelte";
     import type {PricingPlan} from "$lib/types/pricing.js";
     import * as m from "$lib/paraglide/messages.js";
 
@@ -75,7 +75,7 @@
 
 <div class="container mx-auto px-4 py-6 md:py-8">
     <!-- Header Section -->
-    <header class="mb-10 text-center md:mb-12 lg:mb-16">
+    <header class="mb-16 sm:mb-24 md:mb-32 text-center">
         <h1
             class="text-primary-600 dark:text-primary-400 mb-3 text-2xl !leading-tight font-bold sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl"
         >
@@ -117,9 +117,9 @@
     </header>
 
     <!-- Pricing Philosophy -->
-    <section class="mb-10 md:mb-12 lg:mb-16">
+    <section class="mb-16 sm:mb-24 md:mb-32">
         <div
-            class="card from-secondary-50/50 to-surface-50/50 dark:from-secondary-950/10 dark:to-surface-900/20 border-secondary-200/50 dark:border-secondary-800/50 mx-auto max-w-4xl border bg-gradient-to-br p-4 md:p-6 lg:p-8"
+            class="card from-secondary-50/50 to-surface-50/50 dark:from-secondary-950/10 dark:to-surface-900/20 border-secondary-200/50 dark:border-secondary-800/50 mx-auto max-w-5xl border bg-gradient-to-br p-4 md:p-6 lg:p-8"
         >
             <div class="grid gap-6 md:grid-cols-3 md:gap-8">
                 <div class="text-center">
@@ -166,10 +166,9 @@
                     <div
                         class="bg-tertiary-100 dark:bg-tertiary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
                     >
-                        <span
-                            class="text-tertiary-600 dark:text-tertiary-400 text-base font-bold md:text-lg"
-                            >∞</span
-                        >
+                        <Infinity
+                                class="text-tertiary-600 dark:text-tertiary-400 h-5 w-5 md:h-6 md:w-6"
+                        />
                     </div>
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-1.5 text-sm font-semibold md:mb-2 md:text-base"
@@ -207,7 +206,7 @@
     </section>
 
     <!-- Disclaimer -->
-    <section class="mb-10 md:mb-12 lg:mb-16">
+    <section class="mb-16 sm:mb-32 md:mb-48">
         <div
             class="card bg-warning-50 dark:bg-warning-950/20 border-warning-200 dark:border-warning-800 border p-4 md:p-6"
         >
@@ -242,12 +241,12 @@
     <!-- FAQ Preview -->
     <section class="mt-12 text-center md:mt-16 lg:mt-20">
         <h2
-            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 md:text-xl lg:text-2xl"
+            class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-8 md:text-xl lg:text-2xl"
         >
             {m.pricing_faq_title()}
         </h2>
         <p
-            class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-2xl text-xs leading-relaxed md:mb-6 md:text-sm"
+            class="text-surface-700 dark:text-surface-300 mx-auto mb-4 max-w-2xl text-xs leading-relaxed md:mb-12 md:text-sm"
         >
             {m.pricing_faq_description()}
         </p>
