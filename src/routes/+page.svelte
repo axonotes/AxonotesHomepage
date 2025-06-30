@@ -231,7 +231,9 @@
                         <div
                             class="bg-primary-100 dark:bg-primary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg sm:mb-4 sm:h-12 sm:w-12"
                         >
-                            <Icon class="text-primary-600 dark:text-primary-400 h-5 w-5 sm:h-6 sm:w-6"/>
+                            <Icon
+                                class="text-primary-600 dark:text-primary-400 h-5 w-5 sm:h-6 sm:w-6"
+                            />
                         </div>
                         <h3
                             class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold sm:text-base"

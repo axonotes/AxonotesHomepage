@@ -75,7 +75,7 @@
 
 <div class="container mx-auto px-4 py-6 md:py-8">
     <!-- Header Section -->
-    <header class="mb-16 sm:mb-24 md:mb-32 text-center">
+    <header class="mb-16 text-center sm:mb-24 md:mb-32">
         <h1
             class="text-primary-600 dark:text-primary-400 mb-3 text-2xl !leading-tight font-bold sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl"
         >
@@ -167,7 +167,7 @@
                         class="bg-tertiary-100 dark:bg-tertiary-900/30 mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
                     >
                         <Infinity
-                                class="text-tertiary-600 dark:text-tertiary-400 h-5 w-5 md:h-6 md:w-6"
+                            class="text-tertiary-600 dark:text-tertiary-400 h-5 w-5 md:h-6 md:w-6"
                         />
                     </div>
                     <h3

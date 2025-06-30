@@ -135,7 +135,7 @@
 
 <div class="container mx-auto px-4 py-6 md:py-8">
     <!-- Mission Hero -->
-    <header class="mb-16 sm:mb-24 md:mb-32 text-center">
+    <header class="mb-16 text-center sm:mb-24 md:mb-32">
         <h1
             class="text-primary-600 dark:text-primary-400 mb-4 text-2xl !leading-tight font-bold md:mb-6 md:text-4xl lg:text-5xl"
         >
@@ -191,9 +191,7 @@
                         <div
                             class="{member.bgClass} flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full md:h-16 md:w-16"
                         >
-                            <Icon
-                                class={member.iconClass}
-                            />
+                            <Icon class={member.iconClass} />
                         </div>
                         <div class="min-w-0 flex-1">
                             <h3
@@ -273,9 +271,7 @@
                     <div
                         class="{item.bgClass} mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
                     >
-                        <Icon
-                            class={item.iconClass}
-                        />
+                        <Icon class={item.iconClass} />
                     </div>
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
@@ -294,7 +290,7 @@
 
     <!-- Development Status -->
     <section
-        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 border bg-gradient-to-br p-6 md:p-8 lg:p-12 mb-16 sm:mb-32 md:mb-48"
+        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 border-primary-200 dark:border-primary-800 mb-16 border bg-gradient-to-br p-6 sm:mb-32 md:mb-48 md:p-8 lg:p-12"
     >
         <div class="mx-auto max-w-4xl text-center">
             <h2
@@ -383,9 +379,7 @@
                             <div
                                 class="{item.bgClass} mx-auto mb-3 flex h-8 w-8 items-center justify-center rounded-lg md:h-10 md:w-10"
                             >
-                                <Icon
-                                    class={item.iconClass}
-                                />
+                                <Icon class={item.iconClass} />
                             </div>
                             <h3
                                 class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
@@ -418,9 +412,7 @@
                     <div
                         class="{value.bgClass} mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg md:mb-4 md:h-12 md:w-12"
                     >
-                        <Icon
-                            class={value.iconClass}
-                        />
+                        <Icon class={value.iconClass} />
                     </div>
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"

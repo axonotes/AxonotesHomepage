@@ -73,7 +73,7 @@
 
 <div class="container mx-auto px-4 py-6 md:px-6 md:py-8">
     <!-- Hero Section -->
-    <header class="mb-16 sm:mb-24 md:mb-32 text-center">
+    <header class="mb-16 text-center sm:mb-24 md:mb-32">
         <h1
             class="text-primary-600 dark:text-primary-400 mb-3 text-2xl !leading-tight font-bold sm:text-3xl md:text-4xl lg:text-5xl"
         >
@@ -223,7 +223,9 @@
                         items-center justify-center rounded-lg md:mb-4 md:h-12
                         md:w-12"
                     >
-                        <Icon class="{item.iconColorClass} h-5 w-5 md:h-6 md:w-6"/>
+                        <Icon
+                            class="{item.iconColorClass} h-5 w-5 md:h-6 md:w-6"
+                        />
                     </div>
                     <h3
                         class="text-surface-900 dark:text-surface-100 mb-2 text-sm font-semibold md:text-base"
@@ -242,7 +244,7 @@
 
     <!-- Community Guidelines -->
     <section
-        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 bg-gradient-to-br p-6 md:p-12 mb-16 sm:mb-32 md:mb-48"
+        class="card from-primary-50 to-surface-50 dark:from-primary-950/20 dark:to-surface-900/30 mb-16 bg-gradient-to-br p-6 sm:mb-32 md:mb-48 md:p-12"
     >
         <h2
             class="text-surface-900 dark:text-surface-100 mb-4 text-center text-lg font-bold md:mb-16 md:text-xl lg:text-2xl"

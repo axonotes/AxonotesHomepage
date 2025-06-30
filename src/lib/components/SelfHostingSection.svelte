@@ -10,7 +10,7 @@
 </script>
 
 <section
-    class="card from-primary-50 to-surface-50 outline-primary-500 dark:from-primary-950/20 dark:to-surface-900/30 bg-gradient-to-br p-4 outline md:p-6 lg:p-8 xl:p-12 dark:outline-0 mb-16 sm:mb-32 md:mb-48"
+    class="card from-primary-50 to-surface-50 outline-primary-500 dark:from-primary-950/20 dark:to-surface-900/30 mb-16 bg-gradient-to-br p-4 outline sm:mb-32 md:mb-48 md:p-6 lg:p-8 xl:p-12 dark:outline-0"
 >
     <div class="mx-auto max-w-5xl">
         <!-- Header -->
@@ -36,7 +36,7 @@
                 {m.selfHosting_badge()}
             </div>
             <h2
-                class="text-surface-900 dark:text-surface-100 mb-3 text-lg font-bold md:mb-4 mt-3 md:mt-4 md:text-xl lg:text-2xl"
+                class="text-surface-900 dark:text-surface-100 mt-3 mb-3 text-lg font-bold md:mt-4 md:mb-4 md:text-xl lg:text-2xl"
             >
                 {m.selfHosting_title()}
             </h2>
