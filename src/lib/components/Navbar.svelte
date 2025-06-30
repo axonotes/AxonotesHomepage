@@ -3,13 +3,15 @@
     import LightSwitch from "$lib/components/LightSwitch.svelte";
     import {X, Menu} from "@lucide/svelte";
     import {Modal} from "@skeletonlabs/skeleton-svelte";
+    import * as m from "$lib/paraglide/messages.js";
 
+    // Reconstruct the structured data from the flat message strings
     const navLinks = [
-        {href: "/", label: "Home"},
-        {href: "/features", label: "Features"},
-        {href: "/about", label: "About"},
-        {href: "/community", label: "Community"},
-        {href: "/pricing", label: "Pricing"},
+        {href: "/", label: m.nav_link_home()},
+        {href: "/features", label: m.nav_link_features()},
+        {href: "/about", label: m.nav_link_about()},
+        {href: "/community", label: m.nav_link_community()},
+        {href: "/pricing", label: m.nav_link_pricing()},
     ];
 
     let isMobileMenuOpen = $state(false);
@@ -25,7 +27,7 @@
 
 <nav
     class="border-surface-200/50 dark:border-surface-700/50 bg-surface-50/80 dark:bg-surface-950/80 sticky top-0 z-50 border-b backdrop-blur-md"
-    aria-label="Main navigation"
+    aria-label={m.nav_aria_label()}
 >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -36,11 +38,11 @@
             >
                 <img
                     src="/favicon.png"
-                    alt="Axonotes"
+                    alt={m.nav_logo_alt()}
                     class="h-8 w-8"
                     loading="eager"
                 />
-                <span class="hidden sm:block">Axonotes</span>
+                <span class="hidden sm:block">{m.nav_logo_text()}</span>
             </a>
 
             <!-- Desktop Navigation -->
@@ -50,9 +52,9 @@
                         <li>
                             <a
                                 href={link.href}
-                                class="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg px-3 py-2 text-sm font-medium transition-colors
+                                class="text-surface-800 dark:text-surface-200 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg px-3 py-2 text-sm font-medium transition-colors
                                        {isCurrentPage(link.href)
-                                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/50'
+                                    ? 'bg-primary-200/80 dark:bg-primary-800/80'
                                     : ''}"
                                 aria-current={isCurrentPage(link.href)
                                     ? "page"
@@ -71,7 +73,7 @@
                     rel="noopener noreferrer"
                     class="bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 hidden rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors focus:ring-2 focus:outline-none lg:block"
                 >
-                    Join Discord
+                    {m.nav_cta_discord()}
                 </a>
 
                 <LightSwitch />
@@ -93,7 +95,8 @@
                 >
                     {#snippet trigger()}
                         <Menu class="h-6 w-6" />
-                        <span class="sr-only">Open menu</span>
+                        <span class="sr-only">{m.nav_mobile_openMenu_sr()}</span
+                        >
                     {/snippet}
                     {#snippet content()}
                         <div class="flex h-full flex-col">
@@ -104,15 +107,15 @@
                                 >
                                     <img
                                         src="/favicon.png"
-                                        alt="Axonotes"
+                                        alt={m.nav_logo_alt()}
                                         class="h-6 w-6"
                                     />
-                                    Axonotes
+                                    {m.nav_logo_text()}
                                 </div>
                                 <button
                                     onclick={closeMobileMenu}
                                     class="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg p-2 transition-colors"
-                                    aria-label="Close menu"
+                                    aria-label={m.nav_mobile_closeMenu_aria()}
                                 >
                                     <X class="h-6 w-6" />
                                 </button>
@@ -154,7 +157,7 @@
                                     onclick={closeMobileMenu}
                                     class="bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 block w-full rounded-lg px-4 py-3 text-center font-medium text-white transition-colors focus:ring-2 focus:outline-none"
                                 >
-                                    Join Discord
+                                    {m.nav_cta_discord()}
                                 </a>
                             </div>
                         </div>
