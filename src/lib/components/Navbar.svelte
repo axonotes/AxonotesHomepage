@@ -26,7 +26,7 @@
 </script>
 
 <nav
-    class="border-surface-200/50 dark:border-surface-700/50 bg-surface-50/80 dark:bg-surface-950/80 sticky top-0 z-50 border-b backdrop-blur-md"
+    class="border-surface-200/50 dark:border-surface-700/50 bg-surface-50/80 dark:bg-surface-950/80 sticky top-0 z-50 border-b backdrop-blur-xs"
     aria-label={m.nav_aria_label()}
 >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
