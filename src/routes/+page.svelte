@@ -63,11 +63,11 @@
 
 <div class="container mx-auto px-4 py-6 sm:py-8 lg:py-12">
     <!-- Hero Section -->
-    <section class="mb-16 sm:mb-32 md:mb-48">
-        <div class="mx-auto max-w-4xl text-center">
+    <section class="mb-16 sm:mb-16 md:mb-20 mt-16 sm:mt-16 lg:mt-20">
+        <div class="mx-auto max-w-5xl text-center">
             <!-- Main Headline -->
             <h1
-                class="text-primary-600 dark:text-primary-400 mb-4 text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl"
+                class="text-primary-600 dark:text-primary-400 mb-4 text-5xl leading-tight font-bold sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl"
             >
                 {@html m.home_hero_title()}
             </h1>

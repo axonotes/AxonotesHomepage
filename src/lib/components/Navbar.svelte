@@ -23,6 +23,10 @@
     function isCurrentPage(href: string): boolean {
         return page.url.pathname === href;
     }
+
+    function isScrolled(): boolean {
+        return window.scrollY > 0;
+    }
 </script>
 
 <nav
@@ -81,17 +85,16 @@
 
             <!-- Mobile Controls -->
             <div class="flex items-center gap-3 md:hidden">
-                <LightSwitch />
                 <Modal
                     open={isMobileMenuOpen}
                     onOpenChange={(e) => (isMobileMenuOpen = e.open)}
                     triggerBase="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg p-2 transition-colors"
-                    contentBase="bg-surface-50 dark:bg-surface-950 fixed inset-y-0 right-0 z-50 w-80 max-w-[85vw] border-l border-surface-200 dark:border-surface-700 p-6 shadow-xl"
+                    contentBase="bg-surface-50 dark:bg-surface-950 fixed inset-y-0 right-0 z-50 w-full h-full border-l border-surface-200 dark:border-surface-700 p-6 shadow-xl"
                     positionerJustify="justify-end"
                     positionerAlign=""
                     positionerPadding=""
-                    transitionsPositionerIn={{x: 320, duration: 250}}
-                    transitionsPositionerOut={{x: 320, duration: 200}}
+                    transitionsPositionerIn={{y: -200, duration: 250}}
+                    transitionsPositionerOut={{y: -200, duration: 200}}
                 >
                     {#snippet trigger()}
                         <Menu class="h-6 w-6" />
@@ -99,30 +102,30 @@
                         >
                     {/snippet}
                     {#snippet content()}
-                        <div class="flex h-full flex-col">
+                        <div class="flex items-center h-full flex-col">
                             <!-- Mobile Header -->
-                            <div class="flex items-center justify-between pb-6">
+                            <div class="w-[90vw] flex items-center justify-between pb-4 mb-6 border-b border-surface-200 dark:border-surface-700">
                                 <div
-                                    class="text-primary-600 dark:text-primary-400 flex items-center gap-2 text-lg font-bold"
+                                    class="px-4 py-2 text-primary-600 dark:text-primary-400 flex items-center gap-2 text-lg font-bold"
                                 >
                                     <img
                                         src="/favicon.svg"
                                         alt={m.nav_logo_alt()}
-                                        class="h-6 w-6"
+                                        class="h-8 w-8"
                                     />
-                                    {m.nav_logo_text()}
+                                    <h1 class="text-lg font-bold">{m.nav_logo_text()}</h1>
                                 </div>
                                 <button
                                     onclick={closeMobileMenu}
-                                    class="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg p-2 transition-colors"
+                                    class="text-surface-700 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                                     aria-label={m.nav_mobile_closeMenu_aria()}
                                 >
-                                    <X class="h-6 w-6" />
+                                    <X class="h-8 w-8" />
                                 </button>
                             </div>
 
                             <!-- Mobile Navigation -->
-                            <nav class="flex-1">
+                            <nav class="flex-1 w-[80vw]">
                                 <ul class="space-y-2">
                                     {#each navLinks as link (link.href)}
                                         <li>
@@ -144,11 +147,12 @@
                                         </li>
                                     {/each}
                                 </ul>
+                                <LightSwitch />
                             </nav>
 
                             <!-- Mobile CTA -->
                             <div
-                                class="border-surface-200 dark:border-surface-700 border-t pt-6"
+                                class="w-[80vw] mt-6 flex items-center justify-center"
                             >
                                 <a
                                     href="https://discord.gg/myBMaaDeQu"
