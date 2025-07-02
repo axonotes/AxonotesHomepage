@@ -4,6 +4,8 @@
     import {X, Menu} from "@lucide/svelte";
     import {Modal} from "@skeletonlabs/skeleton-svelte";
     import * as m from "$lib/paraglide/messages.js";
+    import { onMount } from "svelte";
+    import { writable } from "svelte/store";
 
     // Reconstruct the structured data from the flat message strings
     const navLinks = [
@@ -24,13 +26,23 @@
         return page.url.pathname === href;
     }
 
-    function isScrolled(): boolean {
-        return window.scrollY > 0;
+    // Track if the page is scrolled
+    const scrolled = writable(false);
+
+    function handleScroll() {
+        scrolled.set(window.scrollY > 250);
     }
+
+    onMount(() => {
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    });
 </script>
 
 <nav
-    class="border-surface-200/50 dark:border-surface-700/50 bg-surface-50/80 dark:bg-surface-950/80 sticky top-0 z-50 border-b backdrop-blur-xs"
+    class="bg-surface-50/80 dark:bg-surface-950/80 sticky top-4 z-50 rounded-4xl mx-4 lg:mx-25 backdrop-blur-xs transition-all
+        { $scrolled ? 'border-1 border-gray-200' : '' }"
     aria-label={m.nav_aria_label()}
 >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +58,7 @@
                     class="h-8 w-8"
                     loading="eager"
                 />
-                <span class="hidden sm:block">{m.nav_logo_text()}</span>
+                <span>{m.nav_logo_text()}</span>
             </a>
 
             <!-- Desktop Navigation -->
@@ -57,12 +69,8 @@
                             <a
                                 href={link.href}
                                 class="text-surface-800 dark:text-surface-200 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg px-3 py-2 text-sm font-medium transition-colors
-                                       {isCurrentPage(link.href)
-                                    ? 'bg-primary-200/80 dark:bg-primary-800/80'
-                                    : ''}"
-                                aria-current={isCurrentPage(link.href)
-                                    ? "page"
-                                    : undefined}
+                                       {isCurrentPage(link.href) ? 'bg-primary-200/80 dark:bg-primary-800/80' : ''}"
+                                aria-current={isCurrentPage(link.href) ? "page" : undefined}
                             >
                                 {link.label}
                             </a>

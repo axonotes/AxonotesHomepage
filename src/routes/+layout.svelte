@@ -51,6 +51,37 @@
                     <LanguageSwitcher />
                 </div>
 
+                <div class="flex flex-col sm:flex-row justify-between gap-6 mt-8">
+                    <div class="flex flex-col">
+                        <h1 class="font-bold">{m.nav_link_features()}</h1>
+                        <div>
+                            <h2>1</h2>
+                            <h2>2</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-bold">{m.nav_link_about()}</h1>
+                        <div>
+                            <h2>1</h2>
+                            <h2>2</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-bold">{m.nav_link_community()}</h1>
+                        <div>
+                            <h2>1</h2>
+                            <h2>2</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-bold">{m.nav_link_pricing()}</h1>
+                        <div>
+                            <h2>1</h2>
+                            <h2>2</h2>
+                        </div>
+                    </div>
+                </div>
+
                 <div>
                     <div class="border-b-2 border-white pb-5 pt-5 mb-7">
                          <div class="text-white dark:text-white flex items-center gap-2 text-lg font-bold">
