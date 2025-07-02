@@ -31,7 +31,7 @@
         </main>
 
         <footer
-            class="border-surface-200 dark:border-surface-700 bg-surface-100/50 dark:bg-surface-900/50 border-t py-8"
+            class="border-surface-200 dark:border-surface-700 bg-[var(--anchor-font-color)] dark:bg-primary-800/80 border-t py-8"
         >
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div
@@ -39,7 +39,7 @@
                 >
                     <!-- Logo & Tagline -->
                     <div
-                        class="text-primary-600 dark:text-primary-400 flex items-center gap-2 text-sm font-medium"
+                        class="text-white dark:text-white flex items-center gap-2 text-sm font-medium"
                     >
                         <img
                             src="/favicon.svg"
@@ -48,55 +48,51 @@
                         />
                         <span>{m.footer_tagline()}</span>
                     </div>
-
-                    <!-- Links & Controls -->
-                    <div
-                        class="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-sm"
-                    >
-                        <a
-                            href="/legal/imprint"
-                            class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                        >
-                            {m.footer_link_imprint()}
-                        </a>
-                        <a
-                            href="/legal/privacy-policy"
-                            class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                        >
-                            {m.footer_link_privacyPolicy()}
-                        </a>
-                        <a
-                            href="https://github.com/axonotes/AxonotesCore"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                        >
-                            {m.footer_link_github()}
-                        </a>
-                        <a
-                            href="https://discord.gg/myBMaaDeQu"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-surface-600 dark:text-surface-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                        >
-                            {m.footer_link_discord()}
-                        </a>
-                        <!-- Dezenter, aber funktionaler Language Switcher -->
-                        <LanguageSwitcher />
-                    </div>
+                    <LanguageSwitcher />
                 </div>
 
-                <!-- Copyright -->
-                <div
-                    class="border-surface-200 dark:border-surface-700 mt-6 border-t pt-4 text-center"
-                >
-                    <span
-                        class="text-surface-500 dark:text-surface-500 text-xs"
-                    >
-                        {m.footer_copyright({
-                            year: new Date().getFullYear(),
-                        })}
-                    </span>
+                <div>
+                    <div class="border-b-2 border-white pb-5 pt-5 mb-7">
+                         <div class="text-white dark:text-white flex items-center gap-2 text-lg font-bold">
+                            <img
+                                src="/favicon.svg"
+                                alt={m.nav_logo_alt()}
+                                class="h-20 w-20"
+                            />
+                            <h1 class="text-4xl font-bold">{m.nav_logo_text()}</h1>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-5">
+                        <div class="text-white dark:text-white flex flex-wrap items-center gap-x-6 gap-y-4 text-xs">
+                            <a
+                                href="/legal/imprint"
+                                class="hover:underline transition-colors"
+                            >
+                                {m.footer_link_imprint()}
+                            </a>
+                            <a
+                                href="/legal/privacy-policy"
+                                class="hover:underline transition-colors"
+                            >
+                                {m.footer_link_privacyPolicy()}
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <a href="https://discord.com/invite/your-invite-code">
+                                <img src="/discord-dark.svg" alt={m.footer_logo_alt()} class="h-5 w-5" />
+                            </a>
+                            <a href="https://github.com/your-repo">
+                                <img src="/github-dark.svg" alt={m.footer_logo_alt()} class="h-5 w-5" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-white">
+                        <span class="text-xs">
+                            {m.footer_copyright({
+                                year: new Date().getFullYear(),
+                            })}
+                        </span>
+                    </div>        
                 </div>
             </div>
         </footer>
