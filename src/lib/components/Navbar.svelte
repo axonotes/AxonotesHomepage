@@ -30,7 +30,7 @@
     const scrolled = writable(false);
 
     function handleScroll() {
-        scrolled.set(window.scrollY > 250);
+        scrolled.set(window.scrollY > 200);
     }
 
     onMount(() => {
@@ -41,8 +41,8 @@
 </script>
 
 <nav
-    class="bg-surface-50/80 dark:bg-surface-950/80 sticky top-4 z-50 rounded-4xl mx-4 lg:mx-25 backdrop-blur-xs transition-all
-        { $scrolled ? 'border-1 border-gray-200' : '' }"
+    class="sticky top-4 z-50 rounded-4xl mx-4 lg:mx-25 backdrop-blur-xs transition-all
+        { $scrolled ? 'bg-surface-100/80 dark:bg-surface-800/80' : 'bg-surface-50/80 dark:bg-surface-950/80' }"
     aria-label={m.nav_aria_label()}
 >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">

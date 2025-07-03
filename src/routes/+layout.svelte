@@ -51,7 +51,7 @@
                     <LanguageSwitcher />
                 </div>
 
-                <div class="flex flex-col sm:flex-row justify-between gap-6 mt-8">
+                <div class="flex flex-col sm:flex-row justify-between gap-6 mt-8 text-white">
                     <div class="flex flex-col">
                         <h1 class="font-bold">{m.nav_link_features()}</h1>
                         <div>

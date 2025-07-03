@@ -164,7 +164,7 @@
             <div class="grid gap-6 sm:gap-8 lg:grid-cols-2">
                 <!-- Before: The Problem -->
                 <div
-                    class="card border-warning-200 dark:border-warning-800 bg-warning-50 dark:bg-warning-950/20 border p-4 sm:p-6"
+                    class="card border-warning-200 dark:border-warning-800 bg-warning-50 dark:bg-warning-950/20 border p-4 sm:p-6 motion-safe:hover:-m-2 motion-safe:hover:p-8 transition-ease duration-300"
                 >
                     <div class="mb-3 flex items-center gap-2 sm:mb-4 sm:gap-3">
                         <h3
@@ -189,7 +189,7 @@
 
                 <!-- After: The Solution -->
                 <div
-                    class="card border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-950/20 border p-4 sm:p-6"
+                    class="card border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-950/20 border p-4 sm:p-6 motion-safe:hover:-m-2 motion-safe:hover:p-8 transition-ease duration-300"
                 >
                     <div class="mb-3 flex items-center gap-2 sm:mb-4 sm:gap-3">
                         <h3
