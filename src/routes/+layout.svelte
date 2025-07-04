@@ -83,7 +83,7 @@
                 </div>
 
                 <div>
-                    <div class="border-b-2 border-white pb-5 pt-5 mb-7">
+                    <div class="border-b-2 border-white dark:border-white pb-5 pt-5 mb-7">
                          <div class="text-black dark:text-white flex items-center gap-2 text-lg font-bold">
                             <img
                                 src="/favicon.svg"
