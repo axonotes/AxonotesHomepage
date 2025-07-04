@@ -31,7 +31,7 @@
         </main>
 
         <footer
-            class="border-surface-200 dark:border-surface-700 bg-[var(--anchor-font-color)] dark:bg-primary-800/80 border-t py-8"
+            class="bg-surface-100/80 dark:bg-surface-800/80 backdrop-blur-xs rounded-4xl mx-4 py-6 lg:mx-25 mb-5"
         >
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div
@@ -39,7 +39,7 @@
                 >
                     <!-- Logo & Tagline -->
                     <div
-                        class="text-white dark:text-white flex items-center gap-2 text-sm font-medium"
+                        class="text-black dark:text-white flex items-center gap-2 text-sm font-medium"
                     >
                         <img
                             src="/favicon.svg"
@@ -51,7 +51,7 @@
                     <LanguageSwitcher />
                 </div>
 
-                <div class="flex flex-col sm:flex-row justify-between gap-6 mt-8 text-white">
+                <div class="flex flex-col sm:flex-row justify-between gap-6 mt-8 text-black dark:text-white">
                     <div class="flex flex-col">
                         <h1 class="font-bold">{m.nav_link_features()}</h1>
                         <div>
@@ -84,7 +84,7 @@
 
                 <div>
                     <div class="border-b-2 border-white pb-5 pt-5 mb-7">
-                         <div class="text-white dark:text-white flex items-center gap-2 text-lg font-bold">
+                         <div class="text-black dark:text-white flex items-center gap-2 text-lg font-bold">
                             <img
                                 src="/favicon.svg"
                                 alt={m.nav_logo_alt()}
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center justify-between gap-5">
-                        <div class="text-white dark:text-white flex flex-wrap items-center gap-x-6 gap-y-4 text-xs">
+                        <div class="text-black dark:text-white flex flex-wrap items-center gap-x-6 gap-y-4 text-xs">
                             <a
                                 href="/legal/imprint"
                                 class="hover:underline transition-colors"
@@ -109,15 +109,17 @@
                             </a>
                         </div>
                         <div class="flex items-center gap-5">
-                            <a href="https://discord.com/invite/your-invite-code">
-                                <img src="/discord-dark.svg" alt={m.footer_logo_alt()} class="h-5 w-5" />
+                            <a href="https://discord.com/invite/your-invite-code" target="_blank" rel="noopener noreferrer">
+                                <img src="/discord-dark.svg" alt={m.footer_logo_alt()} class="h-5 w-5 hidden dark:block" />
+                                <img src="/discord.svg" alt={m.footer_logo_alt()} class="h-5 w-5 dark:hidden" />
                             </a>
-                            <a href="https://github.com/your-repo">
-                                <img src="/github-dark.svg" alt={m.footer_logo_alt()} class="h-5 w-5" />
+                            <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">
+                                <img src="/github-dark.svg" alt={m.footer_logo_alt()} class="h-5 w-5 hidden dark:block" />
+                                <img src="/github.svg" alt={m.footer_logo_alt()} class="h-5 w-5 dark:hidden" />
                             </a>
                         </div>
                     </div>
-                    <div class="mt-2 text-white">
+                    <div class="mt-2 text-black dark:text-white">
                         <span class="text-xs">
                             {m.footer_copyright({
                                 year: new Date().getFullYear(),

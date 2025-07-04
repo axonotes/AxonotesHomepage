@@ -28,7 +28,7 @@
     closeOnEscape
 >
     {#snippet trigger()}
-        <Globe class="h-4 w-4 text-white" />
+        <Globe class="h-4 w-4" />
     {/snippet}
 
     {#snippet content()}
