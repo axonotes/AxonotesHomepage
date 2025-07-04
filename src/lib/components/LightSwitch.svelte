@@ -40,7 +40,7 @@
     {#if checked}
         <button
             type="button"
-            class="btn-icon preset-filled scheme-light"
+            class="btn-icon preset-filled scheme-light bg-transparent text-white"
             onclick={() => onCheckedChange({checked: false})}
             aria-label="Switch to light mode"
         >
@@ -49,7 +49,7 @@
     {:else}
         <button
             type="button"
-            class="btn-icon preset-filled scheme-dark"
+            class="btn-icon preset-filled scheme-dark bg-transparent text-black"
             onclick={() => onCheckedChange({checked: true})}
             aria-label="Switch to dark mode"
         >
